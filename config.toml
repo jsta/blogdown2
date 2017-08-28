@@ -6,8 +6,8 @@ googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 enableEmoji = true
-footnotereturnlinkcontents: "↩"
-rssLimit: 30
+footnotereturnlinkcontents = "↩"
+rssLimit = 30
 
 [permalinks]
     post = "/:year/:month/:day/:slug/"
@@ -28,8 +28,8 @@ rssLimit: 30
 [params]
     description = "Personal website of Joseph Stachelek"
     dateFormat = "2006/01/02"
-    customCSS: ["css/custom.css"]
-    customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js"]
+    customCSS = ["css/custom.css"]
+    customJS = ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js"]
 
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
