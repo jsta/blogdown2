@@ -18,7 +18,7 @@ disable_comments: true
 
 - Bayesian Statistics Workshop, Summer 2017, Michigan State University, Song Qian.
 - Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Andrew Finley.
-- The Mgcv Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Gavin Simpson, David Miller, Eric Pedersen.
+- The `mgcv` Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Gavin Simpson, David Miller, Eric Pedersen.
 - Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Drew Schmidt.
 - Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Robert Dorazio.
 
