@@ -26,35 +26,7 @@ disable_comments: true
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
 
-  - Member of a research team focused on ecological restoration of the Florida Everglades with particular emphasis on the extent to which the Everglades watershed influences downstream estuaries. 
-  - Responsible for translating ecological information and the results of water quality surveys for use in environmental management. 
-  - Developed geospatial water quality models. Prepared reports and other materials for presentations to decision makers. 
-  - Responsible for curating massive environmental databases and developing custom GIS visualization and analysis tools. 
-
-## Software Experience
-  
-### Software package development [(https://github.com/jsta)](https://github.com/jsta)
-
-**Author**
-
-- `ipdw`: Interpolation by Inverse Path Distance Weighting. [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
-- `dbhydroR`: Everglades Hydrologic and Water Quality Data from R. [https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
-- `wikilake`: Scrape Lake Metadata Tables from Wikipedia [https://github.com/jsta/wikilake](https://github.com/jsta/wikilake) 
-
-**Contributor**
-
-- `rnoaa`: 'NOAA' Weather Data from R. [https://github.com/ropensci/rnoaa](https://github.com/ropensci/rnoaa)
-- `lakemorpho`: Lake Morphometry Metrics in R. [https://github.com/USEPA/lakemorpho](https://github.com/USEPA/lakemorpho)
-
-### Other software experience
-
-- Operating Systems: Debian/Ubuntu/Fedora Linux, Windows
-- Office productivity software: Microsoft Office (Word, Excel and PowerPoint), LibreOffice, LaTeX
-- Statistical Software: R
-- Coding languages: R, Python, Fortran
-- Data management: SQLite, netcdf
-- Version control systems: Git, GitHub
-- Web development: `shiny`
+  - Focus on water quality modelling, curating environmental databases, and developing custom GIS visualization tools for water management. 
 
 ## Publications
 
@@ -86,6 +58,31 @@ disable_comments: true
 
 - **Stachelek J**, Ford C, Kincaid D, King K, Miller H, Nagelkirk R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. KNB Data Repository. [http://dx.doi.org/10.5063/F10G3H3Z](http://dx.doi.org/10.5063/F10G3H3Z)
 - Madden C, **Stachelek J**, Kelly S, Blaha M. 2017. Florida Bay water quality estimated by underway flow-through measurement. KNB Data Repository. [http://dx.doi.org/10.5063/F11R6NGR](http://dx.doi.org/10.5063/F11R6NGR)
+
+## Software Experience
+  
+### Software package development [(https://github.com/jsta)](https://github.com/jsta)
+
+**Author**
+
+- `ipdw`: Interpolation by Inverse Path Distance Weighting. [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
+- `dbhydroR`: Everglades Hydrologic and Water Quality Data from R. [https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
+- `wikilake`: Scrape Lake Metadata Tables from Wikipedia [https://github.com/jsta/wikilake](https://github.com/jsta/wikilake) 
+
+**Contributor**
+
+- `rnoaa`: 'NOAA' Weather Data from R. [https://github.com/ropensci/rnoaa](https://github.com/ropensci/rnoaa)
+- `lakemorpho`: Lake Morphometry Metrics in R. [https://github.com/USEPA/lakemorpho](https://github.com/USEPA/lakemorpho)
+
+### Other software experience
+
+- Operating Systems: Debian/Ubuntu/Fedora Linux, Windows
+- Office productivity software: Microsoft Office (Word, Excel and PowerPoint), LibreOffice, LaTeX
+- Statistical Software: R
+- Coding languages: R, Python, Fortran
+- Data management: SQLite, netcdf
+- Version control systems: Git, GitHub
+- Web development: `shiny`
 
 ## Presentations
 
