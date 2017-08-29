@@ -17,27 +17,21 @@ disable_comments: true
 ### Additional Courses and Training
 
 - Bayesian Statistics Workshop, Summer 2017, Michigan State University, Song Qian.
-
 - Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Andrew Finley.
-
 - The Mgcv Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Gavin Simpson, David Miller, Eric Pedersen.
-
 - Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Drew Schmidt.
-
 - Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Robert Dorazio.
-
 
 -----
   
 ## Work Experience
   
-2012 - 2016
-: Research Scientist, South Florida Water Management District
+- 2012 -- 2016, Research Scientist, South Florida Water Management District
 
-- Member of a research team focused on ecological restoration of the Florida Everglades with particular emphasis on the extent to which the Everglades watershed influences downstream estuaries. 
-- Responsible for translating ecological information and the results of water quality surveys for use in environmental management. 
-- Developed geospatial water quality models. Prepared reports and other materials for presentations to decision makers. 
-- Responsible for curating massive environmental databases and developing custom GIS visualization and analysis tools. 
+  - Member of a research team focused on ecological restoration of the Florida Everglades with particular emphasis on the extent to which the Everglades watershed influences downstream estuaries. 
+  - Responsible for translating ecological information and the results of water quality surveys for use in environmental management. 
+  - Developed geospatial water quality models. Prepared reports and other materials for presentations to decision makers. 
+  - Responsible for curating massive environmental databases and developing custom GIS visualization and analysis tools. 
 
 -----
 
