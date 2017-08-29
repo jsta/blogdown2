@@ -118,7 +118,7 @@ res_linear <- level_pool_routing(input_hydro, reservoir_char,
                 initial_storage = 0, linear.fit = FALSE)
 ```
 
-![](../images/linear%20outflow-storage%20calculation-1.png)
+![](../images/linear outflow-storage calculation-1.png)
 
 ``` r
 plot(res_linear$time, res_linear$inflow,
