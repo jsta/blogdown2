@@ -22,8 +22,6 @@ disable_comments: true
 - Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Drew Schmidt.
 - Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Robert Dorazio.
 
------
-  
 ## Work Experience
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
@@ -33,8 +31,6 @@ disable_comments: true
   - Developed geospatial water quality models. Prepared reports and other materials for presentations to decision makers. 
   - Responsible for curating massive environmental databases and developing custom GIS visualization and analysis tools. 
 
------
-
 ## Software Experience
   
 ### Software package development [(https://github.com/jsta)](https://github.com/jsta)
@@ -42,15 +38,12 @@ disable_comments: true
 **Author**
 
 - `ipdw`: Interpolation by Inverse Path Distance Weighting. [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
-
 - `dbhydroR`: Everglades Hydrologic and Water Quality Data from R. [https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
-
 - `wikilake`: Scrape Lake Metadata Tables from Wikipedia [https://github.com/jsta/wikilake](https://github.com/jsta/wikilake) 
 
 **Contributor**
 
 - `rnoaa`: 'NOAA' Weather Data from R. [https://github.com/ropensci/rnoaa](https://github.com/ropensci/rnoaa)
-
 - `lakemorpho`: Lake Morphometry Metrics in R. [https://github.com/USEPA/lakemorpho](https://github.com/USEPA/lakemorpho)
 
 ### Other software experience
@@ -63,39 +56,31 @@ disable_comments: true
 - Version control systems: Git, GitHub
 - Web development: `shiny`
 
------
-
 ## Publications
 
 ### Peer-Reviewed
 
-   - **Stachelek, J.**, 2016. [Re] Least-cost modelling on irregular landscape graphs. ReScience. 2(1), 1-4. [pdf](public/2016_stachelek_rescience.pdf)
-   
-  - **Stachelek J.**, Madden, C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. International Journal of Geographical Information Science. [pdf](public/stachmadden2015am.pdf)
-  
-  - **Stachelek, J.**, Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. Texas Water Journal. 4(2), 62-73. [pdf](public/StachelekDunton2013.pdf)
+<ol reversed>
+<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="public/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
+  </li>
+</ol>
+
+- **Stachelek J.**, Madden, C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. International Journal of Geographical Information Science. [pdf](public/stachmadden2015am.pdf)
+- **Stachelek, J.**, Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. Texas Water Journal. 4(2), 62-73. [pdf](public/StachelekDunton2013.pdf)
   
 ### In-Prep (manuscripts available upon request)
 
- - Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, **Stachelek J.**, <8 alphabetical authors> (_submitted_) Sustainable computational science: the ReScience initiative. [arxiv.org/abs/1707.04393](https://arxiv.org/abs/1707.04393)
+- Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, **Stachelek J.**, <8 alphabetical authors> (_submitted_) Sustainable computational science: the ReScience initiative. [arxiv.org/abs/1707.04393](https://arxiv.org/abs/1707.04393)
+- **Stachelek J.**, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, Earth Syst. Sci. Data Discuss., [https://doi.org/10.5194/essd-2017-52](https://doi.org/10.5194/essd-2017-52) , (_in review_), 2017.  
+- Soranno P.A., <62 alphabetical authors>, **Stachelek J.**, <15 alphabetical authors>. (_in review_) LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. Gigascience.
+- **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
+- Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
+- **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (_in review_). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
+- Hollister J., **Stachelek J.** (_in-prep_) lakemorpho: Calculating lake morphometry metrics in R.
 
-  - **Stachelek J.**, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, Earth Syst. Sci. Data Discuss., [https://doi.org/10.5194/essd-2017-52](https://doi.org/10.5194/essd-2017-52) , (_in review_), 2017.  
-
-  - Soranno P.A., <62 alphabetical authors>, **Stachelek J.**, <15 alphabetical authors>. (_in review_) LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. Gigascience.
-
-   - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
-   
-   - Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
-   
-   - **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (_in review_). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
-   
-   - Hollister J., **Stachelek J.** (_in-prep_) lakemorpho: Calculating lake morphometry metrics in R.
-   
-   
 ### Datasets
 
- - **Stachelek J**, Ford C, Kincaid D, King K, Miller H, Nagelkirk R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. KNB Data Repository. [http://dx.doi.org/10.5063/F10G3H3Z](http://dx.doi.org/10.5063/F10G3H3Z)
-
+- **Stachelek J**, Ford C, Kincaid D, King K, Miller H, Nagelkirk R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. KNB Data Repository. [http://dx.doi.org/10.5063/F10G3H3Z](http://dx.doi.org/10.5063/F10G3H3Z)
 - Madden C, **Stachelek J**, Kelly S, Blaha M. 2017. Florida Bay water quality estimated by underway flow-through measurement. KNB Data Repository. [http://dx.doi.org/10.5063/F11R6NGR](http://dx.doi.org/10.5063/F11R6NGR)
 
 -----
