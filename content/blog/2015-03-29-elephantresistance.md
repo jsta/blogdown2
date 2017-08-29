@@ -4,7 +4,7 @@ date: '2015-03-29'
 ---
 I was intrigued by the idea of running simulations to define landscape resistance as presented in Cushman et al. (2010). Their basic strategy is to use measured track data as a proxy for landscape resistance. They randomly shift and rotate their measured tracks in order to generate support for their paramaterization of landscape resistance by comparing original and transformed tracks. The R code below takes an approximation of their example track and puts it through the same random shifting/rotating procedure.
 
-![trackrot](/public/images/trackrot.png)
+![](../images/trackrot.png)
 
         library(raster)
         library(sp)

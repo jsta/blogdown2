@@ -7,7 +7,7 @@ Recent interest in a paper on sea level rise acceleration (Haigh et al. 2014) ha
 
 Below is R code that I wrote to examine one of the stations from the paper (Key West). In future posts I will expand on this code to check the "sliding" window portion of the paper.
 
-![kw_haigh](/public/images/kw_haigh.png)
+![](../images/kw_haigh.png)
 
       ##obtain annual mean sea level for Key West from:
       #http://www.psmsl.org/data/obtaining/rlr.annual.data/188.rlrdata
