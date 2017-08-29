@@ -10,19 +10,9 @@ disable_comments: true
 
 ## Education
 
-###  **PhD, Fisheries and Wildlife** (in progress) Michigan State University, East Lansing
-- Dissertation Theme: "Landscape Limnology"
-  - Supervisor: Dr. Pat Soranno
-  
-###  **MS, Marine Science** (2012) University of Texas, Austin
-
-- Thesis: "Freshwater inflows in the Nueces Delta, TX : impacts on porewater salinity and estimation of needs." ([link](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549))
-- Supervisor: Dr. Ken Dunton
-
-###  **BSc, Marine Science** (2008) University of Maine, Orono
-
-- Thesis: "Constructing a guide to the Intertidal Algae of Acadia National Park" ([pdf](public/FieldGuidetoMarinePlantsAlgae.pdf))
-- Supervisor: Dr. Susan Brawley
+- 2016 -- present, Ph.D., Department of Fisheries and Wildlife (focus on Landscape Limnology), Michigan State University.
+- 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
+- 2004 -- 2008, B.S., Marine Science, University of Maine-Orono. [thesis](public/FieldGuidetoMarinePlantsAlgae.pdf)
 
 ### Additional Courses and Training
 
