@@ -5,7 +5,7 @@ date: '2015-09-18'
 
 If you are familiar with Landsat 7 (1999 - 2013), you know that there was [failure](http://landsat.usgs.gov/products_slcoffbackground.php) with the Scan Line Corrector instrument early in the mission deployment. The end result is that a sizable portion (~22 %) of each "scene" has been lost. People interested in creating true color images without these missing data gaps might find themselves at the USGS page describing how to [fill gaps for display](http://landsat.usgs.gov/filling_the_gaps_for_display.php).
 
-![landsat](/public/images/landsat_miss.png)  
+![landsat](../images/landsat_miss.png)  
 
 However, after reading the page you might think that the only solutions for gap-filling involve using very expensive proprietary software (ERDAS, Photoshop) or paying for corrected imagery from a _Landsat business partner_. Not having access to these software programs, I unsuccessfully attempted to use the _Dust-and-Scratches_ solution albeit with open-source imaging programs. After quite a bit of struggling I discoved an easy alternative which I will now share. 
 
@@ -58,4 +58,4 @@ Before running this workflow on your own landsat 7 data ensure that you have `gd
         #file.remove(list.files("landsat", include.dirs = TRUE, full.names = TRUE,
           recursive = TRUE))
 
-![landsat](/public/images/landsat.png)  
+![landsat](../images/landsat.png)  
