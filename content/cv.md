@@ -61,12 +61,16 @@ disable_comments: true
 ### Peer-Reviewed
 
 <ol reversed>
-<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="static/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
-  </li>
-</ol>
+<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
+</li>
 
-- **Stachelek J.**, Madden, C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. International Journal of Geographical Information Science. [pdf](public/stachmadden2015am.pdf)
-- **Stachelek, J.**, Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. Texas Water Journal. 4(2), 62-73. [pdf](public/StachelekDunton2013.pdf)
+<li> <b>Stachelek J.</b> and Madden C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. <u><i>International Journal of Geographical Information Science</i></u> <a target="_blank" href="../pdf/stachmadden2015am.pdf"><i class="fa fa-download"></i></a>
+</li>
+
+<li> <b>Stachelek J.</b> and Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. <u><i>Texas Water Journal</i></u>. 4(2), 62-73.. <a target="_blank" href="../pdf/StachelekDunton2013.pdf"><i class="fa fa-download"></i></a>
+</li>
+
+</ol>
   
 ### In-Prep (manuscripts available upon request)
 
