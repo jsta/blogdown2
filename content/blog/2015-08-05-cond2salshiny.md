@@ -15,7 +15,7 @@ Modern salinity measurements are generally calculated from direct measurement of
 
 This app calculates salinity from conductivity data using the PSS-78 practical salinity equation. In its current form temperature and hydrostatic pressure are assumed to be 25 deg C and 0 dBar respectively.
 
-![condmeaurement](/public/images/normal_iil_ian_bf_376.JPG)  
+![condmeaurement](../images/normal_iil_ian_bf_376.JPG)  
 Image credit: http://ian.umces.edu/imagelibrary/displayimage-1996.html  
 **Figure: Direct measurement of conductivity using a handheld meter**
 
