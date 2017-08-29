@@ -118,7 +118,7 @@ res_linear <- level_pool_routing(input_hydro, reservoir_char,
                 initial_storage = 0, linear.fit = FALSE)
 ```
 
-![](../images/linear outflow-storage calculation-1.png)
+![](../images/linear_outflow-storage_calculation-1.png)
 
 ``` r
 plot(res_linear$time, res_linear$inflow,
@@ -128,7 +128,7 @@ legend("topleft", legend = c("Inflow", "Outflow"), lty = c(NA, 1),
        pch = c(21, NA))
 ```
 
-![](../images/linear%20outflow-storage%20final%20plotting-1.png)
+![](../images/linear_outflow-storage_final_plotting-1.png)
 
 Example 2
 ---------
@@ -176,7 +176,7 @@ res_curv <- level_pool_routing(lt = tbl1, qh = tbl2, area = NA,
               initial_storage = 75000000, linear.fit = FALSE)
 ```
 
-![](../images/curvilinear%20routing-1.png)
+![](../images/curvilinear_routing-1.png)
 
 ``` r
 plot(res_curv$time, res_curv$inflow, xlab = "Time (h)",
@@ -186,7 +186,7 @@ legend("topleft", legend = c("Inflow", "Outflow"), lty = c(NA, 1),
   pch = c(21, NA))
 ```
 
-![](../images/curvilinear%20plotting-1.png)
+![](../images/curvilinear_plotting-1.png)
 
 Example 3
 ---------
@@ -211,7 +211,7 @@ res_osc <- level_pool_routing(lt, qh, area = 43560, delta_t = 600,
             linear.fit = FALSE)
 ```
 
-![](../images/osc%20plotting-1.png)
+![](../images/osc_plotting-1.png)
 
 ``` r
 
@@ -222,4 +222,4 @@ legend("topleft", legend = c("Inflow", "Outflow"), lty = c(NA, 1),
   pch = c(21, NA))
 ```
 
-![](../images/osc%20plotting-2.png)
+![](../images/osc_plotting-2.png)
