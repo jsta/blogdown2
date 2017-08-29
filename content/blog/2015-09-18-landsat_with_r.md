@@ -58,4 +58,4 @@ Before running this workflow on your own landsat 7 data ensure that you have `gd
         #file.remove(list.files("landsat", include.dirs = TRUE, full.names = TRUE,
           recursive = TRUE))
 
-![landsat](../images/landsat.png)  
+![](../images/landsat.png)  
