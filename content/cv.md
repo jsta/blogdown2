@@ -25,7 +25,6 @@ disable_comments: true
 ## Work Experience
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
-
   - Focus on water quality modelling, curating environmental databases, and developing custom GIS visualization tools for water management. 
 
 ## Publications
