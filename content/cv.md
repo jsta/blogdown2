@@ -61,7 +61,7 @@ disable_comments: true
 ### Peer-Reviewed
 
 <ol reversed>
-<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="public/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
+<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="static/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
   </li>
 </ol>
 
