@@ -89,7 +89,8 @@
 \setlength{\parindent}{0in}
 
 % Provides special list environments and macros to create new ones
-\usepackage[shortlabels]{enumitem}
+% \usepackage[shortlabels]{enumitem}
+% \usepackage{etaremune}
 
 % Simpler bibsections for CV sections
 % (thanks to natbib for inspiration)
@@ -113,25 +114,32 @@
 %
 %   at the place where you want the numbering to reset.
 
+\usepackage[shortlabels]{enumitem}
+\usepackage{etaremune}
+
 \makeatletter
 \newlength{\bibhang}
 \setlength{\bibhang}{1em}
 \newlength{\bibsep}
  {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
-\newlist{bibsection}{itemize}{3}
-\setlist[bibsection]{label=,leftmargin=\bibhang,%
-        itemindent=-\bibhang,
-        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
-        topsep=0pt}
 \newlist{bibenum}{enumerate}{3}
 \setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
         itemindent=-\bibhang,
-        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        itemsep=\bibsep,parsep=0pt,partopsep=0pt,
         topsep=0pt}
-\let\oldendbibenum\endbibenum
-\def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
-\let\oldendbibsection\endbibsection
-\def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
+%\let\oldendbibenum\endbibenum
+%\def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
+
+\newenvironment{bibenum*}
+  {\renewcommand\labelenumi{[\theenumi]}%
+   \etaremune[
+     topsep=0pt,
+     itemsep=\bibsep,
+     parsep=0pt,partopsep=0pt,
+     itemindent=-\bibhang,
+     leftmargin={\bibhang+\widthof{[999]}}]}
+  {\endetaremune}
+
 \makeatother
 
 %% Reference the last page in the page number
@@ -463,9 +471,9 @@ Port Aransas, TX
 
 \section{Refereed Journal Publications}
 
-\begin{bibenum}
+\begin{bibenum*}
 
-    \item \textbf{Stachelek, J.}, 2016. [Re] Least-cost modelling on irregular landscape graphs. \emph{ReScience}. 2(1), 1-4. %\url{http://jsta.github.io/public/2016_stachelek_rescience.pdf)
+    \item \textbf{Stachelek, J.} 2016. [Re] Least-cost modelling on irregular landscape graphs. \emph{ReScience}. 2(1), 1-4. %\url{http://jsta.github.io/public/2016_stachelek_rescience.pdf)
    
     \item \textbf{Stachelek J.}, Madden, C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. \emph{International Journal of Geographical Information Science}. %[pdf](public/stachmadden2015am.pdf)
    
@@ -477,7 +485,7 @@ Port Aransas, TX
     %     \emph{IEEE Transactions on Cybernetics}, 44(6):774--784, June~2014.
     %     \doi{10.1109/TCYB.2013.2271776}
 
-\end{bibenum}
+\end{bibenum*}
 
 % Add a little space to nudge next ``Conference Publications'' marginpar
 % down to make room for tall ``Submitted Conference Publications''
@@ -491,23 +499,23 @@ Port Aransas, TX
 
 \begin{bibenum}
 
- \item Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, \textbf{Stachelek J.}, <8 alphabetical authors> (\emph{submitted}) Sustainable computational science: the ReScience initiative. \href{arxiv.org/abs/1707.04393}{https://arxiv.org/abs/1707.04393}
+ \item Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, \textbf{Stachelek J.}, <8 alphabetical authors> (\emph{in-review}) Sustainable computational science: the ReScience initiative. \href{arxiv.org/abs/1707.04393}{https://arxiv.org/abs/1707.04393}. Proceedings of the National Academy of Sciences.
 
   \item \textbf{Stachelek J.}, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, \emph{Earth Syst. Sci. Data Discuss.}, \url{https://doi.org/10.5194/essd-2017-52}, \emph{in review}, 2017.
 
-    \item Soranno P.A., <62 alphabetical authors>, \textbf{Stachelek J.}, <15 alphabetical authors>. (\emph{submitted}) LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. \emph{Gigascience}.
+    \item Soranno P.A., <62 alphabetical authors>, \textbf{Stachelek J.}, <15 alphabetical authors>. (\emph{in-review}) LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. \emph{Gigascience}.
   
-    \item Park, S.R., \textbf{Stachelek, J.}, Dunton K.H., (\emph{submitted}) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. \emph{Estuaries and Coasts}.
+    \item Park, S.R., \textbf{Stachelek, J.}, Dunton K.H., (\emph{in-review}) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. \emph{Estuaries and Coasts}.
    
     \item \textbf{Stachelek J.}, Madden, C.J., Kelly, S.P, Blaha, M. (\emph{in-review}). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. \emph{Estuaries and Coasts}.
    
-   \item \textbf{Stachelek J.}, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (\emph{submitted}). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
+   \item \textbf{Stachelek J.}, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (\emph{in-review}). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands. \emph{Methods in Ecology and Evolution}.
    
-   \item Hollister J., \textbf{Stachelek J.} (\emph{submitted}) lakemorpho: Calculating lake morphometry metrics in R.
+   \item Hollister J., \textbf{Stachelek J.} (\emph{in-review}) lakemorpho: Calculating lake morphometry metrics in R. F1000Research.
 
 \end{bibenum}
 
-\section{Datasets}
+\section{Public Datasets}
 
 \restartlist{bibenum}
 \begin{bibenum}
@@ -518,7 +526,7 @@ Port Aransas, TX
    
 \end{bibenum}
 
-\section{Conference Talks}
+\section{Conference Presentations}
 
 \restartlist{bibenum}
 \begin{bibenum}
@@ -625,9 +633,9 @@ Port Aransas, TX
 
 \begin{innerlist}
 
-\item Soranno, P., King, K., Poisson, A., \textbf{Stachelek, J.}, Boudreau, C., Skaff, N., Smith, N. (2017) Cyberinfrastructure support for collaboration and open science in ecology. NSF Request for Information on Future Needs for Advanced Cyberinfrastructure to Support Science and Engineering Research \href{https://www.nsf.gov/cise/oac/ci2030/pdf/RFI-Soranno-261.pdf}{https://www.nsf.gov/cise/oac/ci2030/pdf/RFI-Soranno-261.pdf}
+\item Provided comments for: Soranno, P., King, K., Poisson, A., \textbf{Stachelek, J.}, Boudreau, C., Skaff, N., Smith, N. (2017) Cyberinfrastructure support for collaboration and open science in ecology. NSF Request for Information on Future Needs for Advanced Cyberinfrastructure to Support Science and Engineering Research \href{https://www.nsf.gov/cise/oac/ci2030/pdf/RFI-Soranno-261.pdf}{https://www.nsf.gov/cise/oac/ci2030/pdf/RFI-Soranno-261.pdf}
 
-\item NEON spatio-temporal hackathon (2015) - developed tutorials and assessment instruments to teach fundamental big data skills needed to work efficiently with large spatio-temporal data using open tools, such as R and Python. \href{http://www.neoninc.org/updates-events/update/nsf-biocenters-unite-close-scientific-data-skills-gap-focus-phenology}{link}
+\item Particpated in NEON spatio-temporal hackathon (2015) - developed tutorials and assessment instruments to teach fundamental big data skills needed to work efficiently with large spatio-temporal data using open tools, such as R and Python. \href{http://www.neoninc.org/updates-events/update/nsf-biocenters-unite-close-scientific-data-skills-gap-focus-phenology}{link}
 
 \end{innerlist}
 
@@ -637,13 +645,13 @@ Port Aransas, TX
 
 \begin{innerlist}
 
- \item \href{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes}{WikiProject Lakes} (2017 - Present) \href{https://en.wikipedia.org/wiki/Special:Contributions/Jst4}{Contributor}
+ \item \href{https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes}{WikiProject Lakes}. Apr 07 2017 - Present. \href{https://en.wikipedia.org/wiki/Special:Contributions/Jst4}{Contributor}
 
-  \item Everglades Day (2016) Guided tours of science activities at the Loxahatchee Impoundment Landscape Assessment. 17th Annual Everglades Day, Loxahatchee National Wildlife Refuge.
+  \item Everglades Day. Feb 20 2016. Guided tours of science activities at the Loxahatchee Impoundment Landscape Assessment. 17th Annual Everglades Day, Loxahatchee National Wildlife Refuge.
   
-  \item National Public Radio (2016) \href{http://www.npr.org/2016/05/25/477014085/rising-seas-push-too-much-salt-into-the-florida-everglades}{Rising Seas Push Too Much Salt Into the Florida Everglades}.
+  \item Interviewed for: National Public Radio. May 25 2016. \href{http://www.npr.org/2016/05/25/477014085/rising-seas-push-too-much-salt-into-the-florida-everglades}{Rising Seas Push Too Much Salt Into the Florida Everglades}.
   
-  \item PBS Newshour (2015) \href{https://www.youtube.com/watch?v=ggOl-vaXIFk}{Florida's Everglades face new invasive threat: rising sea levels}.
+  \item Interviewed for: PBS Newshour. June 10 2015. \href{https://www.youtube.com/watch?v=ggOl-vaXIFk}{Florida's Everglades face new invasive threat: rising sea levels}.
 
 \end{innerlist}
 
@@ -665,15 +673,15 @@ Port Aransas, TX
   
   \emph{Author}
   \begin{innerlist}
-    \item \href{https://github.com/jsta/ipdw}{ipdw: Interpolation by Inverse Path Distance Weighting}.
-    \item \href{https://github.com/ropenscilabs/dbhydroR}{dbhydroR: Everglades Hydrologic and Water Quality Data from R.}
-    \item \href{https://github.com/jsta/wikilake}{wikilake: Scrape Lake Metadata Tables from Wikipedia}
+    \item \href{https://github.com/jsta/ipdw}{ipdw: Interpolation by Inverse Path Distance Weighting}. R package.
+    \item \href{https://github.com/ropenscilabs/dbhydroR}{dbhydroR: Everglades Hydrologic and Water Quality Data from R.} R package.
+    \item \href{https://github.com/jsta/wikilake}{wikilake: Scrape Lake Metadata Tables from Wikipedia} R package.
   \end{innerlist}
   
   \emph{Contributor}
   \begin{innerlist}
-    \item \href{https://github.com/ropensci/rnoaa}{rnoaa: 'NOAA' Weather Data from R.}
-    \item \href{https://github.com/jhollist/lakemorpho}{lakemorpho: Lake Morphometry Metrics in R.}
+    \item \href{https://github.com/ropensci/rnoaa}{rnoaa: 'NOAA' Weather Data from R.}  R package.
+    \item \href{https://github.com/jhollist/lakemorpho}{lakemorpho: Lake Morphometry Metrics in R.}  R package.
   \end{innerlist}
    
  
@@ -691,16 +699,15 @@ Port Aransas, TX
   \item Web development: `shiny`
 \end{innerlist}
 
-\section{Additional Courses and Training}
+\section{Additional Coursework and Training}
 
 \begin{innerlist}
 
-        \item Bayesian Statistics Workshop, Summer 2017, Michigan State University, Song Qian.
-        \item Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Andrew Finley.
-        \item The mgcv Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Gavin Simpson, David Miller, Eric Pedersen.
-        \item Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Drew Schmidt.
-        \item Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Robert Dorazio.
-
+        \item Bayesian Statistics Workshop, June 28 2017, Michigan State University, Instructor Song Qian.
+        \item Introduction to Bayesian Statistics, Apr 14 2017, Michigan State University, Instructor Andrew Finley.
+        \item The mgcv Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Aug 08 2016, Ecological Society of America. Instructors Gavin Simpson, David Miller, Eric Pedersen.
+        \item Using R for High Performance Computing, Feb 27 2015, National Institute for Mathematical and Biological Synthesis. Instructor Drew Schmidt.
+        \item Bayesian Inference and Hierachical Modeling, Sep 27 2013, Florida Atlantic University. Instructor Robert Dorazio.
 \end{innerlist}
 
 \section{Honors and Awards}
