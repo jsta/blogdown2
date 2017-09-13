@@ -16,16 +16,16 @@ disable_comments: true
 
 ### Additional Courses and Training
 
-- Bayesian Statistics Workshop, Summer 2017, Michigan State University, Song Qian.
-- Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Andrew Finley.
-- The `mgcv` Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Gavin Simpson, David Miller, Eric Pedersen.
-- Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Drew Schmidt.
-- Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Robert Dorazio.
+- Bayesian Statistics Workshop, Summer 2017, Michigan State University, Instructor Song Qian.
+- Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Instructor Andrew Finley.
+- The `mgcv` Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Instructors Gavin Simpson, David Miller, Eric Pedersen.
+- Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Instructor Drew Schmidt.
+- Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Instructor Robert Dorazio.
 
 ## Work Experience
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
-  - Focus on water quality modelling, curating environmental databases, and developing custom GIS visualization tools for water management. 
+  - Water quality modelling, curating environmental databases, and developing custom GIS visualization tools. 
 
 ## Publications
 

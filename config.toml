@@ -47,6 +47,6 @@ rssLimit = 30
     alt = "Logo"
     
     [params.social]
-    twitter = "__jsta__"
+    twitter = "__jsta"
     github = "jsta"
     
