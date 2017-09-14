@@ -14,6 +14,7 @@ disable_comments: true
 - 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
 - 2004 -- 2008, B.S., Marine Science, University of Maine-Orono. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf)
 
+<!---
 ### Additional Courses and Training
 
 - Bayesian Statistics Workshop, Summer 2017, Michigan State University, Instructor Song Qian.
@@ -21,6 +22,7 @@ disable_comments: true
 - The `mgcv` Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Instructors Gavin Simpson, David Miller, Eric Pedersen.
 - Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Instructor Drew Schmidt.
 - Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Instructor Robert Dorazio.
+--->
 
 ## Work Experience
   
@@ -73,7 +75,7 @@ disable_comments: true
 - `rnoaa`: 'NOAA' Weather Data from R. [https://github.com/ropensci/rnoaa](https://github.com/ropensci/rnoaa)
 - `lakemorpho`: Lake Morphometry Metrics in R. [https://github.com/USEPA/lakemorpho](https://github.com/USEPA/lakemorpho)
 
-### Other software experience
+<!---### Other software experience
 
 - Operating Systems: Debian/Ubuntu/Fedora Linux, Windows
 - Office productivity software: Microsoft Office (Word, Excel and PowerPoint), LibreOffice, LaTeX
@@ -129,12 +131,13 @@ disable_comments: true
 - Reviewer (2017) _Journal of Open Source Software_, _Frontiers in Ecology and Evolution_, [ROpenSci](https://github.com/ropensci/onboarding/issues/118)
 - Reviewer (2016) _Texas Water Journal_, _Journal of Open Source Software_ (2), _Peerage of Science_, _Journal of Atmospheric and Oceanic Technology_
 - Reviewer (2015) _Ecological Modelling_
-- NEON spatio-temporal hackathon (2015) - developed tutorials and assessment instruments to teach fundamental big data skills needed to work efficiently with large spatio-temporal data using open tools, such as R and Python. [link](http://www.neoninc.org/updates-events/update/nsf-biocenters-unite-close-scientific-data-skills-gap-focus-phenology)
+- NEON spatio-temporal hackathon (2015) - developed tutorials and assessment instruments to teach fundamental big data skills needed to work efficiently with large spatio-temporal data using open tools, such as R and Python. [link](http://www.neoninc.org/updates-events/update/nsf-biocenters-unite-close-scientific-data-skills-gap-focus-phenology)--->
 
 ## Outreach Activity  
 
 - [WikiProject Lakes](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes) (2017 - Present) [Contributor](https://en.wikipedia.org/wiki/Special:Contributions/Jst4)
-- Everglades Day (2016) Guided tours of science activities at the Loxahatchee Impoundment Landscape Assessment. 17th Annual Everglades Day, Loxahatchee National Wildlife Refuge.
+
+<!--- Everglades Day (2016) Guided tours of science activities at the Loxahatchee Impoundment Landscape Assessment. 17th Annual Everglades Day, Loxahatchee National Wildlife Refuge.
 - National Public Radio (2016) Rising Seas Push Too Much Salt Into the Florida Everglades. [link](http://www.npr.org/2016/05/25/477014085/rising-seas-push-too-much-salt-into-the-florida-everglades)
 - PBS Newshour (2015) Florida's Everglades face new invasive threat: rising sea levels. [youtube](https://www.youtube.com/watch?v=ggOl-vaXIFk)
 
@@ -149,4 +152,4 @@ disable_comments: true
   
 - Coastal and Estuarine Research Federation
 - Ecological Society of America
-- Foundation for Open Access Statistics
+- Foundation for Open Access Statistics--->
