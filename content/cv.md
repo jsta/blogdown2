@@ -53,7 +53,7 @@ disable_comments: true
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
 - Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
 - **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (_in review_). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
-- Hollister J., **Stachelek J.** (_in-prep_) lakemorpho: Calculating lake morphometry metrics in R.
+- Hollister J., **Stachelek J.** (_in-review_) lakemorpho: Calculating lake morphometry metrics in R. F1000Research. [10.12688/f1000research.12512.1](https://doi.org/10.12688/f1000research.12512.1)
 
 ### Datasets
 
