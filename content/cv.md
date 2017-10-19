@@ -34,6 +34,10 @@ disable_comments: true
 ### Peer-Reviewed
 
 <ol reversed>
+
+<li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>.   2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
+</li>
+
 <li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
 </li>
 
@@ -49,7 +53,6 @@ disable_comments: true
 
 - Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, **Stachelek J.**, <8 alphabetical authors> (_submitted_) Sustainable computational science: the ReScience initiative. [arxiv.org/abs/1707.04393](https://arxiv.org/abs/1707.04393)
 - **Stachelek J.**, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, Earth Syst. Sci. Data Discuss., [https://doi.org/10.5194/essd-2017-52](https://doi.org/10.5194/essd-2017-52) , (_in review_), 2017.  
-- Soranno P.A., <62 alphabetical authors>, **Stachelek J.**, <15 alphabetical authors>. (_in review_) LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. Gigascience.
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
 - Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
 - **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (_in review_). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
