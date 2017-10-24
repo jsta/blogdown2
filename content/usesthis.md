@@ -2,8 +2,6 @@
 title: "Software I Use"
 ---
 
-# Software I Use
-
 ## Operating System
 
 [Linux (Ubuntu)](https://www.ubuntu.com/)
