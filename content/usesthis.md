@@ -12,13 +12,13 @@
 
 [Google Docs](https://docs.google.com) - For collaborative writing
 
-## Coding
+## Coding / GIS
 
 [RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
 
-[VSCode](https://code.visualstudio.com/) - non-R coding
+[VSCode](https://code.visualstudio.com/) - For non-R coding
 
-[vim]() - command-line text editing
+[vim](https://vim-adventures.com/) - Command-line text editing
 
 [QGIS](https://www.qgis.org) - Interactive exploration of spatial data
 
@@ -49,6 +49,8 @@
 https://cmdchallenge.com
 
 https://alf.nu/RegexGolf
+
+https://vim-adventures.com/
 
 ## Software recommendations
 
