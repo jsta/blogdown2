@@ -26,13 +26,13 @@
 
 ## Reproducibility
 
-[Docker]()
+[Docker](https://docker.com) - Embed and share a "computer within a computer"
 
-[Cyverse]() - Short-term alternative to paid cloud hosting. Gives admin rights (sudo)
+[Cyverse](https://cyverse.org) - Short-term alternative to paid cloud hosting. Gives admin rights (sudo)
 
-[imagemagick]() - Save yourself from click-based image editing
+[imagemagick](https://github.com/jsta/imagemagick_cheatsheet) - Save yourself from click-based image editing
 
-[make]()
+[make](https://github.com/kbroman/minimal_make) - Record an analysis pipeline
 
 ## Misc
 
