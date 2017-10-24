@@ -38,9 +38,9 @@
 
 [KeepassX]() - Encrypted password manager
 
-[Evolution]() - E-mail program with easy custom filters
+[Evolution](https://wiki.gnome.org/Apps/Evolution) - E-mail program with easy custom filters
 
-[Autokey]() - Remap painful keyboard shortcuts for any program
+[Autokey](https://github.com/autokey-py3/autokey) - Remap painful keyboard shortcuts for any program
 
 [rsync]() - File backup
 
