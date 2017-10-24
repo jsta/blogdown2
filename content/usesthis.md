@@ -36,13 +36,13 @@
 
 ## Misc
 
-[KeepassX]() - Encrypted password manager
+[KeepassX](https://www.keepassx.org/) - Encrypted password manager
 
 [Evolution](https://wiki.gnome.org/Apps/Evolution) - E-mail program with easy custom filters
 
 [Autokey](https://github.com/autokey-py3/autokey) - Remap painful keyboard shortcuts for any program
 
-[rsync]() - File backup
+[rsync](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps) - File backup
 
 ## Code training
 
