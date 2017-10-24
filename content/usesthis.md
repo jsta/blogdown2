@@ -5,15 +5,23 @@
 [Linux(Ubuntu)](https://www.ubuntu.com/)
 
 ## Writing
+
 [Zotero Reference Manager](https://zotero.org)
+
 [LaTeX](https://www.latex-project.org/about/) - For generating publication quality drafts
+
 [Google Docs](https://docs.google.com) - For collaborative writing
 
 ### Coding
-[RStudio](https://www.rstudio.com/products/rstudio/download/#download)
+
+[RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
+
+[VSCode](https://code.visualstudio.com/) - non-R coding
+
 * QGIS 
+
 * GRASS
-* VSCode: non-R coding
+
 * vim
 
 ### Reproducibility
