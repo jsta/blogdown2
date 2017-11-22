@@ -1,6 +1,6 @@
 ---
 title: "Curriculum Vitae"
-date: "2017-08-29"
+date: "2017-11-22"
 disable_mathjax: true
 disable_highlight: true
 disable_comments: true
