@@ -51,7 +51,7 @@ disable_comments: true
   
 ### In-Prep (manuscripts available upon request)
 
-- Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, **Stachelek J.**, <8 alphabetical authors> (_submitted_) Sustainable computational science: the ReScience initiative. [arxiv.org/abs/1707.04393](https://arxiv.org/abs/1707.04393)
+- Nicolas P. Rougier, Konrad Hinsen, <34 alphabetical authors>, **Stachelek J.**, <8 alphabetical authors> (_accepted_) Sustainable computational science: the ReScience initiative. PeerJ. [arxiv.org/abs/1707.04393](https://arxiv.org/abs/1707.04393)
 - **Stachelek J.**, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, Earth Syst. Sci. Data Discuss., [https://doi.org/10.5194/essd-2017-52](https://doi.org/10.5194/essd-2017-52) , (_in review_), 2017.  
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
 - Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
@@ -69,9 +69,10 @@ disable_comments: true
 
 **Author**
 
-- `ipdw`: Interpolation by Inverse Path Distance Weighting. [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
-- `dbhydroR`: Everglades Hydrologic and Water Quality Data from R. [https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
+- `LAGOSNE`: Interface to the Lake Multi-Scaled Geospatial and Temporal Database [https://github.com/cont-limno/LAGOSNE](https://github.com/cont-limno/LAGOSNE) 
 - `wikilake`: Scrape Lake Metadata Tables from Wikipedia [https://github.com/jsta/wikilake](https://github.com/jsta/wikilake) 
+- `dbhydroR`: Everglades Hydrologic and Water Quality Data from R. [https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
+- `ipdw`: Interpolation by Inverse Path Distance Weighting. [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
 
 **Contributor**
 
