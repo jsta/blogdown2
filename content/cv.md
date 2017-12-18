@@ -35,6 +35,9 @@ disable_comments: true
 
 <ol reversed>
 
+<li> Rougier NP, Hinsen K, <34 alphabetical authors>, <b>Stachelek J</b>. <8 alphabetical authors>. 2017. Sustainable computational science: the ReScience initiative. <u><i>PeerJ Computer Science</i></u>. 3:e142 <a target="_blank" href="https://doi.org/10.7717/peerj-cs.142"><i class="fa fa-download"></i></a>
+</li>
+
 <li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>.   2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
 </li>
 
