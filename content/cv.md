@@ -35,10 +35,13 @@ disable_comments: true
 
 <ol reversed>
 
+<li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-2017-52"><i class="fa fa-download"></i></a>
+</li>
+
 <li> Rougier NP, Hinsen K, <34 alphabetical authors>, <b>Stachelek J</b>. <8 alphabetical authors>. 2017. Sustainable computational science: the ReScience initiative. <u><i>PeerJ Computer Science</i></u>. 3:e142 <a target="_blank" href="https://doi.org/10.7717/peerj-cs.142"><i class="fa fa-download"></i></a>
 </li>
 
-<li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>.   2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
+<li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>. 2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
 </li>
 
 <li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
@@ -54,11 +57,10 @@ disable_comments: true
   
 ### In-Prep (manuscripts available upon request)
 
-- **Stachelek J.**, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R.: The National Eutrophication Survey: lake characteristics and historical nutrient concentrations, Earth Syst. Sci. Data Discuss., [https://doi.org/10.5194/essd-2017-52](https://doi.org/10.5194/essd-2017-52) , (_accepted_), 2017.  
-- **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. (_in review_). Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
-- Park, S.R., **Stachelek, J.**, Dunton K.H., (_submitted_) Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
-- **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. (_in review_). A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
-- Hollister J., **Stachelek J.** (_in-review_) lakemorpho: Calculating lake morphometry metrics in R. F1000Research. [10.12688/f1000research.12512.1](https://doi.org/10.12688/f1000research.12512.1)
+- **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
+- Park, S.R., **Stachelek, J.**, Dunton K.H. Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
+- **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
+- Hollister J., **Stachelek J.** lakemorpho: Calculating lake morphometry metrics in R. F1000Research. [10.12688/f1000research.12512.1](https://doi.org/10.12688/f1000research.12512.1)
 
 ### Datasets
 
