@@ -35,7 +35,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-2017-52"><i class="fa fa-download"></i></a>
+<li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2018. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-10-81-2018"><i class="fa fa-download"></i></a>
 </li>
 
 <li> Rougier NP, Hinsen K, <34 alphabetical authors>, <b>Stachelek J</b>. <8 alphabetical authors>. 2017. Sustainable computational science: the ReScience initiative. <u><i>PeerJ Computer Science</i></u>. 3:e142 <a target="_blank" href="https://doi.org/10.7717/peerj-cs.142"><i class="fa fa-download"></i></a>
