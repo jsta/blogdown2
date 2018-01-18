@@ -44,6 +44,9 @@ disable_comments: true
 <li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>. 2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
 </li>
 
+<li> Hollister J and <b>Stachelek J.</b> 2017. lakemorpho: Calculating lake morphometry metrics in R [version 1; referees: 2 approved]. <u><i>F1000Research</u></i>. <a target="_blank" href="https://doi.org/10.12688/f1000research.12512.1"><i class="fa fa-download"></i></a>
+</li>
+
 <li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
 </li>
 
@@ -60,7 +63,6 @@ disable_comments: true
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA. Estuaries and Coasts.
 - Park, S.R., **Stachelek, J.**, Dunton K.H. Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico. Estuaries and Coasts.
 - **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
-- Hollister J., **Stachelek J.** lakemorpho: Calculating lake morphometry metrics in R. F1000Research. [10.12688/f1000research.12512.1](https://doi.org/10.12688/f1000research.12512.1)
 
 ### Datasets
 
