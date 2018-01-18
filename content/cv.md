@@ -6,7 +6,7 @@ disable_highlight: true
 disable_comments: true
 ---
 
-[pdf version](../pdf/cv.pdf)
+[extended pdf version](../pdf/cv.pdf)
 
 ## Education
 
