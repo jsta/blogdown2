@@ -8,3 +8,5 @@ date: "2017-08-29"
 + [Data and Models for Limnology](https://jsta.github.io/limnology_models_data/) -  List of publicly available data and models for Limnology
 
 + [Software I Use](https://jsta.rbind.io/usesthis) - A list of software I use
+
++ [Rare Papers](https://jsta.rbind.io/rarepapers) - A list of citations for which I have a digital copy but are otherwise unavailable (in digital form) from a commercial publisher or university library 
