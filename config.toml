@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://jsta.rbind.io/"
 languageCode = "en-us"
 title = "Joseph Stachelek"
 theme = "hugo-lithium-theme"
