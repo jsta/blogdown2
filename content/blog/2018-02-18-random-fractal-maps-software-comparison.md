@@ -113,7 +113,7 @@ Visual Comparison
         facet_wrap(~ID, nrow = 1) + theme_nothing(), 
     nrow = 3, ncol = 1, labels = c("NLMR", "GRASS", "NLMpy"), hjust = -0.1, vjust = 2)
 
-![](../../static/images/comparison-1.png)
+![](../images/comparison-1.png)
 
 I played with the `dimension` argument of `grass_mpd()` and the `h`
 argument of `nlmpy_mpd()` to try to get a result that was qualitatively
