@@ -1,3 +1,12 @@
+---
+title: 'Random Fractal Maps: Software Comparison'
+author: ~
+date: '2018-02-18'
+slug: random-fractal-maps-software-comparison
+categories: []
+tags: []
+---
+
 Here I show how to use three different software packages to produce
 neutral landscape models via midpoint displacement. First, I show use of
 the newly released `NLMR` package which runs natively in `R`. Next, I
