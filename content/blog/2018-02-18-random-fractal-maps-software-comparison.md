@@ -5,6 +5,9 @@ date: '2018-02-18'
 slug: random-fractal-maps-software-comparison
 categories: []
 tags: []
+output: 
+  md_document:
+    preserve_yaml: true
 ---
 
 Here I show how to use three different software packages to produce
@@ -23,8 +26,10 @@ respective `R` wrappers.
     library(dplyr)
     library(cowplot)
 
-NLMR package <https://github.com/marcosci/NLMR>
------------------------------------------------
+NLMR package
+------------
+
+<https://github.com/marcosci/NLMR>
 
 > The roughness value controls the level of spatial autocorrelation.
 
@@ -32,8 +37,10 @@ NLMR package <https://github.com/marcosci/NLMR>
       nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness)
     }
 
-GRASS r.surf.fractal <https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html>
-----------------------------------------------------------------------------------
+GRASS r.surf.fractal
+--------------------
+
+<https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html>
 
 > The dimension value controls the fractal dimension of surface (2 &lt;
 > D &lt; 3).
@@ -64,6 +71,9 @@ NLMpy <https://pypi.python.org/pypi/nlmpy>
       res <- nlmpy$nlmpy$mpd(nRow = nRow, nCol = nCol, h = h)
       raster(res, ymx = nrow(res), xmx = ncol(res))
     }
+
+Visual Comparison
+-----------------
 
     # NLMR
     nlmr_mpd_res <- lapply(1:5, function(x) 
