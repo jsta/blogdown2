@@ -22,7 +22,7 @@ library(cowplot)</code></pre>
 <div id="nlmr-package-1" class="section level2">
 <h2><a href="https://github.com/marcosci/NLMR">NLMR package</a> <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
 <blockquote>
-<p>where the <code>roughness</code> value controls the level of spatial autocorrelation.</p>
+<p>where the <code>roughness</code> value controls the “level of spatial autocorrelation”.</p>
 </blockquote>
 <pre class="r"><code>nlmr_mpd &lt;- function(ncol = 17, nrow = 17, roughness = 0.6) {
   nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness)
@@ -31,7 +31,7 @@ library(cowplot)</code></pre>
 <div id="grass-r.surf.fractal-2" class="section level2">
 <h2><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html">GRASS r.surf.fractal</a> <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
 <blockquote>
-<p>where the <code>dimension</code> value controls the fractal dimension of surface (2 &lt; D &lt; 3).</p>
+<p>where the <code>dimension</code> value controls the “fractal dimension of surface (2 &lt; D &lt; 3)”.</p>
 </blockquote>
 <pre class="r"><code>initGRASS(&quot;/usr/lib/grass74&quot;, home = tempdir(), override = TRUE)
 
@@ -51,7 +51,7 @@ grass_mpd &lt;- function(dimension = 2.05){
 <div id="nlmpy-3" class="section level2">
 <h2><a href="https://pypi.python.org/pypi/nlmpy">NLMpy</a> <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></h2>
 <blockquote>
-<p>where the <code>h</code> value controls the level of spatial autocorrelation in element values.</p>
+<p>where the <code>h</code> value controls the “level of spatial autocorrelation in element values”.</p>
 </blockquote>
 <pre class="r"><code>nlmpy &lt;- import(&quot;nlmpy&quot;)
 nlmpy_mpd &lt;- function(nRow = 18L, nCol = 18L, h = 0.6){

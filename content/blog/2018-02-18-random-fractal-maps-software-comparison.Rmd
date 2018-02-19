@@ -23,7 +23,7 @@ library(cowplot)
 
 ## [NLMR package](https://github.com/marcosci/NLMR) [^1] 
 
-> where the `roughness` value controls the level of spatial autocorrelation. 
+> where the `roughness` value controls the "level of spatial autocorrelation". 
 
 ```{r nlmr, message=FALSE}
 nlmr_mpd <- function(ncol = 17, nrow = 17, roughness = 0.6) {
@@ -33,7 +33,7 @@ nlmr_mpd <- function(ncol = 17, nrow = 17, roughness = 0.6) {
 
 ## [GRASS r.surf.fractal](https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html) [^2]
 
-> where the `dimension` value controls the fractal dimension of surface (2 < D < 3).
+> where the `dimension` value controls the "fractal dimension of surface (2 < D < 3)".
 
 ```{r grass, message=FALSE, results='hide'}
 initGRASS("/usr/lib/grass74", home = tempdir(), override = TRUE)
@@ -54,7 +54,7 @@ grass_mpd <- function(dimension = 2.05){
 
 ## [NLMpy](https://pypi.python.org/pypi/nlmpy) [^3]
 
-> where the `h` value controls the level of spatial autocorrelation in element values.
+> where the `h` value controls the "level of spatial autocorrelation in element values".
 
 ```{r echo=FALSE}
 use_condaenv("blog")
