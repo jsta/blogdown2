@@ -107,6 +107,6 @@ I wanted to share the results of my quest to produce random fractal maps. I even
         }
         plot(raster(outarray))
 
-###Reference
+### Reference
 > Saupe, Dietmar. "Algorithms for random fractals." The science of fractal images. Springer New York, 1988. 71-136.
 >
