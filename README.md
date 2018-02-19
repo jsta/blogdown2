@@ -16,8 +16,8 @@ Create a new blog post using:
 blogdown::new_post("This is a post title", ext = ".Rmd", subdir = "blog")
 ```
 
-Add the following line to the YAML header:
+Preview/build post with:
 
 ```
-output: md_document
+blogdown::serve_site()
 ```
