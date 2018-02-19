@@ -98,7 +98,7 @@ plot_grid(
     facet_wrap(~ID, nrow = 1) + theme_nothing(), 
 nrow = 3, ncol = 1, labels = c(&quot;NLMR&quot;, &quot;GRASS&quot;, &quot;NLMpy&quot;), hjust = -0.1, vjust = 2)</code></pre>
 <p><img src="/blog/2018-02-18-random-fractal-maps-software-comparison_files/figure-html/comparison-1.png" width="672" /></p>
-<p>I played with the <code>dimension</code> argument of <code>grass_mpd()</code> and the <code>h</code> argument of <code>nlmpy_mpd()</code> to try to get a result that was qualitatively similar to the results of <code>nlmr_mpd()</code>. Note that I have set the size the the <code>nlmpy</code> raster slightly larger. Setting it to <code>17L</code> causes a strange error that I am hesitant to dig into.</p>
+<p>I played with the <code>dimension</code> argument of <code>grass_mpd()</code> and the <code>h</code> argument of <code>nlmpy_mpd()</code> to try to get a result that was qualitatively similar to the results of <code>nlmr_mpd()</code>. Note that I have set the size of the <code>nlmpy</code> raster slightly larger than the other rasters. Setting it to <code>17L</code> causes a strange error that I am hesitant to dig into.</p>
 <p>Each of the three options analyzed here have a different specification for controlling surface <em>roughness</em>. This makes analytical comparisons difficult. <code>NLMR</code> definitely is the easiest to use but I suspect that its native <code>R</code> implementation would make it much slower than <code>GRASS</code> for large rasters. <code>NLMpy</code> is also easy to use but the errors I encountered when running a 17 x 17 matrix makes me hesitant to recommend it.</p>
 </div>
 <div class="footnotes">
