@@ -1,0 +1,110 @@
+---
+title: 'Random Fractal Maps: Software Comparison'
+author: ~
+date: '2018-02-18'
+slug: random-fractal-maps-software-comparison
+categories: []
+tags: []
+---
+
+
+
+<p>Here I show how to use three different software packages to produce neutral landscape models via midpoint displacement. First, I show use of the newly released <code>NLMR</code> package which runs natively in <code>R</code>. Next, I show use of <code>GRASS</code> (via <code>r.surf.fractal</code>) and <code>nlmpy</code> using their respective <code>R</code> wrappers.</p>
+<pre class="r"><code>library(NLMR)
+library(raster)
+library(boot)
+library(rgrass7)
+library(reticulate)
+library(ggplot2)
+library(purrr)
+library(dplyr)
+library(cowplot)</code></pre>
+<div id="nlmr-package-1" class="section level2">
+<h2><a href="https://github.com/marcosci/NLMR">NLMR package</a> <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<blockquote>
+<p>where the <code>roughness</code> value controls the level of spatial autocorrelation.</p>
+</blockquote>
+<pre class="r"><code>nlmr_mpd &lt;- function(ncol = 17, nrow = 17, roughness = 0.6) {
+  nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness)
+}</code></pre>
+</div>
+<div id="grass-r.surf.fractal-2" class="section level2">
+<h2><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html">GRASS r.surf.fractal</a> <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
+<blockquote>
+<p>where the <code>dimension</code> value controls the fractal dimension of surface (2 &lt; D &lt; 3).</p>
+</blockquote>
+<pre class="r"><code>initGRASS(&quot;/usr/lib/grass74&quot;, home = tempdir(), override = TRUE)
+
+raster_template &lt;- as(nlmr_mpd(), &quot;SpatialGridDataFrame&quot;)
+
+grass_mpd &lt;- function(dimension = 2.05){
+  writeRAST(raster_template, &quot;grass_mpd&quot;, flags = &quot;overwrite&quot;)
+  execGRASS(&quot;g.region&quot;, raster = &quot;grass_mpd&quot;)
+  execGRASS(&quot;r.surf.fractal&quot;, output = &quot;grass_mpd&quot;, flags = &quot;overwrite&quot;, 
+            dimension = dimension)
+  res &lt;- raster(readRAST(&quot;grass_mpd&quot;))
+  res &lt;- raster::scale(res)
+  res[] &lt;- boot::inv.logit(res[])
+  res
+}</code></pre>
+</div>
+<div id="nlmpy-3" class="section level2">
+<h2><a href="https://pypi.python.org/pypi/nlmpy">NLMpy</a> <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></h2>
+<blockquote>
+<p>where the <code>h</code> value controls the level of spatial autocorrelation in element values.</p>
+</blockquote>
+<pre class="r"><code>nlmpy &lt;- import(&quot;nlmpy&quot;)
+nlmpy_mpd &lt;- function(nRow = 18L, nCol = 18L, h = 0.6){
+  res &lt;- nlmpy$nlmpy$mpd(nRow = nRow, nCol = nCol, h = h)
+  raster(res, ymx = nrow(res), xmx = ncol(res))
+}</code></pre>
+</div>
+<div id="visual-comparison" class="section level2">
+<h2>Visual Comparison</h2>
+<pre class="r"><code># NLMR
+nlmr_mpd_res &lt;- lapply(1:5, function(x) 
+                  as.data.frame(as(nlmr_mpd(), &quot;SpatialPixelsDataFrame&quot;)))
+names(nlmr_mpd_res) &lt;- 1:5
+nlmr_mpd_res &lt;- map2_df(nlmr_mpd_res, names(nlmr_mpd_res), ~ mutate(.x, ID = .y))
+
+# GRASS
+grass_mpd_res &lt;- lapply(1:5, function(x) 
+                  as.data.frame(as(grass_mpd(dimension = 2.5),
+                                   &quot;SpatialPixelsDataFrame&quot;)))
+names(grass_mpd_res) &lt;- 1:5
+grass_mpd_res &lt;- map2_df(grass_mpd_res, names(grass_mpd_res), ~ mutate(.x, ID = .y))
+
+
+# NLMpy
+nlmpy_mpd_res &lt;- lapply(1:5, function(x) 
+                  as.data.frame(as(nlmpy_mpd(h = 0.8), &quot;SpatialPixelsDataFrame&quot;)))
+names(nlmpy_mpd_res) &lt;- 1:5
+nlmpy_mpd_res &lt;- map2_df(nlmpy_mpd_res, names(nlmpy_mpd_res), ~ mutate(.x, ID = .y))
+
+# Viz
+plot_grid(
+  ggplot() + 
+    geom_tile(data = nlmr_mpd_res, aes(x = x, y = y, fill = layer)) + 
+    scale_fill_viridis_c() + 
+    facet_wrap(~ID, nrow = 1) + theme_nothing(),
+  ggplot() + 
+    geom_tile(data = grass_mpd_res, aes(x = x, y = y, fill = grass_mpd)) + 
+    scale_fill_viridis_c() + 
+    facet_wrap(~ID, nrow = 1) + theme_nothing(),
+  ggplot() + 
+    geom_tile(data = nlmpy_mpd_res, aes(x = x, y = y, fill = layer)) + 
+    scale_fill_viridis_c() + 
+    facet_wrap(~ID, nrow = 1) + theme_nothing(), 
+nrow = 3, ncol = 1, labels = c(&quot;NLMR&quot;, &quot;GRASS&quot;, &quot;NLMpy&quot;), hjust = -0.1, vjust = 2)</code></pre>
+<p><img src="/blog/2018-02-18-random-fractal-maps-software-comparison_files/figure-html/comparison-1.png" width="672" /></p>
+<p>I played with the <code>dimension</code> argument of <code>grass_mpd()</code> and the <code>h</code> argument of <code>nlmpy_mpd()</code> to try to get a result that was qualitatively similar to the results of <code>nlmr_mpd()</code>. Note that I have set the size the the <code>nlmpy</code> raster slightly smaller. Setting it to <code>17L</code> causes a strange error that I am hesitant to dig into.</p>
+<p>Each of the three options analyzed here have a different specification for controlling surface <em>roughness</em>. This makes analytical comparisons difficult. <code>NLMR</code> definitely is the easiest to use but I suspect that its native <code>R</code> implementation would make it much slower than <code>GRASS</code> for large rasters. <code>NLMpy</code> is also easy to use but the errors I encountered when running a 17 x 17 matrix makes me hesitant to recommend it.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://github.com/marcosci/NLMR" class="uri">https://github.com/marcosci/NLMR</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html" class="uri">https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://pypi.python.org/pypi/nlmpy" class="uri">https://pypi.python.org/pypi/nlmpy</a><a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
