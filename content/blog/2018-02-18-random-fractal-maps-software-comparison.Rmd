@@ -70,6 +70,8 @@ nlmpy_mpd <- function(nRow = 18L, nCol = 18L, h = 0.6){
 
 ## Visual Comparison
 
+The following code chunk generates five neutral landscape simulations using each software option.
+
 ```{r comparison, message=FALSE, results='hide'}
 # NLMR
 nlmr_mpd_res <- lapply(1:5, function(x) 
@@ -108,7 +110,7 @@ plot_grid(
 nrow = 3, ncol = 1, labels = c("NLMR", "GRASS", "NLMpy"), hjust = -0.1, vjust = 2)
 ```
 
-I played with the `dimension` argument of `grass_mpd()` and the `h` argument of `nlmpy_mpd()` to try to get a result that was qualitatively similar to the results of `nlmr_mpd()`. Note that I have set the size the the `nlmpy` raster slightly smaller. Setting it to `17L` causes a strange error that I am hesitant to dig into. 
+I played with the `dimension` argument of `grass_mpd()` and the `h` argument of `nlmpy_mpd()` to try to get a result that was qualitatively similar to the results of `nlmr_mpd()`. Note that I have set the size the the `nlmpy` raster slightly larger. Setting it to `17L` causes a strange error that I am hesitant to dig into. 
 
 Each of the three options analyzed here have a different specification for controlling  surface _roughness_. This makes analytical comparisons difficult. `NLMR` definitely is the easiest to use but I suspect that its native `R` implementation would make it much slower than `GRASS` for large rasters. `NLMpy` is also easy to use but the errors I encountered when running a 17 x 17 matrix makes me hesitant to recommend it.
 
