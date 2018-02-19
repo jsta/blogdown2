@@ -60,8 +60,10 @@ GRASS r.surf.fractal
       res
     }
 
-NLMpy <https://pypi.python.org/pypi/nlmpy>
-------------------------------------------
+NLMpy
+-----
+
+<https://pypi.python.org/pypi/nlmpy>
 
 > The h value controls the level of spatial autocorrelation in element
 > values.
@@ -111,7 +113,7 @@ Visual Comparison
         facet_wrap(~ID, nrow = 1) + theme_nothing(), 
     nrow = 3, ncol = 1, labels = c("NLMR", "GRASS", "NLMpy"), hjust = -0.1, vjust = 2)
 
-![](2018-02-18-random-fractal-maps-software-comparison_files/figure-markdown_strict/comparison-1.png)
+![](../../static/images/comparison-1.png)
 
 I played with the `dimension` argument of `grass_mpd()` and the `h`
 argument of `nlmpy_mpd()` to try to get a result that was qualitatively
