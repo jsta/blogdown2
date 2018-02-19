@@ -1,0 +1,110 @@
+---
+title: 'Random Fractal Maps: Software Comparison'
+author: ~
+date: '2018-02-18'
+slug: random-fractal-maps-software-comparison
+categories: []
+tags: []
+---
+
+Here I show how to use three different software packages to produce neutral landscape models via midpoint displacement. First, I show use of the `NLMR` package which runs natively in `R`. Next, I show `GRASS` (via `r.surf.fractal`) and `nlmpy` in using their respective `R` wrappers.
+
+## NLMR package [https://github.com/marcosci/NLMR](https://github.com/marcosci/NLMR)
+
+> The roughness value controls the level of spatial autocorrelation. 
+
+```{r nlmr, message=FALSE}
+library(NLMR)
+library(raster)
+
+nlmr_mpd <- function(roughness = 0.6) {
+  nlm_mpd(10, 10, roughness = roughness)
+}
+```
+
+## GRASS r.surf.fractal [https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html](https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html)
+
+> The dimension value controls the fractal dimension of surface (2 < D < 3).
+
+```{r grass, message=FALSE}
+library(rgrass7)
+initGRASS("/usr/lib/grass74", home = tempdir(), override = TRUE)
+
+raster_template <- as(nlmr_mpd(), "SpatialGridDataFrame")
+
+grass_mpd <- function(dimension = 2.05){
+  writeRAST(raster_template, "grass_mpd", flags = "overwrite")
+  execGRASS("g.region", raster = "grass_mpd")
+  execGRASS("r.surf.fractal", output = "grass_mpd", flags = "overwrite", 
+            dimension = dimension)
+  raster(readRAST("grass_mpd"))
+}
+
+```
+
+## NLMpy [https://pypi.python.org/pypi/nlmpy](https://pypi.python.org/pypi/nlmpy)
+
+> The h value controls the level of spatial autocorrelation in element values.
+
+```{r echo=FALSE}
+library(reticulate)
+use_condaenv("blog")
+```
+
+```{r }
+library(reticulate)
+nlmpy <- import("nlmpy")
+nlmpy_mpd <- function(nRow = 10L, nCol = 10L, h = 0.6){
+  raster(nlmpy$nlmpy$mpd(nRow = nRow, nCol = nCol, h = h))
+}
+```
+
+
+```{r comparison}
+library(ggplot2)
+library(purrr)
+library(dplyr)
+library(cowplot)
+
+# NLMR
+
+nlmr_mpd_res <- lapply(1:5, function(x) 
+                  as.data.frame(as(nlmr_mpd(), "SpatialPixelsDataFrame")))
+names(nlmr_mpd_res) <- 1:5
+nlmr_mpd_res <- map2_df(nlmr_mpd_res, names(nlmr_mpd_res), ~ mutate(.x, ID = .y))
+
+# NLMpy
+
+nlmpy_mpd_res <- lapply(1:5, function(x) 
+                  as.data.frame(as(nlmpy_mpd(), "SpatialPixelsDataFrame")))
+names(nlmpy_mpd_res) <- 1:5
+nlmpy_mpd_res <- map2_df(nlmpy_mpd_res, names(nlmpy_mpd_res), ~ mutate(.x, ID = .y))
+
+# GRASS
+
+grass_mpd_res <- lapply(1:5, function(x) 
+                  as.data.frame(as(grass_mpd(), "SpatialPixelsDataFrame")))
+names(grass_mpd_res) <- 1:5
+grass_mpd_res <- map2_df(grass_mpd_res, names(grass_mpd_res), ~ mutate(.x, ID = .y))
+
+# Viz
+
+plot_grid(
+ggplot() + 
+  geom_tile(data = nlmr_mpd_res, aes(x = x, y = y, fill = layer)) + 
+  scale_fill_viridis_c() + 
+  facet_wrap(~ID, nrow = 1),
+ggplot() + 
+  geom_tile(data = grass_mpd_res, aes(x = x, y = y, fill = grass_mpd)) + 
+  scale_fill_viridis_c() + 
+  facet_wrap(~ID, nrow = 1),
+ggplot() + 
+  geom_tile(data = nlmpy_mpd_res, aes(x = x, y = y, fill = layer)) + 
+  scale_fill_viridis_c() + 
+  facet_wrap(~ID, nrow = 1), nrow = 3, ncol = 1)
+```
+
+```{shell, eval=FALSE, echo=FALSE}
+# setup
+pip install nlmpy
+```
