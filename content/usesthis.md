@@ -14,6 +14,10 @@ title: "Software I Use"
 
 [Google Docs](https://docs.google.com) - For collaborative writing
 
+[draw.io](https://www.draw.io/) - Mocking up conceptual diagrams
+
+[tikz](https://tex.stackexchange.com/questions/84753/summary-of-tikz-commands) - Generating publication quality conceptual diagrams
+
 ## Coding / GIS
 
 [RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
