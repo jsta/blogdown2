@@ -35,6 +35,9 @@ disable_comments: true
 
 <ol reversed>
 
+<li>Cobourn, K.M., <15 alphabetical authors>, <b>Stachelek J.</b>, <4 alphabetical authors>. 2018. From concept to practice to policy: modeling coupled natural and human systems in lake catchments. <u><i>Ecosphere</u></i>. <a target="_blank" href="https://doi.org/10.1002/ecs2.2209"><i class="fa fa-download"></i></a>
+</li>
+
 <li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2018. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-10-81-2018"><i class="fa fa-download"></i></a>
 </li>
 
