@@ -1,0 +1,44 @@
+---
+title: ""
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    self_contained: FALSE
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(DT)
+library(widgetframe)
+```
+
+
+```{r, echo=FALSE, out.width="100%"}
+read_latest <- function(){
+  archives <- list.files("../static/data/", pattern = "*likes.rds", 
+                         full.names = TRUE, include.dirs = TRUE)
+  dates <- sapply(archives, 
+               function(x) strsplit(x, "_")[[1]][1])
+  dates <- as.Date(
+    sapply(dates, function(x) substring(x, nchar(x)-9, nchar(x))))
+    
+  dt <- readRDS(archives[which.max(dates)])
+  dt <- data.frame(dt)
+}
+
+dt <- read_latest()
+good_cols <- as.numeric(apply(dt, 2, function(x) sum(is.na(x)) / nrow(dt))) < 0.2
+dt <- dt[,good_cols]
+
+dt <- dplyr::select(dt, -user_id, -lang, -is_retweet, -status_id, -urls_url, -urls_t.co, -geo_coords, -coords_coords, -source, -bbox_coords, -favorite_count,
+                    -retweet_count)
+dt$created_at <- strptime(as.POSIXct(dt$created_at), format = "%Y-%m-%d")
+
+dt_table <- DT::datatable(dt, 
+                          options = list(autoWidth = TRUE), 
+                          rownames = FALSE,
+                          fillContainer = TRUE, 
+                      extensions = 'FixedColumns')
+frameWidget(dt_table, width = "100%", options = frameOptions(allowfullscreen = TRUE))
+```
