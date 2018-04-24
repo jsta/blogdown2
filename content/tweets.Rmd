@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Tweets"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -32,6 +32,8 @@ read_latest <- function(){
   dt <- data.frame(dt)
 }
 
+#####
+
 dt <- read_latest()
 good_cols <- as.numeric(apply(dt, 2, function(x) sum(is.na(x)) / nrow(dt))) < 0.2
 dt <- dt[,good_cols]
@@ -41,10 +43,15 @@ dt <- dplyr::select(dt, -user_id, -lang, -is_retweet, -status_id, -urls_url, -ur
 dt$created_at <- strptime(as.POSIXct(dt$created_at), format = "%Y-%m-%d")
 
 createLink <- function(x) {
-  sprintf(paste0('<a href="', URLdecode(x),'" target="_blank">', substr(x, 1, 25) ,'</a>'))
+  if(is.na(x)){
+    return("")
+  }else{
+    sprintf(paste0('<a href="', URLdecode(x),'" target="_blank">', substr(x, 1, 25) ,'</a>'))
+  }
 }
 
 dt$urls_expanded_url <- lapply(dt$urls_expanded_url, function(x) sapply(x, createLink))
+dt$created_at <- format(dt$created_at, '%Y-%m-%d')
 
 dt_table <- DT::datatable(dt, 
                           options = list(# dom = 't',
@@ -56,9 +63,14 @@ dt_table <- DT::datatable(dt,
                           fillContainer = TRUE,
                       width = "100%", 
                   colnames = c("Date", "Handle", "Text", "URL"))
-dt_table <- formatDate(dt_table, columns = c(1))
+
 dt_table <- formatStyle(dt_table, columns = 1:4, fontSize = '70%')
 dt_table <- formatStyle(dt_table, columns = 3, width = '500px')
+
+
+# dt_table <- formatDate(dt_table, columns = c(1), method = 'toLocaleDateString', 
+#                       params = list(year = 'numeric', month = 'long', day = 'numeric'))
+
 frameWidget(dt_table, width = "100%", height = 800, options = frameOptions(allowfullscreen = TRUE))
 
 ```
