@@ -1,7 +1,8 @@
 library(rtweet)
 
-
 jjstache_likes <- get_favorites("__jsta", n = 3000)
+jjstache_likes <- jjstache_likes[
+  order(jjstache_likes$created_at, decreasing = TRUE),]
 
 read_latest <- function(){
   archives <- list.files("static/data", pattern = "*likes.rds", 
