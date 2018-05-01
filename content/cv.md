@@ -35,6 +35,8 @@ disable_comments: true
 
 <ol reversed>
 
+<li><b>Stachelek J.</b>, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. <i>In Press</i> In-situ simulation of sea-level rise impacts on coastal wetlands using a flow-through mesocosm approach. <u><i>Methods in Ecology and Evolution</u></i>
+
 <li>Cobourn, K.M., <15 alphabetical authors>, <b>Stachelek J.</b>, <4 alphabetical authors>. 2018. From concept to practice to policy: modeling coupled natural and human systems in lake catchments. <u><i>Ecosphere</u></i>. <a target="_blank" href="https://doi.org/10.1002/ecs2.2209"><i class="fa fa-download"></i></a>
 </li>
 
@@ -65,7 +67,6 @@ disable_comments: true
 
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA.
 - Park, S.R., **Stachelek, J.**, Dunton K.H. Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico.
-- **Stachelek J.**, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. A mesocosm design for simulating sea-level rise associated saltwater intrusion in coastal wetlands.
 
 ### Datasets
 
