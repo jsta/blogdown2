@@ -1,0 +1,115 @@
+---
+title: Making a twitter dashboard with R
+author: ~
+date: '2018-05-06'
+slug: making-a-twitter-dashboard-with-r
+categories: []
+tags: []
+---
+
+One my primary uses of twitter favorites is to bookmark interesting content. The trouble is they easily accumulate and the twitter search interface does not make it easy to re-find that one tweet from 3 months ago. In the following blog post I show how you can use the `rtweet` and `DT` packages to make yourself a searchable twitter favorites dashboard in the style of https://jsta.rbind.io/tweets.
+
+## Load dependencies
+
+First, lets make sure that some `R` packages are installed and loaded: 
+
+```{r message=FALSE}
+library(rtweet)
+library(magrittr)
+library(dplyr)
+library(DT)
+```
+
+## Retrieving an archive
+
+Next, lets go through the steps of retrieving some tweet data from the Twitter API via the `rtweet` package. 
+
+1. Setup `rtweet`
+
+You should enable `R` access to the twitter API via an access token. See the instructions at http://rtweet.info/articles/auth.html.
+
+2. Pull archive
+
+After you've setup an access token, you can pull some twitter favorites. In order to make things more readable lets select only a few columns and sort the data by descending date.
+
+```{r eval=FALSE}
+user_name <- "__jsta"
+my_likes  <- get_favorites(user_name, n = 100) %>% 
+  select("created_at", "screen_name", "text", "urls_expanded_url") %>%
+  arrange("created_at")
+
+```
+
+3. Datestamp and URL formatting
+
+Now you may want to deal with the fact that the datestamp includes the time (this will take up unncessary space in our dashboard). Although there are many ways to fix the datestamp, I'll use old-school non-`lubridate` formatting:
+
+```{r eval=FALSE}
+my_likes$created_at <- strptime(as.POSIXct(my_likes$created_at), 
+                                format = "%Y-%m-%d")
+my_likes$created_at <- format(my_likes$created_at, "%Y-%m-%d")
+```
+
+Another bit of formatting you many want is to make the content URLs clickable. In their current form they will simply appear as text. I used this [stackoverflow tip](https://stackoverflow.com/a/44575959/3362993) by `BigDataScientist` to make the URLs clickable:
+
+```{r eval=FALSE}
+createLink <- function(x) {
+  if(is.na(x)){
+    return("")
+  }else{
+    sprintf(paste0('<a href="', URLdecode(x),'" target="_blank">', 
+                   substr(x, 1, 25) ,'</a>'))
+  }
+}
+
+my_likes$urls_expanded_url <- lapply(my_likes$urls_expanded_url, 
+                                     function(x) sapply(x, createLink))
+```
+
+## Rendering dashboard
+
+Finally, we can use the `datatable` package to create our searchable dashboard. The first likes of options is passed directly to the `datatable` javascript library wrapped by the `DT` package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about `datatable` adjustments at https://rstudio.github.io/DT/. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet _text_ column larger.
+
+```{r eval=FALSE}
+my_table <- datatable(my_likes, 
+                      options = list(scrollX = TRUE, autoWidth = TRUE,
+                                     columnDefs = list(list(
+                                           width = '70%', 
+                                           targets = c(2)))), 
+                      rownames = FALSE,
+                      fillContainer = TRUE,
+                      width = "100%", 
+                      colnames = c("Date", "Handle", "Text", "URL"))
+
+my_table <- formatStyle(my_table, columns = 1:4, fontSize = '70%')
+my_table <- formatStyle(my_table, columns = 3, width = '500px')
+```
+
+```{r echo=FALSE}
+# saveRDS(my_table, "static/data/my_twitter_table_blog.rds")
+my_table <- readRDS("../../static/data/my_twitter_table_blog.rds")
+```
+
+Thats it. We've made a searchable twitter favorite dashboard! If you are using RStudio you can view it in the Viewer pane by evaluating the dashboard name in the console:
+
+```{r eval=FALSE}
+my_table
+```
+
+You can also save the dashboard for local viewing in a browser (the following assumes you use firefox) with `saveWidget`:
+
+```{r eval=FALSE}
+temp_file <- tempfile()
+saveWidget(my_table, temp_file)
+
+system(paste("firefox", temp_file))
+```
+
+Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo (`blogdown`) site. I found it necessary to embed my dashboard in an `iframe` using the `widgetframe` package:
+
+```{r message=FALSE}
+library(widgetframe)
+
+frameWidget(my_table, width = "100%", height = 800, 
+            options = frameOptions(allowfullscreen = TRUE))
+```

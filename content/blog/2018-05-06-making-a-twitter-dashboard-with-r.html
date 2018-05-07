@@ -1,0 +1,88 @@
+---
+title: Making a twitter dashboard with R
+author: ~
+date: '2018-05-06'
+slug: making-a-twitter-dashboard-with-r
+categories: []
+tags: []
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
+
+
+<p>One my primary uses of twitter favorites is to bookmark interesting content. The trouble is they easily accumulate and the twitter search interface does not make it easy to re-find that one tweet from 3 months ago. In the following blog post I show how you can use the <code>rtweet</code> and <code>DT</code> packages to make yourself a searchable twitter favorites dashboard in the style of <a href="https://jsta.rbind.io/tweets" class="uri">https://jsta.rbind.io/tweets</a>.</p>
+<div id="load-dependencies" class="section level2">
+<h2>Load dependencies</h2>
+<p>First, lets make sure that some <code>R</code> packages are installed and loaded:</p>
+<pre class="r"><code>library(rtweet)
+library(magrittr)
+library(dplyr)
+library(DT)</code></pre>
+</div>
+<div id="retrieving-an-archive" class="section level2">
+<h2>Retrieving an archive</h2>
+<p>Next, lets go through the steps of retrieving some tweet data from the Twitter API via the <code>rtweet</code> package.</p>
+<ol style="list-style-type: decimal">
+<li>Setup <code>rtweet</code></li>
+</ol>
+<p>You should enable <code>R</code> access to the twitter API via an access token. See the instructions at <a href="http://rtweet.info/articles/auth.html" class="uri">http://rtweet.info/articles/auth.html</a>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Pull archive</li>
+</ol>
+<p>After you’ve setup an access token, you can pull some twitter favorites. In order to make things more readable lets select only a few columns and sort the data by descending date.</p>
+<pre class="r"><code>user_name &lt;- &quot;__jsta&quot;
+my_likes  &lt;- get_favorites(user_name, n = 100) %&gt;% 
+  select(&quot;created_at&quot;, &quot;screen_name&quot;, &quot;text&quot;, &quot;urls_expanded_url&quot;) %&gt;%
+  arrange(&quot;created_at&quot;)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Datestamp and URL formatting</li>
+</ol>
+<p>Now you may want to deal with the fact that the datestamp includes the time (this will take up unncessary space in our dashboard). Although there are many ways to fix the datestamp, I’ll use old-school non-<code>lubridate</code> formatting:</p>
+<pre class="r"><code>my_likes$created_at &lt;- strptime(as.POSIXct(my_likes$created_at), 
+                                format = &quot;%Y-%m-%d&quot;)
+my_likes$created_at &lt;- format(my_likes$created_at, &quot;%Y-%m-%d&quot;)</code></pre>
+<p>Another bit of formatting you many want is to make the content URLs clickable. In their current form they will simply appear as text. I used this <a href="https://stackoverflow.com/a/44575959/3362993">stackoverflow tip</a> by <code>BigDataScientist</code> to make the URLs clickable:</p>
+<pre class="r"><code>createLink &lt;- function(x) {
+  if(is.na(x)){
+    return(&quot;&quot;)
+  }else{
+    sprintf(paste0(&#39;&lt;a href=&quot;&#39;, URLdecode(x),&#39;&quot; target=&quot;_blank&quot;&gt;&#39;, 
+                   substr(x, 1, 25) ,&#39;&lt;/a&gt;&#39;))
+  }
+}
+
+my_likes$urls_expanded_url &lt;- lapply(my_likes$urls_expanded_url, 
+                                     function(x) sapply(x, createLink))</code></pre>
+</div>
+<div id="rendering-dashboard" class="section level2">
+<h2>Rendering dashboard</h2>
+<p>Finally, we can use the <code>datatable</code> package to create our searchable dashboard. The first likes of options is passed directly to the <code>datatable</code> javascript library wrapped by the <code>DT</code> package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about <code>datatable</code> adjustments at <a href="https://rstudio.github.io/DT/" class="uri">https://rstudio.github.io/DT/</a>. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet <em>text</em> column larger.</p>
+<pre class="r"><code>my_table &lt;- datatable(my_likes, 
+                      options = list(scrollX = TRUE, autoWidth = TRUE,
+                                     columnDefs = list(list(
+                                           width = &#39;70%&#39;, 
+                                           targets = c(2)))), 
+                      rownames = FALSE,
+                      fillContainer = TRUE,
+                      width = &quot;100%&quot;, 
+                      colnames = c(&quot;Date&quot;, &quot;Handle&quot;, &quot;Text&quot;, &quot;URL&quot;))
+
+my_table &lt;- formatStyle(my_table, columns = 1:4, fontSize = &#39;70%&#39;)
+my_table &lt;- formatStyle(my_table, columns = 3, width = &#39;500px&#39;)</code></pre>
+<p>Thats it. We’ve made a searchable twitter favorite dashboard! If you are using RStudio you can view it in the Viewer pane by evaluating the dashboard name in the console:</p>
+<pre class="r"><code>my_table</code></pre>
+<p>You can also save the dashboard for local viewing in a browser (the following assumes you use firefox) with <code>saveWidget</code>:</p>
+<pre class="r"><code>temp_file &lt;- tempfile()
+saveWidget(my_table, temp_file)
+
+system(paste(&quot;firefox&quot;, temp_file))</code></pre>
+<p>Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo (<code>blogdown</code>) site. I found it necessary to embed my dashboard in an <code>iframe</code> using the <code>widgetframe</code> package:</p>
+<pre class="r"><code>library(widgetframe)
+
+frameWidget(my_table, width = &quot;100%&quot;, height = 800, 
+            options = frameOptions(allowfullscreen = TRUE))</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:800px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/blog/2018-05-06-making-a-twitter-dashboard-with-r_files/figure-html//widgets/widget_unnamed-chunk-9.html","options":{"xdomain":"*","allowfullscreen":true,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+</div>
