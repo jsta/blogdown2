@@ -68,7 +68,7 @@ my_likes$urls_expanded_url <- lapply(my_likes$urls_expanded_url,
 
 ## Rendering dashboard
 
-Finally, we can use the `datatable` package to create our searchable dashboard. The first likes of options is passed directly to the `datatable` javascript library wrapped by the `DT` package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about `datatable` adjustments at https://rstudio.github.io/DT/. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet _text_ column larger.
+Finally, we can use the `datatable` package to create our searchable dashboard. The first list of options is passed directly to the `DataTables` javascript library wrapped by the `DT` package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about `datatable` adjustments at https://rstudio.github.io/DT/. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet _text_ column larger.
 
 ```{r eval=FALSE}
 my_table <- datatable(my_likes, 
@@ -96,7 +96,7 @@ Thats it. We've made a searchable twitter favorite dashboard! If you are using R
 my_table
 ```
 
-You can also save the dashboard for local viewing in a browser (the following assumes you use firefox) with `saveWidget`:
+You can also save the dashboard for local viewing in a browser with `saveWidget` (the following assumes you use firefox):
 
 ```{r eval=FALSE}
 temp_file <- tempfile()
@@ -105,7 +105,7 @@ saveWidget(my_table, temp_file)
 system(paste("firefox", temp_file))
 ```
 
-Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo (`blogdown`) site. I found it necessary to embed my dashboard in an `iframe` using the `widgetframe` package:
+Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo `blogdown` site (https://jsta.rbind.io/tweets). I found it necessary to embed my dashboard in an `iframe` using the `widgetframe` package:
 
 ```{r message=FALSE}
 library(widgetframe)

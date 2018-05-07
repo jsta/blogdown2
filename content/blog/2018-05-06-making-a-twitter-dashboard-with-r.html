@@ -58,7 +58,7 @@ my_likes$urls_expanded_url &lt;- lapply(my_likes$urls_expanded_url,
 </div>
 <div id="rendering-dashboard" class="section level2">
 <h2>Rendering dashboard</h2>
-<p>Finally, we can use the <code>datatable</code> package to create our searchable dashboard. The first likes of options is passed directly to the <code>datatable</code> javascript library wrapped by the <code>DT</code> package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about <code>datatable</code> adjustments at <a href="https://rstudio.github.io/DT/" class="uri">https://rstudio.github.io/DT/</a>. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet <em>text</em> column larger.</p>
+<p>Finally, we can use the <code>datatable</code> package to create our searchable dashboard. The first list of options is passed directly to the <code>DataTables</code> javascript library wrapped by the <code>DT</code> package. Here I also set some other options to supress row numbering, fill as much of the browser window as possible, and clean up the column name labels. You can read more about <code>datatable</code> adjustments at <a href="https://rstudio.github.io/DT/" class="uri">https://rstudio.github.io/DT/</a>. Next, I ran the dashboard through some additional formatting lines to make it more readable by decreasing the font size and making the tweet <em>text</em> column larger.</p>
 <pre class="r"><code>my_table &lt;- datatable(my_likes, 
                       options = list(scrollX = TRUE, autoWidth = TRUE,
                                      columnDefs = list(list(
@@ -73,12 +73,12 @@ my_table &lt;- formatStyle(my_table, columns = 1:4, fontSize = &#39;70%&#39;)
 my_table &lt;- formatStyle(my_table, columns = 3, width = &#39;500px&#39;)</code></pre>
 <p>Thats it. We’ve made a searchable twitter favorite dashboard! If you are using RStudio you can view it in the Viewer pane by evaluating the dashboard name in the console:</p>
 <pre class="r"><code>my_table</code></pre>
-<p>You can also save the dashboard for local viewing in a browser (the following assumes you use firefox) with <code>saveWidget</code>:</p>
+<p>You can also save the dashboard for local viewing in a browser with <code>saveWidget</code> (the following assumes you use firefox):</p>
 <pre class="r"><code>temp_file &lt;- tempfile()
 saveWidget(my_table, temp_file)
 
 system(paste(&quot;firefox&quot;, temp_file))</code></pre>
-<p>Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo (<code>blogdown</code>) site. I found it necessary to embed my dashboard in an <code>iframe</code> using the <code>widgetframe</code> package:</p>
+<p>Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo <code>blogdown</code> site (<a href="https://jsta.rbind.io/tweets" class="uri">https://jsta.rbind.io/tweets</a>). I found it necessary to embed my dashboard in an <code>iframe</code> using the <code>widgetframe</code> package:</p>
 <pre class="r"><code>library(widgetframe)
 
 frameWidget(my_table, width = &quot;100%&quot;, height = 800, 
