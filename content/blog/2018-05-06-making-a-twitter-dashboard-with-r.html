@@ -31,7 +31,7 @@ library(DT)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Pull archive</li>
 </ol>
-<p>After you’ve setup an access token, you can pull some twitter favorites. In order to make things more readable lets select only a few columns and sort the data by descending date.</p>
+<p>After you’ve setup an access token, you can pull some twitter favorites. In order to make things more readable lets select only a few columns and sort the data by descending date. <em>For the purposes of this blog post I only show one pull. You may want to add a few lines of code here to compare the current pull against a previously pulled archive and merge the two</em>.</p>
 <pre class="r"><code>user_name &lt;- &quot;__jsta&quot;
 my_likes  &lt;- get_favorites(user_name, n = 100) %&gt;% 
   select(&quot;created_at&quot;, &quot;screen_name&quot;, &quot;text&quot;, &quot;urls_expanded_url&quot;) %&gt;%
@@ -39,7 +39,7 @@ my_likes  &lt;- get_favorites(user_name, n = 100) %&gt;%
 <ol start="3" style="list-style-type: decimal">
 <li>Datestamp and URL formatting</li>
 </ol>
-<p>Now you may want to deal with the fact that the datestamp includes the time (this will take up unncessary space in our dashboard). Although there are many ways to fix the datestamp, I’ll use old-school non-<code>lubridate</code> formatting:</p>
+<p>Now you may want to deal with the fact that the datestamp includes the time (this will take up unnecessary space in our dashboard). Although there are many ways to fix the datestamp, I’ll use old-school non-<code>lubridate</code> formatting:</p>
 <pre class="r"><code>my_likes$created_at &lt;- strptime(as.POSIXct(my_likes$created_at), 
                                 format = &quot;%Y-%m-%d&quot;)
 my_likes$created_at &lt;- format(my_likes$created_at, &quot;%Y-%m-%d&quot;)</code></pre>
