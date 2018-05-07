@@ -36,7 +36,7 @@ After you've setup an access token, you can pull some twitter favorites. In orde
 user_name <- "__jsta"
 my_likes  <- get_favorites(user_name, n = 100) %>% 
   select("created_at", "screen_name", "text", "urls_expanded_url") %>%
-  arrange("created_at")
+  arrange(desc(created_at))
 
 ```
 

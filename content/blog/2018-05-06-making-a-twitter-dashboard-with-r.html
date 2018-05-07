@@ -35,7 +35,7 @@ library(DT)</code></pre>
 <pre class="r"><code>user_name &lt;- &quot;__jsta&quot;
 my_likes  &lt;- get_favorites(user_name, n = 100) %&gt;% 
   select(&quot;created_at&quot;, &quot;screen_name&quot;, &quot;text&quot;, &quot;urls_expanded_url&quot;) %&gt;%
-  arrange(&quot;created_at&quot;)</code></pre>
+  arrange(desc(created_at))</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Datestamp and URL formatting</li>
 </ol>
