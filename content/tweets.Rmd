@@ -8,7 +8,6 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
 library(DT)
 library(widgetframe)
 ```
@@ -35,11 +34,7 @@ read_latest <- function(){
 #####
 
 dt <- read_latest()
-good_cols <- as.numeric(apply(dt, 2, function(x) sum(is.na(x)) / nrow(dt))) < 0.2
-dt <- dt[,good_cols]
 
-dt <- dplyr::select(dt, -user_id, -lang, -is_retweet, -status_id, -urls_url, -urls_t.co, -geo_coords, -coords_coords, -source, -bbox_coords, -favorite_count,
-                    -retweet_count)
 dt$created_at <- strptime(as.POSIXct(dt$created_at), format = "%Y-%m-%d")
 
 createLink <- function(x) {
@@ -51,7 +46,18 @@ createLink <- function(x) {
 }
 
 dt$urls_expanded_url <- lapply(dt$urls_expanded_url, function(x) sapply(x, createLink))
+
+other_url_rows <- unlist(lapply(dt$urls_expanded_url, function(x) { 
+    length(x) < 1})) & 
+      !is.na(dt$urls_expanded)
+
+dt$urls_expanded_url[other_url_rows] <- 
+  lapply(dt$urls_expanded[other_url_rows], 
+         function(x) sapply(x[[1]], createLink))
+
 dt$created_at <- format(dt$created_at, '%Y-%m-%d')
+
+dt <- dplyr::select(dt, created_at, screen_name, text, urls_expanded_url)
 
 dt_table <- DT::datatable(dt, 
                           options = list(# dom = 't',
