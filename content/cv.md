@@ -16,16 +16,6 @@ disable_comments: true
 - 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
 - 2004 -- 2008, B.S., Department of Marine Science, University of Maine-Orono. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf)
 
-<!---
-### Additional Courses and Training
-
-- Bayesian Statistics Workshop, Summer 2017, Michigan State University, Instructor Song Qian.
-- Introduction to Bayesian Statistics, Spring 2017, Michigan State University, Instructor Andrew Finley.
-- The `mgcv` Package As a One-Stop-Shop for Fitting Non-Linear Ecological Models, Summer 2016, Ecological Society of America. Instructors Gavin Simpson, David Miller, Eric Pedersen.
-- Using R for High Performance Computing, Winter 2015, National Institute for Mathematical and Biological Synthesis. Instructor Drew Schmidt.
-- Bayesian Inference and Hierachical Modeling, Fall 2013, Florida Atlantic University. Instructor Robert Dorazio.
---->
-
 ## Work Experience
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
