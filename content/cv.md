@@ -8,6 +8,8 @@ disable_comments: true
 
 [extended pdf version](../pdf/cv.pdf)
 
+## Joseph Stachelek
+
 ## Education
 
 - 2016 -- present, Ph.D., Department of Fisheries and Wildlife (focus on Landscape Limnology), Michigan State University.
