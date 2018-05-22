@@ -80,7 +80,7 @@ disable_comments: true
 - `wikilake`: Scrape Lake Metadata Tables from Wikipedia
 [https://github.com/jsta/wikilake](https://github.com/jsta/wikilake) 
 - `dbhydroR`: Everglades Hydrologic and Water Quality Data from R
-[https://github.com/SFWMD/dbhydroR](https://github.com/ropenscilabs/dbhydroR)
+[https://github.com/ropensci/dbhydroR](https://github.com/ropensci/dbhydroR)
 - `ipdw`: Interpolation by Inverse Path Distance Weighting
 [https://github.com/jsta/ipdw](https://github.com/jsta/ipdw)
 
