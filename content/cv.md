@@ -14,7 +14,7 @@ disable_comments: true
 
 - 2016 -- present, Ph.D., Department of Fisheries and Wildlife (focus on Landscape Limnology), Michigan State University.
 - 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
-- 2004 -- 2008, B.S., Department of Marine Science, University of Maine-Orono. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf)
+- 2004 -- 2008, B.S., Department of Marine Science, University of Maine. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf)
 
 ## Work Experience
   
