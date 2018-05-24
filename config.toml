@@ -22,8 +22,8 @@ rssLimit = 30
     name = "Blog"
     url = "/blog/"
 [[menu.main]]
-    name = "Links"
-    url = "/links/"
+    name = "Extras"
+    url = "/extras/"
 
 [params]
     description = "Personal website of Joseph Stachelek"
