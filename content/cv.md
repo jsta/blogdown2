@@ -27,8 +27,8 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Mazzei, V., Gaiser, E., Kominoski, J., <7 authors> , <b>Stachelek J.</b>, Troxler, T. <i>In Press</i>. Functional and compositional responses of periphyton mats to simulated saltwater intrusion in the southern Everglades. <u><i>Estuaries and Coasts</u></i>.
-</li>
+<li>Mazzei, V., Gaiser, E., Kominoski, J., <7 authors> , <b>Stachelek J.</b>, Troxler, T. 2018. Functional and compositional responses of periphyton mats to simulated saltwater intrusion in the southern Everglades. <u><i>Estuaries and Coasts</u></i>. <a target="_blank" href="https://doi.org/10.1007/s12237-018-0415-6"><i class="fa fa-download"></i></a>
+</li> 
 
 <li><b>Stachelek J.</b>, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. 2018. In-situ simulation of sea-level rise impacts on coastal wetlands using a flow-through mesocosm approach. <u><i>Methods in Ecology and Evolution</u></i>. <a target="_blank" href="https://doi.org/10.1111/2041-210X.13028"><i class="fa fa-download"></i></a>
 </li>
