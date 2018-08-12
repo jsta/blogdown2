@@ -11,3 +11,5 @@ title: "Extras"
 + [Rare Papers](https://jsta.rbind.io/rarepapers) - A list of citations for which I have a digital copy but are otherwise unavailable (in digital form) from a commercial publisher or university library 
 
 + [Twitter Favorites](https://jsta.rbind.io/tweets) - Interactive searchable archive of `__jsta` twitter likes/favorites 
+
++ [Github Dashboard](https://jsta.rbind.io/githubdashboard) - Interactive searchable dashboard of `jsta` Github activity
