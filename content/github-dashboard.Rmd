@@ -187,36 +187,3 @@ filter(issues_df, state == "open") %>%
 ```
 
 >  `r sprintf("%s total open issues", scales::comma(nrow(filter(issues_df, state == "open"))))`
-
-Recent Issue Detail
-===================================== 
-
-```{r issue_detail, include=FALSE}
-options(knitr.duplicate.label = 'allow')
-
-issues_df %>% 
-  mutate(hr_diff = as.numeric(difftime(Sys.time(), 
-                                       issues_df$updated_at, 
-                                       units = "hours"))) %>% 
-  filter(hr_diff <= 48) %>% 
-  arrange(hr_diff) -> recent_issues
-
-if (nrow(recent_issues) == 0) {
-  out <- "### No new issues in the past 48 hours"
-} else {
-  out <-  NULL
-  cat("", file = "/tmp/k.txt")
-  for (i in 1:nrow(recent_issues)) {
-    res <- knit_child('issue_detail.Rmd', envir=parent.frame())
-    cat(res, file="/tmp/k.txt", append = TRUE)
-    out <- c(out, res)
-  }
-  
-}
-
-options(knitr.duplicate.label = 'no way')
-```
-
-`r paste(out, sep=" ", collapse="\n")`
-
-
