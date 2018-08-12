@@ -12,4 +12,4 @@ title: "Extras"
 
 + [Twitter Favorites](https://jsta.rbind.io/tweets) - Interactive searchable archive of `__jsta` twitter likes/favorites 
 
-+ [Github Dashboard](https://jsta.rbind.io/github-dashboard) - Interactive searchable dashboard of `jsta` Github activity
++ [Github Dashboard](https://jsta.github.io/github-dashboard) - Interactive searchable dashboard of `jsta` Github activity
