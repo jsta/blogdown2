@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Wilson, B.J., Servais, S., <10 authors>, <b>Stachelek J.</b>, Troxler, T. <i>In Press</i>. Long-term experimental salinity pulses in brackish and freshwater marshes interact with seasonal dry-down to increase ecosystem carbon loss in the Florida Coastal Everglades. <u><i>Ecological Applications</u></i>.
+<li>Wilson, B.J., Servais, S., <10 authors>, <b>Stachelek J.</b>, Troxler, T. <i>In Press</i>. Long-term experimental salinity pulses in brackish and freshwater marshes interact with seasonal dry-down to increase ecosystem carbon loss in the Florida Coastal Everglades. <u><i>Ecological Applications</u></i>. <a target="_blank" href="https://doi.org/10.1002/eap.1798"><i class="fa fa-download"></i></a>
 </li>
 
 <li>Mazzei, V., Gaiser, E., Kominoski, J., <7 authors> , <b>Stachelek J.</b>, Troxler, T. 2018. Functional and compositional responses of periphyton mats to simulated saltwater intrusion in the southern Everglades. <u><i>Estuaries and Coasts</u></i>. <a target="_blank" href="https://doi.org/10.1007/s12237-018-0415-6"><i class="fa fa-download"></i></a>
