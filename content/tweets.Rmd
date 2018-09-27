@@ -14,6 +14,8 @@ library(widgetframe)
 
 
 ```{r, echo=FALSE, out.width="100%", warning=FALSE}
+# update archive with `get_tweets.R`
+
 read_latest <- function(){
   fpath <- "../static/data/"
   if(!file.exists(fpath)){
