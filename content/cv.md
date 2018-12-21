@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. <i>in press</i>. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>.
+<li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>. <a target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i class="fa fa-download"></i></a>
 </li>
 
 <li>Wilson, B.J., Servais, S., <10 authors>, <b>Stachelek J.</b>, Troxler, T. 2018. Salinity pulses interact with seasonal dry‐down to increase ecosystem carbon loss in marshes of the Florida Everglades. <u><i>Ecological Applications</u></i>. <a target="_blank" href="https://doi.org/10.1002/eap.1798"><i class="fa fa-download"></i></a>
