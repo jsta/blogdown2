@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li><b>Stachelek, J.</b>, Soranno, P.A. <i>In Press</i>. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>.
+<li><b>Stachelek, J.</b>, Soranno, P.A. <i>In Press</i>. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="fa fa-download"></i></a>
 </li>
 
 <li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>. <a target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i class="fa fa-download"></i></a>
