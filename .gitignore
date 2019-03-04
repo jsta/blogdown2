@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+public
+static/pdf/*.gz
+static/pdf/*.log
+
