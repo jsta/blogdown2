@@ -28,10 +28,9 @@ disable_comments: true
 <ol reversed>
 
 <li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. In Press. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR02308"><i class="ai ai-doi"></i></a>
-<a target="_blank" href="../static/pdf/2019_stachelek-soranno_preprint.pdf"><i class="fa  fa-download"></i></a>
 </li>
 
-<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="ai ai-doi"></i></a>
+<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="ai ai-doi"></i></a> <a target="_blank" href="../pdf/2019_stachelek-soranno_preprint.pdf"><i class="fa  fa-download"></i></a>
 </li>
 
 <li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>. <a target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i class="ai ai-doi"></i></a>
@@ -61,13 +60,13 @@ disable_comments: true
 <li> Hollister J and <b>Stachelek J.</b> 2017. lakemorpho: Calculating lake morphometry metrics in R [version 1; referees: 2 approved]. <u><i>F1000Research</u></i>. <a target="_blank" href="https://doi.org/10.12688/f1000research.12512.1"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="ai ai-doi"></i></a>
+<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> and Madden C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. <u><i>International Journal of Geographical Information Science</i></u>. <a target="_blank" href="../pdf/stachmadden2015am.pdf"><i class="ai ai-doi"></i></a>
+<li> <b>Stachelek J.</b> and Madden C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. <u><i>International Journal of Geographical Information Science</i></u>. <a target="_blank" href="../pdf/stachmadden2015am.pdf"><i class="fa fa-download"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> and Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. <u><i>Texas Water Journal</i></u>. 4(2), 62-73. <a target="_blank" href="../pdf/StachelekDunton2013.pdf"><i class="ai ai-doi"></i></a>
+<li> <b>Stachelek J.</b> and Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. <u><i>Texas Water Journal</i></u>. 4(2), 62-73. <a target="_blank" href="../pdf/StachelekDunton2013.pdf"><i class="fa fa-download"></i></a>
 </li>
 
 </ol>
