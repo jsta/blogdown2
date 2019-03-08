@@ -27,47 +27,47 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. In Press. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR02308"><i class="fa fa-download"></i></a>
-</li> <a target="_blank" href="https://doi.org/10.1029/2018WR02308"><i class="ai ai-doi"></i></a>
+<li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. In Press. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR02308"><i class="ai ai-doi"></i></a>
+<a target="_blank" href="static/pdf/2019_stachelek-soranno_preprint.pdf"><i class="fa  fa-download"></i></a>
 </li>
 
-<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="fa fa-download"></i></a>
+<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="ai ai-doi"></i></a>
 </li>
 
-<li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>. <a target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i class="fa fa-download"></i></a>
+<li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <u><i>Ambio</u></i>. <a target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i class="ai ai-doi"></i></a>
 </li>
 
-<li>Wilson, B.J., Servais, S., <10 authors>, <b>Stachelek J.</b>, Troxler, T. 2018. Salinity pulses interact with seasonal dry‐down to increase ecosystem carbon loss in marshes of the Florida Everglades. <u><i>Ecological Applications</u></i>. <a target="_blank" href="https://doi.org/10.1002/eap.1798"><i class="fa fa-download"></i></a>
+<li>Wilson, B.J., Servais, S., <10 authors>, <b>Stachelek J.</b>, Troxler, T. 2018. Salinity pulses interact with seasonal dry‐down to increase ecosystem carbon loss in marshes of the Florida Everglades. <u><i>Ecological Applications</u></i>. <a target="_blank" href="https://doi.org/10.1002/eap.1798"><i class="ai ai-doi"></i></a>
 </li>
 
-<li>Mazzei, V., Gaiser, E., Kominoski, J., <7 authors> , <b>Stachelek J.</b>, Troxler, T. 2018. Functional and compositional responses of periphyton mats to simulated saltwater intrusion in the southern Everglades. <u><i>Estuaries and Coasts</u></i>. <a target="_blank" href="https://doi.org/10.1007/s12237-018-0415-6"><i class="fa fa-download"></i></a>
+<li>Mazzei, V., Gaiser, E., Kominoski, J., <7 authors> , <b>Stachelek J.</b>, Troxler, T. 2018. Functional and compositional responses of periphyton mats to simulated saltwater intrusion in the southern Everglades. <u><i>Estuaries and Coasts</u></i>. <a target="_blank" href="https://doi.org/10.1007/s12237-018-0415-6"><i class="ai ai-doi"></i></a>
 </li> 
 
-<li><b>Stachelek J.</b>, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. 2018. In-situ simulation of sea-level rise impacts on coastal wetlands using a flow-through mesocosm approach. <u><i>Methods in Ecology and Evolution</u></i>. <a target="_blank" href="https://doi.org/10.1111/2041-210X.13028"><i class="fa fa-download"></i></a>
+<li><b>Stachelek J.</b>, Kelly, S.P, Sklar, F., Coronado, C.M., Troxler, T., Bauman, L. 2018. In-situ simulation of sea-level rise impacts on coastal wetlands using a flow-through mesocosm approach. <u><i>Methods in Ecology and Evolution</u></i>. <a target="_blank" href="https://doi.org/10.1111/2041-210X.13028"><i class="ai ai-doi"></i></a>
 </li>
 
-<li>Cobourn, K.M., <15 alphabetical authors>, <b>Stachelek J.</b>, <4 alphabetical authors>. 2018. From concept to practice to policy: modeling coupled natural and human systems in lake catchments. <u><i>Ecosphere</u></i>. <a target="_blank" href="https://doi.org/10.1002/ecs2.2209"><i class="fa fa-download"></i></a>
+<li>Cobourn, K.M., <15 alphabetical authors>, <b>Stachelek J.</b>, <4 alphabetical authors>. 2018. From concept to practice to policy: modeling coupled natural and human systems in lake catchments. <u><i>Ecosphere</u></i>. <a target="_blank" href="https://doi.org/10.1002/ecs2.2209"><i class="ai ai-doi"></i></a>
 </li>
 
-<li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2018. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-10-81-2018"><i class="fa fa-download"></i></a>
+<li><b>Stachelek J.</b>, Ford, C., Kincaid, D., King, K., Miller, H, and Nagelkirk, R. 2018. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. <u><i>Earth Syst. Sci. Data</u></i>. <a target="_blank" href="https://doi.org/10.5194/essd-10-81-2018"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> Rougier NP, Hinsen K, <34 alphabetical authors>, <b>Stachelek J</b>. <8 alphabetical authors>. 2017. Sustainable computational science: the ReScience initiative. <u><i>PeerJ Computer Science</i></u>. 3:e142 <a target="_blank" href="https://doi.org/10.7717/peerj-cs.142"><i class="fa fa-download"></i></a>
+<li> Rougier NP, Hinsen K, <34 alphabetical authors>, <b>Stachelek J</b>. <8 alphabetical authors>. 2017. Sustainable computational science: the ReScience initiative. <u><i>PeerJ Computer Science</i></u>. 3:e142 <a target="_blank" href="https://doi.org/10.7717/peerj-cs.142"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>. 2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="fa fa-download"></i></a>
+<li> Soranno P.A., <62 alphabetical authors>, <b>Stachelek J.</b>, <15 alphabetical authors>. 2017. LAGOS-NE: A multi-scaled geospatial and temporal database of lake ecological context and water quality for thousands of U.S. lakes. <u><i>Gigascience</i></u>. <a target="_blank" href="https://doi.org/10.1093/gigascience/gix101"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> Hollister J and <b>Stachelek J.</b> 2017. lakemorpho: Calculating lake morphometry metrics in R [version 1; referees: 2 approved]. <u><i>F1000Research</u></i>. <a target="_blank" href="https://doi.org/10.12688/f1000research.12512.1"><i class="fa fa-download"></i></a>
+<li> Hollister J and <b>Stachelek J.</b> 2017. lakemorpho: Calculating lake morphometry metrics in R [version 1; referees: 2 approved]. <u><i>F1000Research</u></i>. <a target="_blank" href="https://doi.org/10.12688/f1000research.12512.1"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="fa fa-download"></i></a>
+<li> <b>Stachelek J.</b> 2016. [Re] Least-cost modelling on irregular landscape graphs. <u><i>ReScience</i></u>. 2(1): 1-4. <a target="_blank" href="../pdf/2016_stachelek_rescience.pdf"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> and Madden C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. <u><i>International Journal of Geographical Information Science</i></u>. <a target="_blank" href="../pdf/stachmadden2015am.pdf"><i class="fa fa-download"></i></a>
+<li> <b>Stachelek J.</b> and Madden C.J. 2015. Application of Inverse Path Distance Weighting for high density spatial mapping of coastal water quality patterns. <u><i>International Journal of Geographical Information Science</i></u>. <a target="_blank" href="../pdf/stachmadden2015am.pdf"><i class="ai ai-doi"></i></a>
 </li>
 
-<li> <b>Stachelek J.</b> and Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. <u><i>Texas Water Journal</i></u>. 4(2), 62-73. <a target="_blank" href="../pdf/StachelekDunton2013.pdf"><i class="fa fa-download"></i></a>
+<li> <b>Stachelek J.</b> and Dunton K.H. 2013. Freshwater inflow requirements for the Nueces Delta, Texas: Spartina alterniflora as an indicator of ecosystem condition. <u><i>Texas Water Journal</i></u>. 4(2), 62-73. <a target="_blank" href="../pdf/StachelekDunton2013.pdf"><i class="ai ai-doi"></i></a>
 </li>
 
 </ol>
