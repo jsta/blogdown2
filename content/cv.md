@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. In Press. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR023088"><i class="ai ai-doi"></i></a>
+<li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. 2019. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR023088"><i class="ai ai-doi"></i></a>
 </li>
 
 <li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <u><i>Limnology and Oceanography</u></i>. <a target="_blank" href="https://doi.org/10.1002/lno.11137"><i class="ai ai-doi"></i></a> <a target="_blank" href="../pdf/2019_stachelek-soranno_preprint.pdf"><i class="fa  fa-download"></i></a>
