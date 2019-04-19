@@ -11,13 +11,13 @@ tags: []
 
 More and more research papers are making use of Google Earth Engine (EE) to do geocomputation with gridded data and satellite (remote sensing) output. Are these analyses reproducible? Will they be reproducible in 2-3 years? In the following blog post, I explore these questions and conclude that:
 
-* If a paper uses EE to simply pull/crop/extract data they answer is likely yes. 
+* If a paper uses EE to simply pull/crop/extract data the answer is likely yes. 
 
-* If a paper uses any computation functions then the analyses have a hard dependency on the EE remote servers. Should they go away, the paper will no longer be reproducible. 
+* If a paper uses any EE specific computation functions then the analyses have a hard dependency on the EE remote servers. Should they go away, the paper will no longer be reproducible. 
 
 ## Dependencies
 
-Before we begin let's set up our python environment and initialize EE where [python dependencies](environment.yml) are:
+Before we begin, let's set up our python environment and initialize EE where the [python dependencies](https://github.com/jsta/earthengine/blob/master/environment.yml) are:
 
 - python=3.7.3
 - earthengine-api        
@@ -31,7 +31,7 @@ $ earthengine authenticate
 
 ## Walkthrough
 
-First, we must manually initialize EE and setup `pydrive` in a python session:
+First, in our python session, we must manually initialize EE and setup `pydrive`:
 
 ```python
 ee.Initialize()
@@ -65,7 +65,7 @@ file1 = drive.CreateFile({'id':file_id})
 file1.GetContentFile('raw_export.tif')
 ```
 
-Now, let's find the _edges_ of our scene using a non-reproducible EE (`ee.Algorithms.CannyEdgeDetector`) workflow:
+Now, let's find the _edges_ of our scene using a non-reproducible EE workflow where `ee.Algorithms.CannyEdgeDetector` does the heavy lifting:
 
 ```python
 canny = ee.Algorithms.CannyEdgeDetector(image, 10, 1)
@@ -104,7 +104,7 @@ Here is a comparison of the raw data with the results of each approach:
 
 ## Notes about EE
 
-* It's obnoxious that there seems to be no way to read the argument descriptions of EE functions without going to the online code editor. Also, the code editor docs don't have embedded examples. You need to browse a separate webpage.
+* It's obnoxious that there seems to be no way to read the argument descriptions of EE functions without going to the online code editor. These docs don't have embedded examples. You need to browse a separate webpage.
 
 * I was able to reproduce [EE data fetching code](https://github.com/acgeospatial/GoogleEarthEnginePy/blob/master/OrderData.py) from 2016 that uses legacy formatting of Landsat file names.
 
