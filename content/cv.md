@@ -87,6 +87,8 @@ disable_comments: true
 
 **Author**
 
+- `nhdR`: Tools for working with the National Hydrography Dataset
+[https://github.com/jsta/nhdR](https://github.com/jsta/nhdR)
 - `LAGOSNE`: Interface to the Lake Multi-Scaled Geospatial and Temporal Database
 [https://github.com/cont-limno/LAGOSNE](https://github.com/cont-limno/LAGOSNE) 
 - `wikilake`: Scrape Lake Metadata Tables from Wikipedia
