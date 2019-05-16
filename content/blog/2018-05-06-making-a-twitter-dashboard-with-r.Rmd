@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-One my primary uses of twitter favorites is to bookmark interesting content. The trouble is they easily accumulate and the twitter search interface does not make it easy to re-find that one tweet from 3 months ago. In the following blog post I show how you can use the `rtweet` and `DT` packages to make yourself a searchable twitter favorites dashboard in the style of https://jsta.rbind.io/tweets.
+One my primary uses of twitter favorites is to bookmark interesting content. The trouble is they easily accumulate and the twitter search interface does not make it easy to re-find that one tweet from 3 months ago. In the following blog post I show how you can use the `rtweet` and `DT` packages to make yourself a searchable twitter favorites dashboard in the style of https://jsta.github.io/twitter-likes_dashboard/.
 
 ## Load dependencies
 
@@ -92,7 +92,7 @@ my_table <- readRDS("../../static/data/my_twitter_table_blog.rds")
 
 Thats it. We've made a searchable twitter favorite dashboard! If you are using RStudio you can view it in the Viewer pane by evaluating the dashboard name in the console:
 
-```{r eval=FALSE}
+```{r eval=TRUE}
 my_table
 ```
 
@@ -103,13 +103,4 @@ temp_file <- tempfile()
 saveWidget(my_table, temp_file)
 
 system(paste("firefox", temp_file))
-```
-
-Finally, you can render your dashboard on a webpage. Mine is hosted on my Hugo `blogdown` site (https://jsta.rbind.io/tweets). I found it necessary to embed my dashboard in an `iframe` using the `widgetframe` package:
-
-```{r message=FALSE}
-library(widgetframe)
-
-frameWidget(my_table, width = "100%", height = 800, 
-            options = frameOptions(allowfullscreen = TRUE))
 ```
