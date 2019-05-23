@@ -13,3 +13,5 @@ title: "Extras"
 + [Twitter Favorites](https://jsta.github.io/twitter-likes_dashboard/) - Interactive searchable archive of `__jsta` twitter likes/favorites 
 
 + [Github Dashboard](https://jsta.github.io/githubdashboard) - Interactive searchable dashboard of `jsta` Github activity
+
++ [Data Science Portfolio](https://jsta.github.io/gh_cran_portfolio/) - Collection of data science and programming projects organized by tool

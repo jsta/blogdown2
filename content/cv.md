@@ -88,6 +88,8 @@ disable_comments: true
   
 ### Software package development [(https://github.com/jsta)](https://github.com/jsta)
 
+See [Data Science Portfolio](https://jsta.github.io/gh_cran_portfolio/)
+
 **Author**
 
 - `nhdR`: Tools for working with the National Hydrography Dataset
