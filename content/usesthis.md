@@ -18,6 +18,8 @@ title: "Software I Use"
 
 [tikz](https://tex.stackexchange.com/questions/84753/summary-of-tikz-commands) - Generating publication quality conceptual diagrams
 
+[Okular](https://okular.kde.org/) - Annotate pdfs without Adobe
+
 ## Coding / GIS
 
 [RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
