@@ -30,7 +30,7 @@ disable_comments: true
 <li> Qian, S.S., Stow, C.A., Nojavan, F., <b>Stachelek, J.</b>, Cha, Y., Alameddine, I., Soranno, P.A. <i>In Press</i>. The Implications of Simpson's Paradox for Cross-Scale Inference Among Lakes. <i>Water Research</i>.
 </li>
 
-<li> McCullough, I., Cheruvelil, K.S, Lapierre, J.F., Lottig, N., Moritz, M., <b> Stachelek, J.</b>, Soranno, P.A. 2019. Do lakes feel the burn? Ecological consequences of increasing exposure of lakes to fire in the continental US. <u><i>Global Change Biology</u></i>. <a target="_blank" href="https://doi.org/10.1111/gcb.14732"><i class="ai ai-doi"></i></a>
+<li> McCullough, I., Cheruvelil, K.S, Lapierre, J.F., Lottig, N., Moritz, M., <b> Stachelek, J.</b>, Soranno, P.A. 2019. Do lakes feel the burn? Ecological consequences of increasing exposure of lakes to fire in the continental United States. <u><i>Global Change Biology</u></i>. <a target="_blank" href="https://doi.org/10.1111/gcb.14732"><i class="ai ai-doi"></i></a>
 </li>
 
 <li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. 2019. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <u><i>Water Resources Research</u></i>. <a target="_blank" href="https://doi.org/10.1029/2018WR023088"><i class="ai ai-doi"></i></a>
