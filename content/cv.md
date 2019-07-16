@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li> Qian, S.S., Stow, C.A., Nojavan, F., <b>Stachelek, J.</b>, Cha, Y., Alameddine, I., Soranno, P.A. <i>In Press</i>. The Implications of Simpson's Paradox for Cross-Scale Inference Among Lakes. <i>Water Research</i>.
+<li> Qian, S.S., Stow, C.A., Nojavan, F., <b>Stachelek, J.</b>, Cha, Y., Alameddine, I., Soranno, P.A. 2019. The Implications of Simpson's Paradox for Cross-Scale Inference Among Lakes. <i>Water Research</i>.
 </li>
 
 <li> McCullough, I., Cheruvelil, K.S, Lapierre, J.F., Lottig, N., Moritz, M., <b> Stachelek, J.</b>, Soranno, P.A. 2019. Do lakes feel the burn? Ecological consequences of increasing exposure of lakes to fire in the continental United States. <u><i>Global Change Biology</u></i>. <a target="_blank" href="https://doi.org/10.1111/gcb.14732"><i class="ai ai-doi"></i></a>
