@@ -27,6 +27,9 @@ disable_comments: true
 
 <ol reversed>
 
+<li> McCullough, I., King K., <b>Stachelek, J.</b>, Diaz, J., Sorrano, P.A., Cheruvelil K.S. 2019. Applying the patch-matrix model to lakes: a connectivity-based conservation framework. <i>Landscape Ecology</i>
+</li>
+
 <li> Qian, S.S., Stow, C.A., Nojavan, F., <b>Stachelek, J.</b>, Cha, Y., Alameddine, I., Soranno, P.A. 2019. The Implications of Simpson's Paradox for Cross-Scale Inference Among Lakes. <i>Water Research</i>. <a target="_blank" href="https://doi.org/10.1016/j.watres.2019.114855"><i class="ai ai-doi"></i></a>
 </li>
 
