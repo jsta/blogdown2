@@ -94,7 +94,7 @@ d[0:3]
 
 Next, lets look at the top journals of the year as measured by number of papers and average likes per paper. Looks like  _Water Resources Research_ is leading the pack with the most limnopapers in 2019 but _Hydrobiologia_ papers are getting the most likes.
 
-```{python}
+```{python, eval=FALSE}
 log_perjournal = (log
                   .groupby(["dc_source"])
                   .agg(["count"])
@@ -110,6 +110,8 @@ plt.tight_layout()
 plt.show()
 
 ```
+
+![](../images/paper_count.png)
 
 ```{python, eval=FALSE, include=FALSE}
 # calculate average likes per journal
@@ -170,7 +172,7 @@ with open ('avg_likes_2019', 'rb') as fp:
     res = pickle.load(fp)
 ```
 
-```{python echo=FALSE}
+```{python echo=FALSE, eval=FALSE}
 avg_favs = (res
 .groupby(['dc_source'])['fav_count']
 .mean()
@@ -209,17 +211,21 @@ plt.show()
 
 ```
 
+![](../images/journal_ranking.png)
+
 Next, lets look at a wordcloud of paper titles to see common themes:
 
-```{python}
+```{python, eval=FALSE}
 wc = wordcloud.WordCloud().generate(log["title"].str.cat(sep=" "))
 plt.imshow(wc)
 plt.show()
 ```
 
+![](../images/wordcloud.png)
+
 To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.
 
-```{python}
+```{python, eval=FALSE}
 log_cumsum = (log
               .groupby(["date"])
               .agg(["count"])
@@ -235,9 +241,11 @@ plt.tight_layout()
 plt.show()
 ```
 
+![](../images/cumul_tweets.png)
+
 ...and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.
 
-```{python}
+```{python, eval=FALSE}
 # per day stats
 # calculate day of the week from date, group per day and sum
 log['day_of_week'] = log['date'].dt.day_name()
@@ -260,6 +268,8 @@ sns.barplot(data = log_perday, y = "day", x = "count")
 plt.tight_layout()
 plt.show()
 ```
+
+![](../images/doy.png)
 
 Certainly caveats apply here. My keyword choices reflect a specific interpretation of limnology, my journal choices are limited to only a few dozen titles, and I used my personal judgement to tune the papers that were posted. Anyone interested in running their own feed either on limnology or some other topic can do so by forking the code at https://github.com/jsta/limnopapers and adjusting the feed choices in `feeds.csv` and/or the keywords in `keywords.csv`.
 
