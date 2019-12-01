@@ -1,0 +1,272 @@
+---
+title: Limnology papers year end review 2019
+author: ~
+date: '2019-12-01'
+slug: limnology-papers-year-end-review-with-a-python-twitter-rss-feed
+categories: []
+tags: []
+---
+
+```{r include=FALSE}
+library(reticulate)
+use_condaenv("limnopapers")
+```
+
+```{python echo=FALSE, warning=FALSE}
+import warnings
+warnings.filterwarnings('ignore')
+import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
+import matplotlib.dates as mdates
+import pickle
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import wordcloud
+import twitter
+import config
+import re
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
+pd.plotting.register_matplotlib_converters()
+sns.set_style('white')
+```
+
+The [limnopapers](https://twitter.com/limnopapers) twitter feed underwent a comprehensive revamp in December 2018. I replaced the click-based framework detailed by Rob Lanfear [here](https://github.com/roblanf/phypapers) with a custom scripted solution using a `feedparser` and `python-twitter` backend. Rather than tediously adding _include_ and _exclude_ keywords through a web gui and being limited to 5 feeds, this new solution allows easy control over keywords and tracking as many feeds as you want. In addition to custom feed handling in the new system (I can now deal with feeds that come in a variety of formats instead of being limited to the dlvr.it parser) there is a built-in system for logging tweets that have passed through the keyword filters and can be considered "limnology papers".
+
+**In the following post, I take a look at this log to to get a sense of Limnology in 2019.** 
+
+```{python eval=FALSE}
+import pandas as pd
+import seaborn as sns
+import wordcloud
+```
+
+```{python, include=FALSE}
+log_raw = pd.read_csv("/home/jose/python/limnopapers/log.csv")
+```
+
+```{python, include=FALSE}
+log = (log_raw
+       .dropna(subset = ["date"])
+       .loc[log_raw["posted"] == "y"])
+log["date"] = pd.to_datetime(log["date"])
+```
+
+```{python, eval=FALSE}
+log_raw = pd.read_csv("log.csv")
+```
+
+```{python, eval=FALSE}
+log = (log_raw
+       .loc[log_raw["posted"] == "y"])
+log["date"] = pd.to_datetime(log["date"])
+```
+
+First, lets look at the top papers of the year as measured by twitter likes:
+
+```{python, include=FALSE}
+with open ('/home/jose/python/limnopapers/tweet_cache_2019', 'rb') as fp:
+    statuses = pickle.load(fp)
+```
+
+```{python, eval=FALSE, include=FALSE}
+with open ('tweet_cache_2019', 'rb') as fp:
+    res = pickle.load(fp)
+```
+
+```{python, eval=FALSE, include=FALSE}
+fav_count = [s.favorite_count for s in statuses]
+ids = [s.id for s in statuses]
+d = dict(zip(['fav_count', "id"], [fav_count, ids]))
+d = (pd.DataFrame.from_records(d)
+     .sort_values(by = ["fav_count"], ascending = False))
+
+d[0:3]
+```
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">AquaSat: a dataset to enable remote sensing of water quality for inland waters. Water Resources Research. <a href="https://t.co/RNxifhH0qi">https://t.co/RNxifhH0qi</a></p>&mdash; limnopapers (@limno_papers) <a href="https://twitter.com/limno_papers/status/1183731513084600321?ref_src=twsrc%5Etfw">October 14, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Large spatial and temporal variability of carbon dioxide and methane in a eutrophic lake. Journal of Geophysical Research: Biogeosciences. <a href="https://t.co/uHyTN6xT4b">https://t.co/uHyTN6xT4b</a></p>&mdash; limnopapers (@limno_papers) <a href="https://twitter.com/limno_papers/status/1146216503416676352?ref_src=twsrc%5Etfw">July 3, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Process‐guided deep learning predictions of lake water temperature. Water Resources Research. <a href="https://t.co/h8rBDbVaKy">https://t.co/h8rBDbVaKy</a></p>&mdash; limnopapers (@limno_papers) <a href="https://twitter.com/limno_papers/status/1193879047975112705?ref_src=twsrc%5Etfw">November 11, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Next, lets look at the top journals of the year as measured by number of papers and average likes per paper. Looks like  _Water Resources Research_ is leading the pack with the most limnopapers in 2019 but _Hydrobiologia_ papers are getting the most likes.
+
+```{python}
+log_perjournal = (log
+                  .groupby(["dc_source"])
+                  .agg(["count"])
+                  .reset_index()
+                  .iloc[:, 0:2])
+log_perjournal.columns = ["dc_source", "count"]
+log_perjournal = log_perjournal.sort_values(by = ["count"], ascending = False)
+
+sns.barplot(data = log_perjournal.query("count > 6"), y = "dc_source", x = "count")   
+plt.xlabel("count")
+plt.ylabel("")
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python, eval=FALSE, include=FALSE}
+# calculate average likes per journal
+text = [re.search(r'.*(?=\s)', s.text).group(0) for s in statuses]
+text = pd.DataFrame.from_dict(text)
+text.columns = ["title"]
+text = text.assign(fav_count = fav_count)
+
+log.fav_count = np.nan
+
+# https://medium.com/@rtjeannier/combining-data-sets-with-fuzzy-matching-17efcb510ab2
+def match_name(name, list_names, min_score=0):
+    max_score = -1
+    max_name = ""
+    for name2 in list_names:
+        score = fuzz.ratio(name, name2)
+        if (score > min_score) & (score > max_score):
+            max_name = name2
+            max_score = score
+    return (max_name, max_score)
+
+text2 = text[:600]
+
+dict_list = []
+for fc in text2.title:
+    match = match_name(fc, log.title, 90)
+    dict_ = {}
+    dict_.update({"title" : fc})
+    dict_.update({"match_name" : match[0]})
+    dict_.update({"score" : match[1]})
+    dict_list.append(dict_)
+    
+merge_table = pd.DataFrame(dict_list)
+
+res = (text
+.set_index('title')
+.join(merge_table.set_index('title')))
+
+res = (res
+.set_index('match_name')
+.join(log.set_index('title'))
+)
+
+res = (res
+.query("score > -1"))
+
+with open('avg_likes_2019', 'wb') as fp:
+    pickle.dump(res, fp)
+```
+
+```{python, include = FALSE} 
+with open ('/home/jose/python/limnopapers/avg_likes_2019', 'rb') as fp:
+    res = pickle.load(fp)
+```
+
+```{python, eval=FALSE, echo=FALSE, include=FALSE}
+with open ('avg_likes_2019', 'rb') as fp:
+    res = pickle.load(fp)
+```
+
+```{python echo=FALSE}
+avg_favs = (res
+.groupby(['dc_source'])['fav_count']
+.mean()
+.reset_index()
+.iloc[:, 0:2]
+.sort_values(by = ["fav_count"], ascending = False))
+avg_favs.columns = ["dc_source", "avg"]
+
+common_journals = (res
+.groupby(['dc_source'])
+.count()
+.reset_index()
+.iloc[:, 0:2]
+.sort_values(by = ["fav_count"], ascending = False)
+.query("fav_count >= 8"))
+common_journals.columns = ["dc_source", "count"]
+
+res2 = (common_journals
+.set_index('dc_source')
+.join(avg_favs.set_index('dc_source'))
+.reset_index()
+.iloc[:, 0:3]
+)
+res2.columns = ["dc_source", "count", "avg"]
+res2 = res2.sort_values(by = "avg", ascending=False).reset_index()
+
+p1 = sns.scatterplot(data = res2, y = "avg", x = "count")
+for line in [0, 2, 8, len(res2) - 2]:
+    p1.text(res2["count"][line]-1, res2["avg"][line], 
+    res2["dc_source"][line], horizontalalignment='left', 
+    size='medium', color='black', weight='semibold')
+plt.xlabel("# of papers")
+plt.ylabel("average likes per paper")
+plt.tight_layout()
+plt.show()
+
+```
+
+Next, lets look at a wordcloud of paper titles to see common themes:
+
+```{python}
+wc = wordcloud.WordCloud().generate(log["title"].str.cat(sep=" "))
+plt.imshow(wc)
+plt.show()
+```
+
+To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.
+
+```{python}
+log_cumsum = (log
+              .groupby(["date"])
+              .agg(["count"])
+              .loc[:, ["date", "title"]]
+              .cumsum())
+
+chart = (log_cumsum
+         .pipe((sns.lineplot, "data"))
+         .legend_.remove())
+plt.xlabel("")
+plt.ylabel("Cumulative tweets")
+plt.tight_layout()
+plt.show()
+```
+
+...and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.
+
+```{python}
+# per day stats
+# calculate day of the week from date, group per day and sum
+log['day_of_week'] = log['date'].dt.day_name()
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+log_perday = (log
+              .groupby(["day_of_week"])
+              .agg(["count"])
+              .loc[:, ["title"]]
+              .reset_index()
+              .iloc[:, 0:2])
+log_perday.columns = ["day", "count"]
+
+log_perday = log_perday[~log_perday["day"].isin(["Saturday", "Sunday"])]
+log_perday.day = log_perday.day.astype("category")
+log_perday.day.cat.set_categories(days, inplace=True)
+log_perday = log_perday.sort_values(["day"])
+
+sns.barplot(data = log_perday, y = "day", x = "count")   
+plt.tight_layout()
+plt.show()
+```
+
+Certainly caveats apply here. My keyword choices reflect a specific interpretation of limnology, my journal choices are limited to only a few dozen titles, and I used my personal judgement to tune the papers that were posted. Anyone interested in running their own feed either on limnology or some other topic can do so by forking the code at https://github.com/jsta/limnopapers and adjusting the feed choices in `feeds.csv` and/or the keywords in `keywords.csv`.
+
+## Further reading
+
+https://stmorse.github.io/journal/tidyverse-style-pandas.html
+
+https://github.com/roblanf/phypapers
+
+https://github.com/jsta/limnopapers

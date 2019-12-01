@@ -1,0 +1,108 @@
+---
+title: Limnology papers year end review 2019
+author: ~
+date: '2019-12-01'
+slug: limnology-papers-year-end-review-with-a-python-twitter-rss-feed
+categories: []
+tags: []
+---
+
+
+
+<p>The <a href="https://twitter.com/limnopapers">limnopapers</a> twitter feed underwent a comprehensive revamp in December 2018. I replaced the click-based framework detailed by Rob Lanfear <a href="https://github.com/roblanf/phypapers">here</a> with a custom scripted solution using a <code>feedparser</code> and <code>python-twitter</code> backend. Rather than tediously adding <em>include</em> and <em>exclude</em> keywords through a web gui and being limited to 5 feeds, this new solution allows easy control over keywords and tracking as many feeds as you want. In addition to custom feed handling in the new system (I can now deal with feeds that come in a variety of formats instead of being limited to the dlvr.it parser) there is a built-in system for logging tweets that have passed through the keyword filters and can be considered “limnology papers”.</p>
+<p><strong>In the following post, I take a look at this log to to get a sense of Limnology in 2019.</strong></p>
+<pre class="python"><code>import pandas as pd
+import seaborn as sns
+import wordcloud</code></pre>
+<pre class="python"><code>log_raw = pd.read_csv(&quot;log.csv&quot;)</code></pre>
+<pre class="python"><code>log = (log_raw
+       .loc[log_raw[&quot;posted&quot;] == &quot;y&quot;])
+log[&quot;date&quot;] = pd.to_datetime(log[&quot;date&quot;])</code></pre>
+<p>First, lets look at the top papers of the year as measured by twitter likes:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+AquaSat: a dataset to enable remote sensing of water quality for inland waters. Water Resources Research. <a href="https://t.co/RNxifhH0qi">https://t.co/RNxifhH0qi</a>
+</p>
+— limnopapers (<span class="citation">@limno_papers</span>) <a href="https://twitter.com/limno_papers/status/1183731513084600321?ref_src=twsrc%5Etfw">October 14, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Large spatial and temporal variability of carbon dioxide and methane in a eutrophic lake. Journal of Geophysical Research: Biogeosciences. <a href="https://t.co/uHyTN6xT4b">https://t.co/uHyTN6xT4b</a>
+</p>
+— limnopapers (<span class="citation">@limno_papers</span>) <a href="https://twitter.com/limno_papers/status/1146216503416676352?ref_src=twsrc%5Etfw">July 3, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Process‐guided deep learning predictions of lake water temperature. Water Resources Research. <a href="https://t.co/h8rBDbVaKy">https://t.co/h8rBDbVaKy</a>
+</p>
+— limnopapers (<span class="citation">@limno_papers</span>) <a href="https://twitter.com/limno_papers/status/1193879047975112705?ref_src=twsrc%5Etfw">November 11, 2019</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Next, lets look at the top journals of the year as measured by number of papers and average likes per paper. Looks like <em>Water Resources Research</em> is leading the pack with the most limnopapers in 2019 but <em>Hydrobiologia</em> papers are getting the most likes.</p>
+<pre class="python"><code>log_perjournal = (log
+                  .groupby([&quot;dc_source&quot;])
+                  .agg([&quot;count&quot;])
+                  .reset_index()
+                  .iloc[:, 0:2])
+log_perjournal.columns = [&quot;dc_source&quot;, &quot;count&quot;]
+log_perjournal = log_perjournal.sort_values(by = [&quot;count&quot;], ascending = False)
+
+sns.barplot(data = log_perjournal.query(&quot;count &gt; 6&quot;), y = &quot;dc_source&quot;, x = &quot;count&quot;)   
+plt.xlabel(&quot;count&quot;)
+plt.ylabel(&quot;&quot;)
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Next, lets look at a wordcloud of paper titles to see common themes:</p>
+<pre class="python"><code>wc = wordcloud.WordCloud().generate(log[&quot;title&quot;].str.cat(sep=&quot; &quot;))
+plt.imshow(wc)
+plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.</p>
+<pre class="python"><code>log_cumsum = (log
+              .groupby([&quot;date&quot;])
+              .agg([&quot;count&quot;])
+              .loc[:, [&quot;date&quot;, &quot;title&quot;]]
+              .cumsum())
+
+chart = (log_cumsum
+         .pipe((sns.lineplot, &quot;data&quot;))
+         .legend_.remove())
+plt.xlabel(&quot;&quot;)
+plt.ylabel(&quot;Cumulative tweets&quot;)
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>…and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.</p>
+<pre class="python"><code># per day stats
+# calculate day of the week from date, group per day and sum
+log[&#39;day_of_week&#39;] = log[&#39;date&#39;].dt.day_name()
+days = [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;]
+
+log_perday = (log
+              .groupby([&quot;day_of_week&quot;])
+              .agg([&quot;count&quot;])
+              .loc[:, [&quot;title&quot;]]
+              .reset_index()
+              .iloc[:, 0:2])
+log_perday.columns = [&quot;day&quot;, &quot;count&quot;]
+
+log_perday = log_perday[~log_perday[&quot;day&quot;].isin([&quot;Saturday&quot;, &quot;Sunday&quot;])]
+log_perday.day = log_perday.day.astype(&quot;category&quot;)
+log_perday.day.cat.set_categories(days, inplace=True)
+log_perday = log_perday.sort_values([&quot;day&quot;])
+
+sns.barplot(data = log_perday, y = &quot;day&quot;, x = &quot;count&quot;)   
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Certainly caveats apply here. My keyword choices reflect a specific interpretation of limnology, my journal choices are limited to only a few dozen titles, and I used my personal judgement to tune the papers that were posted. Anyone interested in running their own feed either on limnology or some other topic can do so by forking the code at <a href="https://github.com/jsta/limnopapers" class="uri">https://github.com/jsta/limnopapers</a> and adjusting the feed choices in <code>feeds.csv</code> and/or the keywords in <code>keywords.csv</code>.</p>
+<div id="further-reading" class="section level2">
+<h2>Further reading</h2>
+<p><a href="https://stmorse.github.io/journal/tidyverse-style-pandas.html" class="uri">https://stmorse.github.io/journal/tidyverse-style-pandas.html</a></p>
+<p><a href="https://github.com/roblanf/phypapers" class="uri">https://github.com/roblanf/phypapers</a></p>
+<p><a href="https://github.com/jsta/limnopapers" class="uri">https://github.com/jsta/limnopapers</a></p>
+</div>
