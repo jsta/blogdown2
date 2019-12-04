@@ -109,9 +109,10 @@ plt.ylabel("")
 plt.tight_layout()
 plt.show()
 
+
+plt.savefig("static/images/paper_count.png")
 ```
 
-![](../images/paper_count.png)
 
 ```{python, eval=FALSE, include=FALSE}
 # calculate average likes per journal
@@ -211,8 +212,6 @@ plt.show()
 
 ```
 
-![](../images/journal_ranking.png)
-
 Next, lets look at a wordcloud of paper titles to see common themes:
 
 ```{python, eval=FALSE}
@@ -221,7 +220,6 @@ plt.imshow(wc)
 plt.show()
 ```
 
-![](../images/wordcloud.png)
 
 To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.
 
@@ -241,7 +239,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](../images/cumul_tweets.png)
 
 ...and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.
 
@@ -268,8 +265,6 @@ sns.barplot(data = log_perday, y = "day", x = "count")
 plt.tight_layout()
 plt.show()
 ```
-
-![](../images/doy.png)
 
 Certainly caveats apply here. My keyword choices reflect a specific interpretation of limnology, my journal choices are limited to only a few dozen titles, and I used my personal judgement to tune the papers that were posted. Anyone interested in running their own feed either on limnology or some other topic can do so by forking the code at https://github.com/jsta/limnopapers and adjusting the feed choices in `feeds.csv` and/or the keywords in `keywords.csv`.
 
