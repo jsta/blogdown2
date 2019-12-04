@@ -8,6 +8,8 @@ Create a new blog post using:
 blogdown::new_post("This is a post title", ext = ".Rmd", subdir = "blog")
 ```
 
+Commit Rmd + html at `content/blog/*` as well as image files at `static/blog/title`
+
 Preview/build post with:
 
 ```
