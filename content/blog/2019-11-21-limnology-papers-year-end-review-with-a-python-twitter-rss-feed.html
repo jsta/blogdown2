@@ -53,14 +53,14 @@ sns.barplot(data = log_perjournal.query(&quot;count &gt; 6&quot;), y = &quot;dc_
 plt.xlabel(&quot;count&quot;)
 plt.ylabel(&quot;&quot;)
 plt.tight_layout()
-plt.show()
-
-
-plt.savefig(&quot;static/images/paper_count.png&quot;)</code></pre>
+plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Next, lets look at a wordcloud of paper titles to see common themes:</p>
 <pre class="python"><code>wc = wordcloud.WordCloud().generate(log[&quot;title&quot;].str.cat(sep=&quot; &quot;))
 plt.imshow(wc)
 plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.</p>
 <pre class="python"><code>log_cumsum = (log
               .groupby([&quot;date&quot;])
@@ -75,6 +75,7 @@ plt.xlabel(&quot;&quot;)
 plt.ylabel(&quot;Cumulative tweets&quot;)
 plt.tight_layout()
 plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>…and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.</p>
 <pre class="python"><code># per day stats
 # calculate day of the week from date, group per day and sum
@@ -97,6 +98,7 @@ log_perday = log_perday.sort_values([&quot;day&quot;])
 sns.barplot(data = log_perday, y = &quot;day&quot;, x = &quot;count&quot;)   
 plt.tight_layout()
 plt.show()</code></pre>
+<p><img src="/blog/2019-11-21-limnology-papers-year-end-review-with-a-python-twitter-rss-feed_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>Certainly caveats apply here. My keyword choices reflect a specific interpretation of limnology, my journal choices are limited to only a few dozen titles, and I used my personal judgement to tune the papers that were posted. Anyone interested in running their own feed either on limnology or some other topic can do so by forking the code at <a href="https://github.com/jsta/limnopapers" class="uri">https://github.com/jsta/limnopapers</a> and adjusting the feed choices in <code>feeds.csv</code> and/or the keywords in <code>keywords.csv</code>.</p>
 <div id="further-reading" class="section level2">
 <h2>Further reading</h2>

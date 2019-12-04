@@ -94,7 +94,7 @@ d[0:3]
 
 Next, lets look at the top journals of the year as measured by number of papers and average likes per paper. Looks like  _Water Resources Research_ is leading the pack with the most limnopapers in 2019 but _Hydrobiologia_ papers are getting the most likes.
 
-```{python, eval=FALSE}
+```{python, eval=TRUE}
 log_perjournal = (log
                   .groupby(["dc_source"])
                   .agg(["count"])
@@ -109,8 +109,6 @@ plt.ylabel("")
 plt.tight_layout()
 plt.show()
 
-
-plt.savefig("static/images/paper_count.png")
 ```
 
 
@@ -173,7 +171,7 @@ with open ('avg_likes_2019', 'rb') as fp:
     res = pickle.load(fp)
 ```
 
-```{python echo=FALSE, eval=FALSE}
+```{python echo=FALSE, eval=TRUE}
 avg_favs = (res
 .groupby(['dc_source'])['fav_count']
 .mean()
@@ -214,7 +212,7 @@ plt.show()
 
 Next, lets look at a wordcloud of paper titles to see common themes:
 
-```{python, eval=FALSE}
+```{python, eval=TRUE}
 wc = wordcloud.WordCloud().generate(log["title"].str.cat(sep=" "))
 plt.imshow(wc)
 plt.show()
@@ -223,7 +221,7 @@ plt.show()
 
 To wrap things up, lets look at a cumulative timeline of limnopapers tweets. We saw about 600 papers in 2019.
 
-```{python, eval=FALSE}
+```{python, eval=TRUE}
 log_cumsum = (log
               .groupby(["date"])
               .agg(["count"])
@@ -239,10 +237,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-
 ...and there was no real pattern in the day of the week when most papers are posted. Looks like Friday is the most popular day followed closely by Tuesday.
 
-```{python, eval=FALSE}
+```{python, eval=TRUE}
 # per day stats
 # calculate day of the week from date, group per day and sum
 log['day_of_week'] = log['date'].dt.day_name()
