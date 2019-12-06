@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li> Wagner, T., <7 authors>, <b>Stachelek, J.</b>, Cheruvelil, K.S., Filstrup, C.T., Lapierre, J.F., Liu, B., Soranno, P.A., Tan, P.N., Wang, Q., Webster, K.,  Zhou, J. In press. Increasing accuracy of lake nutrient predictions in thousands of lakes by leveraging water clarity data. <u><i>Limnology and Oceanography: Letters</i></u>. 
+<li> Wagner, T., <7 authors>, <b>Stachelek, J.</b>, Cheruvelil, K.S., Filstrup, C.T., Lapierre, J.F., Liu, B., Soranno, P.A., Tan, P.N., Wang, Q., Webster, K.,  Zhou, J. In press. Increasing accuracy of lake nutrient predictions in thousands of lakes by leveraging water clarity data. <u><i>Limnology and Oceanography: Letters</i></u>  <a target="_blank" href="https://doi.org/10.1002/lol2.10134"><i class="ai ai-doi"></i></a>. 
 </li>
 
 <li> McCullough, I., King K., <b>Stachelek, J.</b>, Diaz, J., Sorrano, P.A., Cheruvelil K.S. 2019. Applying the patch-matrix model to lakes: a connectivity-based conservation framework. <u><i>Landscape Ecology</i></u>. <a target="_blank" href="https://doi.org/10.1007/s10980-019-00915-7"><i class="ai ai-doi"></i></a>
