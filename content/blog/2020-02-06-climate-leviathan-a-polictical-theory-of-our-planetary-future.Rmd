@@ -1,0 +1,28 @@
+---
+title: 'Book review - Climate leviathan: a polictical theory of our planetary future.'
+author: ~
+date: '2020-02-06'
+slug: climate-leviathan-a-polictical-theory-of-our-planetary-future
+categories: []
+tags: []
+---
+
+Many scientists are deeply knowledgable about the effects of climate change on biological systems. As a group, they have generated an immense wealth of accumulated knowledge that cuts across organisms, ecosystem types, and regions. Despite the major role scientists have played in generating knowledge about climate change outcomes, my sense is that few scientists have devoted serious consideration to why, given the accumulate evidenced, nothing is being done to mitigate climate change. They look at international agreements that seem powerless and ineffective and wonder: **Is the reason for a lack of emissions reductions to mitigate climate change simply a lack of "political will"?** I recently read the book [Climate levaiathan: a political theory of our planetary future](https://www.versobooks.com/books/2545-climate-leviathan) by Joel Wainwright and Geoff Mann that tackles this very question. 
+
+The authors's main argument that "international aggrements [i.e. the Paris Agreement] depend almost wholly on the comodification of carbon in every ecosystem and economy". However, such solutions are doomed to fail because the optimal self-interest strategy of participants (i.e. individual countries) in such international agreements is "to emit freely and to free-ride on the carbon controls of others". Given this distinctly political framing, Wainwright and Mann argue that, "if the market is a apolitical then it is ridiculous to suggest it as a solution to what is in many ways today's defining political question." 
+
+The problem according to Wainwright and Mann is that: "to many, market-based approaches seem like not only the best option but also the _only_ option". Therefore, a lack of emissions controls can be attributed not not to a lack of political will but rather a lack of _political imagination_. Much of the remainder of the book is dedicated to exactly this type of imagination excercise. They describe three political futures that create the conditions to "save" the planet:
+
+1. A world where we rely on the markets to "save" us; Nations remain divided and we have ceded contol of the planet to "economic elites". There is a heavy reliance on geoengineering. I think of this as the Elon Musk scenario. 
+
+> "The only possible enforcement mechanism for [international agreements] to work is to further concentrate power and resources in the hands of elites thus rendering us even more beholden to the political status quo". 
+
+2. A world where nation-based autonomy is ceded to a global goverment (or an alliance of 1-2 nations) with absolute power to enforce emissions reductions. This scenario "saves" us but the global government rules with an iron fist.
+
+3. Finally, a world where **massive** protests (i.e. general strikes) shut down entire economies to force a different (non-capitalist) climate-justice based future. This senario would expressly exclude "elites" like Justin Trudeau and the Pope. They would not be given power and would not participate in the protests as it would not be in their self-interest.
+
+> "If the need to rapidly reduce carbon emissions is the world's greater collective action problem, then the prevailing patterns of adaption - which entrench profound inequalities - reflect the premeditated refusal of elites to solve it. The relatively poor and least powerful are left to fend for themselves. [...] During Superstorm Sandy, huge areas of New York and New Jersery were massively damaged. However, the global headquarters of Goldman Sachs remained intact and powered by a bank of backup generators. They recognize that the present world order is incapable of stemming accelerating climate change." 
+
+Some scientists may be unused to the kind of imagination advocated for in the book and some may come away from this book pessimistic about our climate future. Others may find political imagination a source of hope that strengthens their resolve to do good science. The next step is for scientists to imagine for themselves what will their science look like in the climate future and what role their science will play in informing action if any. 
+
+> "The impossibility of accurate prediction does not mean we should throw up our hands and give up trying to anticipate a range of futures. Instead, the challenge of all climate futures centers on the question of the political. **How, the world with respond _politically_ to climate change and its effects is the key question in every model or theory." 
