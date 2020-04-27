@@ -6,7 +6,7 @@ disable_highlight: true
 ---
 
 <div id="widerimg">
-    <img src="/images/Picture_021.jpg">
+    <img src="/images/Picture_021.jpg" alt="Ocean scene">
 </div>
 
 <center><strong> Aquatic Ecology | Coastal Science | Open Data | Statistics </strong></center>
