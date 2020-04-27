@@ -48,7 +48,7 @@ disable_comments: true
 <li>Collins, S.M., Yuan, S., Tan, P.N., Oliver, S.K., Lapierre, J.F., Cheruvelil, K.S., Fergus, C.E., Skaff, N.K., <b>Stachelek, J.</b>, Wagner, T., Soranno, P.A. 2019. Winter Precipitation and Summer Temperature Predict Lake Water Quality at Macroscales. <i>Water Resources Research</i>. <a aria-label="doi link" target="_blank" href="https://doi.org/10.1029/2018WR023088"><i aria-hidden="true" class="ai ai-doi" title="doi link"></i></a>
 </li>
 
-<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <i>Limnology and Oceanography</i>. <a aria-label="doi link" target="_blank" href="https://doi.org/10.1002/lno.11137"><i aria-hidden="true" class="ai ai-doi" title="doi link"></i></a> <a aria-label="download link" target="_blank" href="../pdf/2019_stachelek-soranno_preprint.pdf"><i aria-hidden="true" class="fa  fa-download"></i></a>
+<li><b>Stachelek, J.</b>, Soranno, P.A. 2019. Does freshwater connectivity influence phosphorus retention in lakes? <i>Limnology and Oceanography</i>. <a aria-label="doi link" target="_blank" href="https://doi.org/10.1002/lno.11137"><i aria-hidden="true" class="ai ai-doi" title="doi link"></i></a> <a aria-label="download link" target="_blank" href="../pdf/2019_stachelek-soranno_preprint.pdf"><i aria-hidden="true" class="fa fa-download" title="download link"></i></a>
 </li>
 
 <li>Ward, N.K., Fitchett, L., Hart, J.A., Shu, L., <b>Stachelek, J.</b>, <10 authors>, Weathers, K.C. 2018. Integrating fast and slow processes is essential for simulating human-freshwater interactions. <i>Ambio</i>. <a aria-label="doi link" target="_blank" href="https://doi.org/10.1007/s13280-018-1136-6"><i aria-hidden="true" class="ai ai-doi" title="doi link"></i></a>
