@@ -27,6 +27,8 @@ disable_comments: true
 
 <ol reversed>
 
+<li><b>Stachelek, J.</b>, Weng, W., Carey, C.C., Kemanian, A.R., Cobourn, K.M., Wagner, T., Weathers, K.C., Soranno, P.A., In Press. Granular measures of agricultural land-use influence lake nitrogen and phosphorus differently at macroscales. <i><u>Ecological Applications.</i></u>
+
 <li>Servais, S., Kominoski, J.S., Coronado-Molina, C., Bauman, L., Davis, S.E., Gaiser, E.E., Kelly, S., Madden, C., Mazzei, V., Rudnik, D., Santamaria, F., Sklar, F.H., <b>Stachelek, J.</b>, Troxler, T.G., Wilson, B.J., 2020. Effects of saltwater pulses on soil microbial enzymes and organic matter breakdown in freshwater and brackish coastal wetlands. <i><u>Estuaries and Coasts.</i></u> <a target="_blank" href="https://doi.org/10.1007/s12237-020-00708-1"><i class="ai ai-doi"></i></a>
 
 <li> Soranno, P.A., Cheruvelil, K.S., Liu, B., Wang, Q., Tan, P.N., Zhou, J., King, K.B.S., McCullough, I.M., <b>Stachelek, J.</b>, Bartley, M., Filstrup, C.T., Hanks, E.M., Lapierre, J.F., Lottig, N.R., Schliep, E.M., Wagner, T., Webster, K.E., 2020. Ecological prediction at macroscales using big data: Does sampling design matter? <u><i>Ecological Applications</i></u> <a target="_blank" href="https://doi.org/10.1002/eap.2123"><i class="ai ai-doi"></i></a>
