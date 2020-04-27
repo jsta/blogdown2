@@ -44,7 +44,7 @@ rssLimit = 30
     url = "logo.png"
     width = 50
     height = 50
-    alt = "Logo link to homepage"
+    alt = ""
     
     [params.social]
     twitter = "__jsta"
