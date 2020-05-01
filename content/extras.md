@@ -4,8 +4,6 @@ title: "Extras"
 
 + [Portfolio](https://jsta.rbind.io/portfolio) - Collection of my favorite self-produced figures
 
-+ [LAGOS](https://lagoslakes.org) - Publicly accessible lake water quality and ecological context data for the US.
-
 + [Data and Models for Limnology](https://jsta.github.io/limnology_models_data/) -  List of publicly available data and models for Limnology
 
 + [Software I Use](https://jsta.rbind.io/usesthis) - A list of software I use
