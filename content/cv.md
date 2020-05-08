@@ -16,7 +16,7 @@ disable_comments: true
 - 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
 - 2004 -- 2008, B.S., Department of Marine Science, University of Maine. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf)
 
-## Work Experience
+## Professional Experience
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
   - Water quality modelling, curating environmental databases, and developing custom GIS visualization tools. 
