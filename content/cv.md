@@ -27,7 +27,7 @@ disable_comments: true
 
 <ol reversed>
 
-<li>Hanson, P. Stillman, A.B., Jia, X., Karpatne, A., Hilary A Dugan, H.A., Carey, C.C., <b>Stachelek, J.</b>, Ward, N.K, Zhang, Y., Read, J.S., Kumar, V., In Press. Predicting lake surface water phosphorus dynamics using process-guided machine learning. <i>Ecological Modelling.</i>
+<li>Hanson, P., Stillman, A.B., Jia, X., Karpatne, A., Dugan, H.A., Carey, C.C., <b>Stachelek, J.</b>, Ward, N.K, Zhang, Y., Read, J.S., Kumar, V., In Press. Predicting lake surface water phosphorus dynamics using process-guided machine learning. <i>Ecological Modelling.</i>
 
 <li><b>Stachelek, J.</b>, Weng, W., Carey, C.C., Kemanian, A.R., Cobourn, K.M., Wagner, T., Weathers, K.C., Soranno, P.A., In Press. Granular measures of agricultural land-use influence lake nitrogen and phosphorus differently at macroscales. <i>Ecological Applications.</i>
 
