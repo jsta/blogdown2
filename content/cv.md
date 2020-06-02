@@ -91,10 +91,10 @@ disable_comments: true
 
 </ol>
   
-### In-Prep (manuscripts available upon request)
+<!---### In-Prep (manuscripts available upon request)
 
 - **Stachelek J.**, Madden, C.J., Kelly, S.P, Blaha, M. Fine-scale relationships between phytoplankton abundance and environmental drivers in Florida Bay, USA.
-- Park, S.R., **Stachelek, J.**, Dunton K.H. Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico.
+- Park, S.R., **Stachelek, J.**, Dunton K.H. Photosynthesis and drought resilience in three emergent vascular plant species common to marshes of the western Gulf of Mexico.--->
 
 ### Datasets
 
