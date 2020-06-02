@@ -98,7 +98,10 @@ disable_comments: true
 
 ### Datasets
 
+- **Stachelek J.** 2019. Freshwater connectivity and stream morphology metrics for Northeast and Midwestern US lakes. [https://doi.org/10.5281/zenodo.2554212](https://doi.org/10.5281/zenodo.2554212)
+
 - **Stachelek J**, Ford C, Kincaid D, King K, Miller H, Nagelkirk R. 2017. The National Eutrophication Survey: lake characteristics and historical nutrient concentrations. KNB Data Repository. [http://dx.doi.org/10.5063/F10G3H3Z](http://dx.doi.org/10.5063/F10G3H3Z)
+
 - Madden C, **Stachelek J**, Kelly S, Blaha M. 2017. Florida Bay water quality estimated by underway flow-through measurement. KNB Data Repository. [http://dx.doi.org/10.5063/F11R6NGR](http://dx.doi.org/10.5063/F11R6NGR)
 
 ## Software Experience
