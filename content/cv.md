@@ -1,6 +1,6 @@
 ---
 title: "Curriculum Vitae"
-date: "2017-11-22"
+date: "2020-07-03"
 disable_mathjax: true
 disable_highlight: true
 disable_comments: true
@@ -12,11 +12,13 @@ disable_comments: true
 
 ## Education
 
-- 2016 -- 2020 (expected), Ph.D., Department of Fisheries and Wildlife (focus on Landscape Limnology), Michigan State University.
+- 2016 -- 2020, Ph.D., Department of Fisheries and Wildlife, Michigan State University.
 - 2009 -- 2012, M.S., Deparment of Marine Science, University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
 - 2004 -- 2008, B.S., Department of Marine Science, University of Maine. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf).
 
 ## Professional Experience
+  
+- 2020 -- Present, Post-doctoral Research Associate, Center for Limnology, University of Wisconsin-Madison
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
   - Water quality modelling, curating environmental databases, and developing custom GIS visualization tools. 
