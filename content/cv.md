@@ -21,7 +21,6 @@ disable_comments: true
 - 2020 -- Present, Post-doctoral Research Associate, Center for Limnology, University of Wisconsin-Madison
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
-  - Water quality modelling, curating environmental databases, and developing custom GIS visualization tools. 
 
 ## Publications
 
