@@ -48,18 +48,4 @@ title: "Software I Use"
 
 [Evolution](https://wiki.gnome.org/Apps/Evolution) - E-mail program with easy custom filters
 
-[Autokey](https://github.com/autokey-py3/autokey) - Remap painful keyboard shortcuts for any program
-
 [rsync](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps) - File backup
-
-## Code training
-
-https://cmdchallenge.com
-
-https://alf.nu/RegexGolf
-
-https://vim-adventures.com/
-
-## Software recommendations
-
-https://alternativeto.net
