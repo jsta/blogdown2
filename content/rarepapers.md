@@ -7,3 +7,5 @@ This list contains some citations for which I have a digital copy but are otherw
 Admiraal, W., 1984. The ecology of estuarine sediment-inhabiting diatoms. Progress in phycological research, pp.269-322.
 
 Allan, P.F., 1950. Ecological bases for land use planning in Gulf coast marshlands. Journal of Soil and Water Conservation. pp.57-62.
+
+Forbes, S.A., 1887. The lake as a microcosm. Bull. Sci. Assoc. (Peoria, IL), 1887, 77–87.
