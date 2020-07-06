@@ -14,6 +14,7 @@ library(NLMR)
 library(raster)
 library(boot)
 library(rgrass7)
+use_sp()
 library(reticulate)
 library(ggplot2)
 library(purrr)
@@ -36,7 +37,7 @@ nlmr_mpd <- function(ncol = 17, nrow = 17, roughness = 0.6) {
 > where the `dimension` value controls the "fractal dimension of surface (2 < D < 3)".
 
 ```{r grass, message=FALSE, results='hide'}
-initGRASS("/usr/lib/grass74", home = tempdir(), override = TRUE)
+initGRASS("/usr/lib/grass78", home = tempdir(), override = TRUE)
 
 raster_template <- as(nlmr_mpd(), "SpatialGridDataFrame")
 

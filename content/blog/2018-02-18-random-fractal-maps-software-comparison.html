@@ -14,13 +14,14 @@ tags: []
 library(raster)
 library(boot)
 library(rgrass7)
+use_sp()
 library(reticulate)
 library(ggplot2)
 library(purrr)
 library(dplyr)
 library(cowplot)</code></pre>
 <div id="nlmr-package-1" class="section level2">
-<h2><a href="https://github.com/marcosci/NLMR">NLMR package</a> <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<h2><a href="https://github.com/marcosci/NLMR">NLMR package</a> <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h2>
 <blockquote>
 <p>where the <code>roughness</code> value controls the “level of spatial autocorrelation”.</p>
 </blockquote>
@@ -29,15 +30,16 @@ library(cowplot)</code></pre>
 }</code></pre>
 </div>
 <div id="grass-r.surf.fractal-2" class="section level2">
-<h2><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html">GRASS r.surf.fractal</a> <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
+<h2><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html">GRASS r.surf.fractal</a> <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h2>
 <blockquote>
 <p>where the <code>dimension</code> value controls the “fractal dimension of surface (2 &lt; D &lt; 3)”.</p>
 </blockquote>
-<pre class="r"><code>initGRASS(&quot;/usr/lib/grass74&quot;, home = tempdir(), override = TRUE)
+<pre class="r"><code>initGRASS(&quot;/usr/lib/grass78&quot;, home = tempdir(), override = TRUE)
 
-raster_template &lt;- as(nlmr_mpd(), &quot;SpatialGridDataFrame&quot;)
-
-grass_mpd &lt;- function(dimension = 2.05){
+raster_template &lt;- as(nlmr_mpd(), &quot;SpatialGridDataFrame&quot;)</code></pre>
+<pre><code>## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.</code></pre>
+<pre class="r"><code>grass_mpd &lt;- function(dimension = 2.05){
   writeRAST(raster_template, &quot;grass_mpd&quot;, flags = &quot;overwrite&quot;)
   execGRASS(&quot;g.region&quot;, raster = &quot;grass_mpd&quot;)
   execGRASS(&quot;r.surf.fractal&quot;, output = &quot;grass_mpd&quot;, flags = &quot;overwrite&quot;, 
@@ -49,7 +51,7 @@ grass_mpd &lt;- function(dimension = 2.05){
 }</code></pre>
 </div>
 <div id="nlmpy-3" class="section level2">
-<h2><a href="https://pypi.python.org/pypi/nlmpy">NLMpy</a> <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></h2>
+<h2><a href="https://pypi.python.org/pypi/nlmpy">NLMpy</a> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></h2>
 <blockquote>
 <p>where the <code>h</code> value controls the “level of spatial autocorrelation in element values”.</p>
 </blockquote>
@@ -64,8 +66,22 @@ nlmpy_mpd &lt;- function(nRow = 18L, nCol = 18L, h = 0.6){
 <p>The following code chunk generates five neutral landscape simulations using each software option.</p>
 <pre class="r"><code># NLMR
 nlmr_mpd_res &lt;- lapply(1:5, function(x) 
-                  as.data.frame(as(nlmr_mpd(), &quot;SpatialPixelsDataFrame&quot;)))
-names(nlmr_mpd_res) &lt;- 1:5
+                  as.data.frame(as(nlmr_mpd(), &quot;SpatialPixelsDataFrame&quot;)))</code></pre>
+<pre><code>## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.
+
+## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.
+
+## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.
+
+## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.
+
+## Warning in nlm_mpd(ncol = ncol, nrow = nrow, roughness = roughness): nlm_mpd
+## changes the dimensions of the RasterLayer if even ncols/nrows are choosen.</code></pre>
+<pre class="r"><code>names(nlmr_mpd_res) &lt;- 1:5
 nlmr_mpd_res &lt;- map2_df(nlmr_mpd_res, names(nlmr_mpd_res), ~ mutate(.x, ID = .y))
 
 # GRASS
@@ -104,8 +120,8 @@ nrow = 3, ncol = 1, labels = c(&quot;NLMR&quot;, &quot;GRASS&quot;, &quot;NLMpy&
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://github.com/marcosci/NLMR" class="uri">https://github.com/marcosci/NLMR</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html" class="uri">https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><a href="https://pypi.python.org/pypi/nlmpy" class="uri">https://pypi.python.org/pypi/nlmpy</a><a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p><a href="https://github.com/marcosci/NLMR">https://github.com/marcosci/NLMR</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html" class="uri">https://grass.osgeo.org/grass74/manuals/r.surf.fractal.html</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://pypi.python.org/pypi/nlmpy" class="uri">https://pypi.python.org/pypi/nlmpy</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
