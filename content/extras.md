@@ -2,7 +2,7 @@
 title: "Extras"
 ---
 
-+ [Portfolio](https://jsta.rbind.io/portfolio) - Collection of my favorite self-produced figures
++ [Figure Portfolio](https://jsta.rbind.io/portfolio) - Collection of my favorite self-produced figures
 
 + [Data and Models for Limnology](https://jsta.github.io/limnology_models_data/) -  List of publicly available data and models for Limnology
 

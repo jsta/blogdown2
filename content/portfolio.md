@@ -1,5 +1,5 @@
 ---
-title: "Portfolio"
+title: "Figure Portfolio"
 ---
 
 # Academic Figures
