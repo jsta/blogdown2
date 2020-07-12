@@ -9,6 +9,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+> TLDR; You can have roxygen automatically build your R data documentation from an external file.
+
 Documenting data is an important part of the R package publishing process. Most packages document their data using a named list so that they have a roxygen block that looks like this:
 
 ```
@@ -18,9 +20,9 @@ Documenting data is an important part of the R package publishing process. Most 
 #' }
 ```
 
-Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). A project I'm working on has 10 or so datasets, which are updated frequently, and have over 20 different variables.
+Writing out named lists in this way is fine for small and infrequently updated data. However, manually entering the information in the named list and the fact that it is non-tabular makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). 
 
-We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
+We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. Then we could pass our data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
 
 ```{r }
 # modified from http://r-pkgs.had.co.nz/man.html
@@ -32,10 +34,16 @@ tabular <- function(df, ...) {
 
   cols <- lapply(df, format, ...)
   contents <- do.call("paste",
-    c(cols, list(sep = " \\tab ", collapse = "\\cr\n  ")))
+                      c(cols, list(sep = " \\tab ", collapse = "\\cr\n  ")))
+  col_names <- paste0("\\bold{",
+                      do.call("paste",
+                              c(names(df), list(sep = "} \\tab \\bold{", collapse = "\\cr\n  "))),
+                      "} \\cr")
 
-  paste("\\tabular{", paste(col_align, collapse = ""), "}{\n  ",
-    contents, "\n}\n", sep = "")
+  paste("\\tabular{", paste(col_align, collapse = ""), "}{\n",
+        col_names,
+        "\n",
+        contents, "\n}\n", sep = "")
 }
 ```
 
@@ -52,7 +60,7 @@ dictionary <- dplyr::bind_rows(
 cat(tabular(dictionary))
 ```
 
-The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. I discovered an automated solution using (a little known) `@eval` roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the [`population` dataset](https://tidyr.tidyverse.org/reference/who.html) contained in the `tidyr` R package. This strategy is implemented in a fully functioning R package at https://github.com/jsta/autodatadoc.
+The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. _A project I'm working on has 10 datasets, which are updated frequently, and have over 20 different variables each._ I discovered an automated solution using (a little known) `@eval` roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the [`population` dataset](https://tidyr.tidyverse.org/reference/who.html) contained in the `tidyr` R package. The strategy I describe is implemented in a fully functioning R package at https://github.com/jsta/autodatadoc.
 
 ## Step 1: Create a csv data dictionary
 
@@ -76,7 +84,7 @@ We should probably store our data dictionary under version control alongside our
 
 ## Step 2: Write a function to pass a tabular representation of our data dictionary as individual lines
 
-We need to write a function to locate our data dictionary (in the `data-raw` folder), read the contents, pass it through our `tabular` function above, and return the output as individual roxygen lines:
+We need to write a function to locate our data dictionary, read the contents, pass it through our `tabular` function above, and return the output as individual roxygen lines:
 
 ```{r, eval=FALSE}
 get_table_metadata <- function(path){
@@ -97,15 +105,22 @@ get_table_metadata(dictionary)
 
 ## Ste 3: Automatically include this output in a roxygen block using the  `@eval` tag. 
 
-To have this function evaluated during the course of roxygen building, we include the following in our code:
+To have this function evaluated during the course of roxygen building, we include an `@eval` tag in our roxygen code:
 
 ```r
-#' @eval c("@details", get_table_metadata("data-raw/dictionary.csv"))
+#' World Health Organization TB data
+#'
+#' A subset of data from the World Health Organization Global Tuberculosis
+#' Report, and accompanying global populations.
+#'
+#' @eval c("@format", get_table_metadata("data-raw/dictionary.csv"))
+#'
+"population"
 ```
 
 ## Step 4: Run `roxygen::document` and/or `pkgdown::build_site`
 
-Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs (hooray!):
+Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs :tada:
 
 ```{r, echo=FALSE}
 library(printr)
@@ -114,9 +129,9 @@ library(printr)
 
 ## Further reading
 
-https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries
-
 https://github.com/r-lib/roxygen2/issues/645
+
+https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries
 
 https://blog.r-hub.io/2020/05/29/distribute-data/
 
