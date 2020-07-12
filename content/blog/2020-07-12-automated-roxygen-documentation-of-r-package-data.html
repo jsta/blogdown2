@@ -1,0 +1,161 @@
+---
+title: Automated roxygen documentation of R package data
+author: null
+date: '2020-07-12'
+slug: automated-roxygen-documentation-of-r-package-data
+categories: []
+tags: []
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<p>Documenting data is an important part of the R package publishing process. Most packages document their data using a named list so that they have a roxygen block that looks like this:</p>
+<pre><code>#&#39; \describe{
+#&#39;   \item{One}{Description of the One variable}
+#&#39;   \item{Two}{Description of the Two variable}
+#&#39; }</code></pre>
+<p>Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">data dictionaries</a>. We can make the storage and entry of data documentation cleaner and enable reuse by storing the data dictionary in a separate file from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style <code>\tabular</code> object that can be manually pasted into a roxygen block (See <a href="http://r-pkgs.had.co.nz/man.html" class="uri">http://r-pkgs.had.co.nz/man.html</a>):</p>
+<pre class="r"><code># modified from http://r-pkgs.had.co.nz/man.html
+tabular &lt;- function(df, ...) {
+  stopifnot(is.data.frame(df))
+
+  align &lt;- function(x) if (is.numeric(x)) &quot;r&quot; else &quot;l&quot;
+  col_align &lt;- vapply(df, align, character(1))
+
+  cols &lt;- lapply(df, format, ...)
+  contents &lt;- do.call(&quot;paste&quot;,
+    c(cols, list(sep = &quot; \\tab &quot;, collapse = &quot;\\cr\n  &quot;)))
+
+  paste(&quot;\\tabular{&quot;, paste(col_align, collapse = &quot;&quot;), &quot;}{\n  &quot;,
+    contents, &quot;\n}\n&quot;, sep = &quot;&quot;)
+}</code></pre>
+<p>The output would be manually copy-pasted into roxygen code looking like this:</p>
+<pre class="r"><code>cat(tabular(dictionary))</code></pre>
+<pre><code>## \tabular{ll}{
+##   One \tab Description of the One variable\cr
+##   Two \tab Description of the Two variable
+## }</code></pre>
+<p>The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. I discovered an automated solution using (a little known) <code>@eval</code> roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the <a href="https://tidyr.tidyverse.org/reference/who.html"><code>population</code> dataset</a> contained in the <code>tidyr</code> R package. This strategy is implemented in a fully functioning R package at <a href="https://github.com/jsta/autodatadoc" class="uri">https://github.com/jsta/autodatadoc</a>.</p>
+<div id="step-1-create-a-csv-data-dictionary" class="section level2">
+<h2>Step 1: Create a csv data dictionary</h2>
+<p>Most people will use a spreadsheet program to manually create their data dictionary. An alternative approach is to use a more complex tool such as the <a href="https://github.com/dmrodz/dataMeta">dataMeta</a> R package or <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">some other external tool</a> besides a spreadsheet program.</p>
+<p>Our example data has a data dictionary that looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">country</td>
+<td align="left">Country name</td>
+</tr>
+<tr class="even">
+<td align="left">year</td>
+<td align="left">Year</td>
+</tr>
+<tr class="odd">
+<td align="left">population</td>
+<td align="left">Population</td>
+</tr>
+</tbody>
+</table>
+<p>We should probably store our data dictionary under version control alongside our package. This is conventionally done by storing it in the <code>data-raw</code> folder.</p>
+</div>
+<div id="step-2-write-a-function-to-pass-a-tabular-representation-of-our-data-dictionary-as-individual-lines" class="section level2">
+<h2>Step 2: Write a function to pass a tabular representation of our data dictionary as individual lines</h2>
+<p>We need to write a function to locate our data dictionary (in the <code>data-raw</code> folder), read the contents, pass it through our <code>tabular</code> function above, and return the output as individual roxygen lines:</p>
+<pre class="r"><code>get_table_metadata &lt;- function(path){
+  dt &lt;- read.csv(path, stringsAsFactors = FALSE)
+  paste0(readLines(textConnection(tabular(dt))))
+}
+
+get_table_metadata(&quot;data-raw/dictionary.csv&quot;)</code></pre>
+<pre><code>## [1] &quot;\\tabular{ll}{&quot;                      &quot;  country    \\tab Country name\\cr&quot;
+## [3] &quot;  year       \\tab Year        \\cr&quot; &quot;  population \\tab Population  &quot;    
+## [5] &quot;}&quot;                                   &quot;&quot;</code></pre>
+</div>
+<div id="ste-3-automatically-include-this-output-in-a-roxygen-block-using-the-eval-tag." class="section level2">
+<h2>Ste 3: Automatically include this output in a roxygen block using the <code>@eval</code> tag.</h2>
+<p>To have this function evaluated during the course of roxygen building, we include the following in our code:</p>
+<pre class="r"><code>#&#39; @eval c(&quot;@details&quot;, get_table_metadata(&quot;data-raw/dictionary.csv&quot;))</code></pre>
+</div>
+<div id="step-4-run-roxygendocument-andor-pkgdownbuild_site" class="section level2">
+<h2>Step 4: Run <code>roxygen::document</code> and/or <code>pkgdown::build_site</code></h2>
+<p>Now when we build the documentation with roxygen::document() <code>@eval</code> will evaluate the function and include a nicely formatted data dictionary table in our docs (hooray!):</p>
+<div class="r-help-page">
+<table width="100%" summary="page for population">
+<tr>
+<td>
+population
+</td>
+<td style="text-align: right;">
+R Documentation
+</td>
+</tr>
+</table>
+<h2>
+World Health Organization TB data
+</h2>
+<h3>
+Description
+</h3>
+<p>
+A subset of data from the World Health Organization Global Tuberculosis
+Report, and accompanying global populations.
+</p>
+<h3>
+Usage
+</h3>
+<pre class="r">
+population
+</pre>
+<h3>
+Format
+</h3>
+<table summary="Rd table">
+<tr>
+<td style="text-align: left;">
+<b>name</b>
+</td>
+<td style="text-align: left;">
+<b>description</b>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+country
+</td>
+<td style="text-align: left;">
+Country name
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+year
+</td>
+<td style="text-align: left;">
+Year
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+population
+</td>
+<td style="text-align: left;">
+Population
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="further-reading" class="section level2">
+<h2>Further reading</h2>
+<p><a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries" class="uri">https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries</a></p>
+<p><a href="https://github.com/r-lib/roxygen2/issues/645" class="uri">https://github.com/r-lib/roxygen2/issues/645</a></p>
+<p><a href="https://blog.r-hub.io/2020/05/29/distribute-data/" class="uri">https://blog.r-hub.io/2020/05/29/distribute-data/</a></p>
+</div>

@@ -1,0 +1,121 @@
+---
+title: Automated roxygen documentation of R package data
+author: null
+date: '2020-07-12'
+slug: automated-roxygen-documentation-of-r-package-data
+categories: []
+tags: []
+editor_options: 
+  chunk_output_type: console
+---
+
+Documenting data is an important part of the R package publishing process. Most packages document their data using a named list so that they have a roxygen block that looks like this:
+
+```
+#' \describe{
+#'   \item{One}{Description of the One variable}
+#'   \item{Two}{Description of the Two variable}
+#' }
+```
+
+Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). We can make the storage and entry of data documentation cleaner and enable reuse by storing the data dictionary in a separate file from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
+
+```{r }
+# modified from http://r-pkgs.had.co.nz/man.html
+tabular <- function(df, ...) {
+  stopifnot(is.data.frame(df))
+
+  align <- function(x) if (is.numeric(x)) "r" else "l"
+  col_align <- vapply(df, align, character(1))
+
+  cols <- lapply(df, format, ...)
+  contents <- do.call("paste",
+    c(cols, list(sep = " \\tab ", collapse = "\\cr\n  ")))
+
+  paste("\\tabular{", paste(col_align, collapse = ""), "}{\n  ",
+    contents, "\n}\n", sep = "")
+}
+```
+
+The output would be manually copy-pasted into roxygen code looking like this:
+
+```{r echo=FALSE}
+dictionary <- dplyr::bind_rows(
+  c(name = "One", description = "Description of the One variable"),
+  c(name = "Two", description = "Description of the Two variable")
+)
+```
+
+```{r }
+cat(tabular(dictionary))
+```
+
+The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. I discovered an automated solution using (a little known) `@eval` roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the [`population` dataset](https://tidyr.tidyverse.org/reference/who.html) contained in the `tidyr` R package. This strategy is implemented in a fully functioning R package at https://github.com/jsta/autodatadoc.
+
+## Step 1: Create a csv data dictionary
+
+Most people will use a spreadsheet program to manually create their data dictionary. An alternative approach is to use a more complex tool such as the [dataMeta](https://github.com/dmrodz/dataMeta) R package or [some other external tool](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries) besides a spreadsheet program.
+
+```{r, echo=FALSE}
+dictionary <- dplyr::bind_rows(
+  c(name = "country", description = "Country name"), 
+  c(name = "year", description = "Year"), 
+  c(name = "population", description = "Population") 
+)
+```
+
+Our example data has a data dictionary that looks like this:
+
+```{r, echo=FALSE}
+knitr::kable(dictionary)
+```
+
+We should probably store our data dictionary under version control alongside our package. This is conventionally done by storing it in the `data-raw` folder.
+
+## Step 2: Write a function to pass a tabular representation of our data dictionary as individual lines
+
+We need to write a function to locate our data dictionary (in the `data-raw` folder), read the contents, pass it through our `tabular` function above, and return the output as individual roxygen lines:
+
+```{r, eval=FALSE}
+get_table_metadata <- function(path){
+  dt <- read.csv(path, stringsAsFactors = FALSE)
+  paste0(readLines(textConnection(tabular(dt))))
+}
+
+get_table_metadata("data-raw/dictionary.csv")
+```
+
+```{r, echo=FALSE}
+get_table_metadata <- function(dt){
+  paste0(readLines(textConnection(tabular(dt))))
+}
+
+get_table_metadata(dictionary)
+```
+
+## Ste 3: Automatically include this output in a roxygen block using the  `@eval` tag. 
+
+To have this function evaluated during the course of roxygen building, we include the following in our code:
+
+```r
+#' @eval c("@details", get_table_metadata("data-raw/dictionary.csv"))
+```
+
+## Step 4: Run `roxygen::document` and/or `pkgdown::build_site`
+
+Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs (hooray!):
+
+```{r, echo=FALSE}
+library(printr)
+?autodatadoc::population
+```
+
+## Further reading
+
+https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries
+
+https://github.com/r-lib/roxygen2/issues/645
+
+https://blog.r-hub.io/2020/05/29/distribute-data/
+
+
