@@ -18,7 +18,9 @@ Documenting data is an important part of the R package publishing process. Most 
 #' }
 ```
 
-Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). We can make the storage and entry of data documentation cleaner and enable reuse by storing the data dictionary in a separate file from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
+Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). A project I'm working on has 10 or so datasets, which are updated frequently, and have over 20 different variables.
+
+We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
 
 ```{r }
 # modified from http://r-pkgs.had.co.nz/man.html

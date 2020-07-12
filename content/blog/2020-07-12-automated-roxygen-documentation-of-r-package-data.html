@@ -16,7 +16,8 @@ editor_options:
 #&#39;   \item{One}{Description of the One variable}
 #&#39;   \item{Two}{Description of the Two variable}
 #&#39; }</code></pre>
-<p>Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">data dictionaries</a>. We can make the storage and entry of data documentation cleaner and enable reuse by storing the data dictionary in a separate file from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style <code>\tabular</code> object that can be manually pasted into a roxygen block (See <a href="http://r-pkgs.had.co.nz/man.html" class="uri">http://r-pkgs.had.co.nz/man.html</a>):</p>
+<p>Writing out named lists in this way is fine for small and infrequently updated data. However, the manual entry and non-tabular formatting makes for difficult reuse in other contexts such as in <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">data dictionaries</a>. A project I’m working on has 10 or so datasets, which are updated frequently, and have over 20 different variables.</p>
+<p>We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. A relatively simple way to do this is to pass your data dictionary through a function to convert it into a LaTeX-style <code>\tabular</code> object that can be manually pasted into a roxygen block (See <a href="http://r-pkgs.had.co.nz/man.html" class="uri">http://r-pkgs.had.co.nz/man.html</a>):</p>
 <pre class="r"><code># modified from http://r-pkgs.had.co.nz/man.html
 tabular &lt;- function(df, ...) {
   stopifnot(is.data.frame(df))
