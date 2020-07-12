@@ -118,9 +118,9 @@ To have this function evaluated during the course of roxygen building, we includ
 "population"
 ```
 
-## Step 4: Run `roxygen::document` and/or `pkgdown::build_site`
+## Step 4: Run `roxygen::document`
 
-Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs :tada:
+Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs :smile:
 
 ```{r, echo=FALSE}
 library(printr)
