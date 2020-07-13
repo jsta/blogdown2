@@ -22,7 +22,7 @@ Documenting data is an important part of the R package publishing process. Most 
 
 Writing out named lists in this way is fine for small and infrequently updated data. However, manually entering the information in the named list and the fact that it is non-tabular makes for difficult reuse in other contexts such as in [data dictionaries](https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries). 
 
-We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. Then we could pass our data dictionary through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
+We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a csv file separate from the R source code. Then we could pass our data dictionary (as a `data.frame` object) through a function to convert it into a LaTeX-style `\tabular` object that can be manually pasted into a roxygen block (See http://r-pkgs.had.co.nz/man.html):
 
 ```{r }
 # modified from http://r-pkgs.had.co.nz/man.html
@@ -47,7 +47,7 @@ tabular <- function(df, ...) {
 }
 ```
 
-The output would be manually copy-pasted into roxygen code looking like this:
+The output could then be manually copy-pasted into roxygen code looking like this:
 
 ```{r echo=FALSE}
 dictionary <- dplyr::bind_rows(
@@ -60,7 +60,9 @@ dictionary <- dplyr::bind_rows(
 cat(tabular(dictionary))
 ```
 
-The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. _A project I'm working on has 10 datasets, which are updated frequently, and have over 20 different variables each._ I discovered an automated solution using (a little known) `@eval` roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the [`population` dataset](https://tidyr.tidyverse.org/reference/who.html) contained in the `tidyr` R package. The strategy I describe is implemented in a fully functioning R package at https://github.com/jsta/autodatadoc.
+The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. _A project I'm working on has 10 datasets, which are updated frequently, and have over 20 different variables each._ I discovered an automated solution using (a little known) `@eval` roxygen tag. 
+
+What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the [`population` dataset](https://tidyr.tidyverse.org/reference/who.html) contained in the `tidyr` R package. The strategy I describe is implemented in a fully functioning demonstration package at https://github.com/jsta/autodatadoc.
 
 ## Step 1: Create a csv data dictionary
 

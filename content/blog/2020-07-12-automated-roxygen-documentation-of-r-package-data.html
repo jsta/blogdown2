@@ -20,7 +20,7 @@ editor_options:
 #&#39;   \item{Two}{Description of the Two variable}
 #&#39; }</code></pre>
 <p>Writing out named lists in this way is fine for small and infrequently updated data. However, manually entering the information in the named list and the fact that it is non-tabular makes for difficult reuse in other contexts such as in <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">data dictionaries</a>.</p>
-<p>We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a file separate from the R source code. Then we could pass our data dictionary through a function to convert it into a LaTeX-style <code>\tabular</code> object that can be manually pasted into a roxygen block (See <a href="http://r-pkgs.had.co.nz/man.html" class="uri">http://r-pkgs.had.co.nz/man.html</a>):</p>
+<p>We can make the storage and entry of our data documentation cleaner while enabling reuse by storing the data dictionary in a csv file separate from the R source code. Then we could pass our data dictionary (as a <code>data.frame</code> object) through a function to convert it into a LaTeX-style <code>\tabular</code> object that can be manually pasted into a roxygen block (See <a href="http://r-pkgs.had.co.nz/man.html" class="uri">http://r-pkgs.had.co.nz/man.html</a>):</p>
 <pre class="r"><code># modified from http://r-pkgs.had.co.nz/man.html
 tabular &lt;- function(df, ...) {
   stopifnot(is.data.frame(df))
@@ -41,14 +41,15 @@ tabular &lt;- function(df, ...) {
         &quot;\n&quot;,
         contents, &quot;\n}\n&quot;, sep = &quot;&quot;)
 }</code></pre>
-<p>The output would be manually copy-pasted into roxygen code looking like this:</p>
+<p>The output could then be manually copy-pasted into roxygen code looking like this:</p>
 <pre class="r"><code>cat(tabular(dictionary))</code></pre>
 <pre><code>## \tabular{ll}{
 ## \bold{name} \tab \bold{description} \cr
 ## One \tab Description of the One variable\cr
 ##   Two \tab Description of the Two variable
 ## }</code></pre>
-<p>The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. <em>A project I’m working on has 10 datasets, which are updated frequently, and have over 20 different variables each.</em> I discovered an automated solution using (a little known) <code>@eval</code> roxygen tag. What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the <a href="https://tidyr.tidyverse.org/reference/who.html"><code>population</code> dataset</a> contained in the <code>tidyr</code> R package. The strategy I describe is implemented in a fully functioning R package at <a href="https://github.com/jsta/autodatadoc" class="uri">https://github.com/jsta/autodatadoc</a>.</p>
+<p>The problem with this approach is that the interactive manual copying becomes extremely cumbersome if you have a lot of different datasets to document. <em>A project I’m working on has 10 datasets, which are updated frequently, and have over 20 different variables each.</em> I discovered an automated solution using (a little known) <code>@eval</code> roxygen tag.</p>
+<p>What follows is a a step-by-step guide to creating automated roxygen data documentation that pulls from an external data dictionary. For this demonstration we will use the <a href="https://tidyr.tidyverse.org/reference/who.html"><code>population</code> dataset</a> contained in the <code>tidyr</code> R package. The strategy I describe is implemented in a fully functioning demonstration package at <a href="https://github.com/jsta/autodatadoc" class="uri">https://github.com/jsta/autodatadoc</a>.</p>
 <div id="step-1-create-a-csv-data-dictionary" class="section level2">
 <h2>Step 1: Create a csv data dictionary</h2>
 <p>Most people will use a spreadsheet program to manually create their data dictionary. An alternative approach is to use a more complex tool such as the <a href="https://github.com/dmrodz/dataMeta">dataMeta</a> R package or <a href="https://www.usgs.gov/products/data-and-tools/data-management/data-dictionaries">some other external tool</a> besides a spreadsheet program.</p>
