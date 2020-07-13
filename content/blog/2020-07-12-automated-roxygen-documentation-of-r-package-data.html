@@ -12,7 +12,7 @@ editor_options:
 
 
 <blockquote>
-<p>TLDR; You can have roxygen automatically build your R data documentation from an external file.</p>
+<p>TLDR; You can have roxygen automatically build your R data documentation from an external csv file.</p>
 </blockquote>
 <p>Documenting data is an important part of the R package publishing process. Most packages document their data using a named list so that they have a roxygen block that looks like this:</p>
 <pre><code>#&#39; \describe{
@@ -94,8 +94,8 @@ get_table_metadata(&quot;data-raw/dictionary.csv&quot;)</code></pre>
 ## [6] &quot;}&quot;                                          
 ## [7] &quot;&quot;</code></pre>
 </div>
-<div id="ste-3-automatically-include-this-output-in-a-roxygen-block-using-the-eval-tag." class="section level2">
-<h2>Ste 3: Automatically include this output in a roxygen block using the <code>@eval</code> tag.</h2>
+<div id="step-3-automatically-include-this-output-in-a-roxygen-block-using-the-eval-tag." class="section level2">
+<h2>Step 3: Automatically include this output in a roxygen block using the <code>@eval</code> tag.</h2>
 <p>To have this function evaluated during the course of roxygen building, we include an <code>@eval</code> tag in our roxygen code:</p>
 <pre class="r"><code>#&#39; World Health Organization TB data
 #&#39;
@@ -108,7 +108,7 @@ get_table_metadata(&quot;data-raw/dictionary.csv&quot;)</code></pre>
 </div>
 <div id="step-4-run-roxygendocument" class="section level2">
 <h2>Step 4: Run <code>roxygen::document</code></h2>
-<p>Now when we build the documentation with roxygen::document() <code>@eval</code> will evaluate the function and include a nicely formatted data dictionary table in our docs :smile:</p>
+<p>Now when we build the documentation with <code>roxygen::document()</code>, the <code>@eval</code> tag will evaluate the function and include a nicely formatted data dictionary table in our docs!</p>
 <div class="r-help-page">
 <table width="100%" summary="page for population">
 <tr>

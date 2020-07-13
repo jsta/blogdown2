@@ -9,7 +9,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-> TLDR; You can have roxygen automatically build your R data documentation from an external file.
+> TLDR; You can have roxygen automatically build your R data documentation from an external csv file.
 
 Documenting data is an important part of the R package publishing process. Most packages document their data using a named list so that they have a roxygen block that looks like this:
 
@@ -103,7 +103,7 @@ get_table_metadata <- function(dt){
 get_table_metadata(dictionary)
 ```
 
-## Ste 3: Automatically include this output in a roxygen block using the  `@eval` tag. 
+## Step 3: Automatically include this output in a roxygen block using the  `@eval` tag. 
 
 To have this function evaluated during the course of roxygen building, we include an `@eval` tag in our roxygen code:
 
@@ -120,7 +120,7 @@ To have this function evaluated during the course of roxygen building, we includ
 
 ## Step 4: Run `roxygen::document`
 
-Now when we build the documentation with roxygen::document() `@eval` will evaluate the function and include a nicely formatted data dictionary table in our docs :smile:
+Now when we build the documentation with `roxygen::document()`, the `@eval` tag will evaluate the function and include a nicely formatted data dictionary table in our docs!
 
 ```{r, echo=FALSE}
 library(printr)
