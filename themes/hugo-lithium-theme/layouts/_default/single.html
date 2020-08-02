@@ -16,6 +16,11 @@
     <div class="article-content">
       {{ .Content }}
     </div>
+    
+    				<footer class="footer">
+					{{ partial "tags.html" . }}
+					
+				</footer>
   </article>
 
   {{ partial "disqus.html" .}}

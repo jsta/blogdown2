@@ -212,3 +212,36 @@ pre .nohighlight {
   }
 }
 
+.octicon {
+  vertical-align: middle;
+  color: #4d4d4d;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.post-tags a.p-tag {
+  font-size: 14px;
+  display: inline-block;
+  padding: 3px 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  border: solid 1px #dc322f;
+  border-radius: 4px;
+  break-inside: avoid;
+  white-space: nowrap;
+}
+
+.post-tags a.p-tag:hover,
+.post-tags a.p-tag:active,
+.post-tags a.p-tag:focus {
+  background: #dc322f;
+  color: #fff;
+}
+
+.post-tags a.p-tag {
+  color: #4d4d4d;
+  border-color: #4d4d4d;
+}
