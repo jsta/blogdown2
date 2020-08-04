@@ -15,15 +15,23 @@ rssLimit = 30
 [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = 1
+[[menu.main]]
+    name = "Open Science"
+    url = "/packages/"
+    weight = 2
 [[menu.main]]
     name = "CV"
     url = "/cv/"
+    weight = 3
 [[menu.main]]
     name = "Blog"
     url = "/blog/"
+    weight = 4
 [[menu.main]]
     name = "Extras"
     url = "/extras/"
+    weight = 5
 
 [params]
     description = "Personal website of Joseph Stachelek"
