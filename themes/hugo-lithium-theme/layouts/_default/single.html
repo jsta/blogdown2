@@ -17,10 +17,11 @@
       {{ .Content }}
     </div>
     
-    				<footer class="footer">
+    {{ if .Params.tags }}
+    		<footer class="footer">
 					{{ partial "tags.html" . }}
-					
 				  </footer>
+		{{ end }}
   </article>
 {{$pages := .Site.Pages.ByPublishDate.Reverse}}
 
