@@ -198,8 +198,6 @@ q:before, q:after {
 }a {
     text-decoration: none;
     color: #1b6ada
-}a:hover{
-  text-decoration: underline;
 }a.external{
   display: inline-block;
   text-transform: uppercase;
@@ -897,7 +895,10 @@ q:before, q:after {
 }/* Tables */table {
     width: 100%;
     text-align: left;
-    font-size: .87rem
+    font-size: .94rem
+}table a{
+}table a:hover{
+  color: #0095eb;
 }table thead{
   font-weight: 600;
   background-color: #dfe3eb;
