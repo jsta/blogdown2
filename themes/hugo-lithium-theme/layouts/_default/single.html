@@ -20,8 +20,13 @@
     				<footer class="footer">
 					{{ partial "tags.html" . }}
 					
-				</footer>
+				  </footer>
   </article>
+{{$pages := .Site.Pages.ByPublishDate.Reverse}}
+
+  {{ range $elem_val := $.Params.partials }}
+  {{ partial $elem_val (dict "Site" $.Site "Data" $.Site.Data) }}
+{{ end }}
 
   {{ partial "disqus.html" .}}
 
