@@ -1,7 +1,7 @@
 var oTable;
 $(document).ready( function () {
     var radio = $('input[type=radio]')
-    var checkbox = $('input[type=checkbox]')
+    // var checkbox = $('input[type=checkbox]')
     var markdown = new showdown.Converter();
 
     oTable = $('#packagestable').DataTable({
@@ -29,10 +29,16 @@ $(document).ready( function () {
                 "title": "description",
             },
             {
-                "data": function(row, type, set, meta){return row.tags || ""},
+                "data": function(row, type, set, meta){
+                    return row.keywords || ""
+                },
                 "visible": false
             }                                    
         ],        
+        "createdRow" : function( row, data, index ){     
+            // data.ropensci_category                   
+            $(row).addClass(data.keywords.split(", "));            
+        },        
         "info": false, // won't display showed entries of total
         "pagingType": "simple_numbers",
         "pageLength": 18,
@@ -53,43 +59,29 @@ $(document).ready( function () {
         oTable.search("").draw();
     });
 
-    $(checkbox).change(function() {
-        oTable.search("").draw();
-    });
+    // $(checkbox).change(function() {
+    //     oTable.search("").draw();
+    // });
 
     /* Custom filtering function which will filter data in column four between two values */
     
     $.fn.dataTableExt.afnFiltering.push(
         function (oSettings, aData, iDataIndex) {
-            var cran = $('input[class="on_cran"]')            
+
             var selected = $('input:checked')
+            // console.log(selected)
             var filter = selected.attr('class')
-            if ((cran.is(':checked') && ! $(oSettings.aoData[iDataIndex].nTr).hasClass('on_cran'))){
-                return false;
-            }
+            // console.log(filter)            
+
             return !filter || filter == 'all' || $(oSettings.aoData[iDataIndex].nTr).hasClass(filter);
         }
     );   
 
 
     function makeDetailsRow(data){
-        //console.log(data)
+        // console.log(data)
         var text = '<h5>Description</h5><p><i>' + (data.details || "No detail for this package available.") + "</i><p>";
-        if(Object.keys(citedata).length == 0){
-            text = text + "Citation data unavailable";
-            return text;
-        }
-        var citations = citedata[data.name];
-        if(citations){
-            var list = citations.map(function(cite){
-                var doilink = "";
-                if(cite.doi && cite.doi != "NA"){
-                    doilink = '<a href="https://doi.org/' + cite.doi + '">DOI:' + cite.doi + "</a>";
-                }
-                return '<li>' + cite.citation + doilink + '</li>';
-            }).join('\n');
-            text = text + "<br /><h5>Scientific use cases</h5> <ol>" + list + "</ol>";
-        }
+
         return '<div class="packagedetails">' + text + '</div>';
     }
 
