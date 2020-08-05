@@ -18,7 +18,7 @@ $(document).ready( function () {
             },
             {
                 "data" : function(row, type, set, meta){
-                    return '<a href="' + row.url + '">' + row.repo +'</a>';
+                    return '<a href="' + row.repo_url + '">' + row.repo +'</a>';
                 },
                 title: "Name"
             },                                    
@@ -27,7 +27,11 @@ $(document).ready( function () {
                     return markdown.makeHtml(row.description);
                 },
                 "title": "description",
-            },                                    
+            },
+            {
+                "data": function(row, type, set, meta){return row.tags || ""},
+                "visible": false
+            }                                    
         ],        
         "info": false, // won't display showed entries of total
         "pagingType": "simple_numbers",
