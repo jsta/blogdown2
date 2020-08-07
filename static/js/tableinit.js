@@ -80,7 +80,7 @@ $(document).ready( function () {
 
     function makeDetailsRow(data){
         // console.log(data)
-        var text = '<h5>Description</h5><p><i>' + (data.details || "No detail for this package available.") + "</i><p>";
+        var text = '<h5>Keywords</h5><p><i>' + (data.keywords || "No details for this package available.") + "</i><p>";
 
         return '<div class="packagedetails">' + text + '</div>';
     }
