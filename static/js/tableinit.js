@@ -6,7 +6,7 @@ $(document).ready( function () {
 
     oTable = $('#packagestable').DataTable({
         "ajax": {
-            "url": "https://jsta.github.io/jsta/releases.json",
+            "url": "https://raw.githubusercontent.com/jsta/jsta/main/releases.json",
             "dataSrc": ""
         },
         "columns": [
