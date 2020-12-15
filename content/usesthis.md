@@ -24,7 +24,7 @@ title: "Software I Use"
 
 [RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
 
-[VSCode](https://code.visualstudio.com/) - For non-R coding
+[VSCodium](https://vscodium.com/) - For non-R coding
 
 [vim](https://vim-adventures.com/) - Command-line text editing
 
