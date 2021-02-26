@@ -8,3 +8,4 @@ static/pdf/*.log
 static/data/WFD*
 static/data/*.rds
 config.py
+temp
