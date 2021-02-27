@@ -3,7 +3,7 @@ $(document).ready( function () {
     var radio = $('input[type=radio]')
     // var checkbox = $('input[type=checkbox]')
     var markdown = new showdown.Converter();
-    var manualjson = JSON.parse('json/test.json');
+    var testjson = $.getJSON("/json/test.json")
 
     oTable = $('#packagestable').DataTable({
         "ajax": {
