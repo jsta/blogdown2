@@ -8,9 +8,10 @@ $(document).ready( function () {
     var releases = $.extend({}, ghreleases, testjson);
 
     oTable = $('#packagestable').DataTable({
-        "ajax": {
-            "url": "https://raw.githubusercontent.com/jsta/jsta/main/releases.json",
-            "dataSrc": ""
+        "ajax": function (data, callback, settings) {
+            callback(
+              JSON.parse( localStorage.getItem('releases') )
+            );
         },
         "columns": [
             {
