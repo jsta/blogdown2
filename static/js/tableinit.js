@@ -4,6 +4,8 @@ $(document).ready( function () {
     // var checkbox = $('input[type=checkbox]')
     var markdown = new showdown.Converter();
     var testjson = $.getJSON("/json/test.json")
+    var ghreleases = $.getJSON("https://raw.githubusercontent.com/jsta/jsta/main/releases.json")
+    var releases = $.extend({}, ghreleases, testjson);
 
     oTable = $('#packagestable').DataTable({
         "ajax": {
