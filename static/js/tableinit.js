@@ -8,10 +8,7 @@ $(document).ready( function () {
     var releases = $.extend({}, ghreleases, testjson);
 
     oTable = $('#packagestable').DataTable({
-        "ajax": {
-            "url": "releases",
-            "dataSrc": ""
-        },
+        "ajax": "releaes",
         "columns": [
             {
                 "className":      'details-control',
