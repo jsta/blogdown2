@@ -3,13 +3,12 @@ $(document).ready( function () {
     var radio = $('input[type=radio]')
     // var checkbox = $('input[type=checkbox]')
     var markdown = new showdown.Converter();
-    var testjson = $.getJSON("/json/test.json")
-    var ghreleases = $.getJSON("https://raw.githubusercontent.com/jsta/jsta/main/releases.json")
-    var releases = $.extend({}, ghreleases, testjson);
-    console.log(releases)
 
     oTable = $('#packagestable').DataTable({
-        "ajax": releases,
+        "ajax": {
+            "url": "https://raw.githubusercontent.com/jsta/jsta/main/releases.json",
+            "dataSrc": ""
+        },
         "columns": [
             {
                 "className":      'details-control',
