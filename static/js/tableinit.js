@@ -6,6 +6,7 @@ $(document).ready( function () {
     var testjson = $.getJSON("/json/test.json")
     var ghreleases = $.getJSON("https://raw.githubusercontent.com/jsta/jsta/main/releases.json")
     var releases = $.extend({}, ghreleases, testjson);
+    console.log(releases)
 
     oTable = $('#packagestable').DataTable({
         "ajax": releases,
