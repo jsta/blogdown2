@@ -1,5 +1,5 @@
 ---
-title: Interpreting Ecological Society of America's new Open Science policies
+title: Interpreting the new Ecological Society of America Open Science policy
 author: ~
 date: '2021-02-28'
 slug: esa-data-policy
@@ -15,27 +15,31 @@ tags: []
 <p>You can read their announcement at:
 <a href="https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/" class="uri">https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/</a></p>
 <p>In general, I think this new policy is great and should go a long way in promoting open data, code, and reproduciblity in Ecology.</p>
-<p><strong>However, I want to talk about two aspects of this new policy 1) certain requirements that I view as ambiguous such that newcomers to Open Science would have trouble following them and 2) requirements I view as too prescriptive such that they risk becoming outdated as digital services (hopefully) come and go.</strong></p>
-<p>My goal is to expound on the former to hopefully bring some clarity and suggest alternatives to the latter requirements in the hopes that ESA Publications staff will be adaptable. All of this bearing in mind the difficulty inherent in striking the right amount of detail in these types of policy documents. In some cases, resolving all ambiguity is probably out of scope for a formal policy document like this and could be handled at the level of individuals, on a case-by-case basis, or with links to resources. What follows are merely my opinions as of the writing of this post and I’d love to hear from people where I might be off base.</p>
+<p><strong>The purpose of this blog post is to talk about A) ESA data policy requirements that I view as ambiguous such people may have trouble following them and B) requirements that I view as too prescriptive such that they are too onerous for newcomers or risk becoming outdated as digital services (hopefully) come and go.</strong></p>
+<p>My goal is to expound on the former to hopefully bring some clarity and to dissect the latter in the hopes that the policy will be flexible. All of this is bearing in mind the difficulty inherent in arriving at the right amount of detail in these types of policy documents without going overboard. I think some ambiguity is unavoidable and I plan to amend this post with more resources so that people can be informed. What follows are merely my opinions as of the writing of this post and I’d love to hear from people where I might be off base.</p>
 <blockquote>
 <p>The relevant text from the policy document is set in quoted blocks under each requirement with <strong>emphasis mine</strong></p>
 </blockquote>
 <hr />
+<div id="ambiguous-requirements" class="section level2">
+<h2>Ambiguous requirements</h2>
 <p><strong>1. What is and is not novel code?</strong></p>
 <blockquote>
 <p>Archiving of novel code is required for each submission. Code that is not novel (e.g., from a standard statistical package or publicly available model) must only be properly cited and referenced.</p>
 </blockquote>
-<p>This is certainly a worthwhile requirement. However, I feel that it can be difficult to distinguish between what is and is not novel code. My interpretation of the requirement is that if you used an publicly available software package (e.g. an R package on CRAN, even if “non-standard”), you should cite it but you don’t need to archive its source code. In my experience, the biggest challenge to providing code with a paper is corralling disparate coding efforts across large multi-author teams. So, yes, the code your collaborator wrote in an unfamiliar (to you) language to produce one component of the paper counts as novel code. It doesn’t need to be integrated with your code in a single repository but it does need to be archived.</p>
+<p>This is certainly a worthwhile requirement. However, I feel that it can be difficult to distinguish between what is and is not novel code. My interpretation of the requirement is that if you used a publicly available software package (e.g. an R package on CRAN, even if “non-standard”), you should cite it but you don’t need to archive its source code. In my experience, the biggest challenge to providing code with a paper is corralling disparate coding efforts across large multi-author teams. So, yes, the code your collaborator wrote in an unfamiliar (to you) language to produce one component of the paper counts as novel code. It doesn’t need to be integrated with your code in a single repository but it does need to be archived.</p>
 <p><strong>2. What does it mean to archive a derived data product?</strong></p>
 <blockquote>
 <p>Raw data and metadata used to generate tables, figures, plots, videos/animations [is required for each submission]. Derived data products [are required for each submission]. Derived data products constitutes data which are collected from database source(s) and collated and/or processed specific to the current research.</p>
 </blockquote>
-<p>I think the Details sections of the policy does a good job defining raw data. I don’t see a lot of ambiguity there. However, I do see some potential for confusion with the requirement to archive derived data products. As an example, consider a study where elevation is data is collected from a data source like the National Elevation Dataset (NED). My interpretation is that to satisfy the policy you would not need to archive the entire NED or even the entirety of any NED tiles you used in the paper. Because the NED is a very public dataset, you would instead provide a formal citation reference and details/code on data processing steps. Then, if you extracted point measurements from NED tiles, these would be archived as part of your “raw” data product.</p>
+<p>I think the Details sections of the policy does a good job defining raw data. I don’t see a lot of ambiguity there. However, I do see some potential for confusion with the requirement to archive derived data products. As an example, consider a study where elevation data is collected from something like the National Elevation Dataset (NED). My interpretation is that to satisfy the policy you would not need to archive the entire NED or even the entirety of any NED tiles you used in your paper. Because the NED is a very public dataset, you would provide a formal citation reference and details (or code) for data processing steps. Then, if you extracted point measurements from NED tiles, these would be archived as part of your “raw” data product.</p>
 <p><strong>3. What is a proprietary data format?</strong></p>
 <blockquote>
 <p>Data should be provided in non-proprietary, machine-readable formats (e.g., “.csv”).</p>
 </blockquote>
-<p>This is a great part of the policy in my opinion. Let’s not use Access databases or raster ESRI geodatabases that require paid software to open. While the policy gives an example of a non-proprietary format, there are differences in practice between what is technically proprietary and practically proprietary. For example, <a href="https://en.wikipedia.org/wiki/Shapefile">Shapefiles may be technically proprietary</a> but they are not practically proprietary. The format has an open specification so as to not require paid software. Anyway, I recommend Geopackages rather than Shapefiles if you also want to be technically non-proprietary (<a href="https://jsta.rbind.io/blog/2016-07-14-geopackage-r/">see prior post</a>).</p>
+<p>This is a great part of the policy in my opinion. While the policy gives an example of a non-proprietary format, there are differences in practice between what is technically proprietary and practically proprietary. For example,
+Access databases and raster ESRI geodatabases require paid software to open and are both technical <strong>and</strong> practically proprietary. Conversely, <a href="https://en.wikipedia.org/wiki/Shapefile">shapefiles are technically proprietary</a> but they are not practically proprietary. The format has an open specification so as to not require paid software. As an aside, I recommend Geopackages rather than Shapefiles to be technically non-proprietary (<a href="https://jsta.rbind.io/blog/2016-07-14-geopackage-r/">see prior post</a>).</p>
+</div>
 <div id="overprescribed-requirements" class="section level2">
 <h2>Overprescribed requirements</h2>
 <p><strong>4. Are graphical point-and-click figure making programs banned?</strong></p>
@@ -52,5 +56,5 @@ tags: []
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>I am excited for the future of Open Science. It is great for education and has the potential to at least somewhat un-close the Ivory Tower. One of the sticking points in past efforts of this type is the question of enforcement. Who will be responsible for telling authors they are required to do the extra work of making their data and code open? Will it be granting agencies, university leadership, journal reviewers? On this point, I was particularly interested to see the promise that <strong>“ESA Publications staff will verify data and code archiving is complete before releasing files to the publisher”</strong>.</p>
+<p>I am excited for the future of Open Science. It is great for education and has the potential to at least somewhat puncture the Ivory Tower. One of the sticking points in past Open Science discussions I’ve seen is the question of enforcement. Who will be responsible for telling authors they are required to do the extra work of making their data and code open? Will it be granting agencies, university leadership, journal reviewers? On this point, I was particularly interested to see the promise that <strong>“ESA Publications staff will verify data and code archiving is complete before releasing files to the publisher”</strong>.</p>
 </div>
