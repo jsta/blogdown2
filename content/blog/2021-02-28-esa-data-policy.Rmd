@@ -6,7 +6,7 @@ slug: esa-data-policy
 categories: []
 tags: []
 ---
-The Ecological Society of America (ESA) has recently adopted an [Open Science (and Open Data policy)](https://www.esa.org/publications/data-policy/):
+The Ecological Society of America (ESA) has recently adopted a new [Open Science (and Open Data policy)](https://www.esa.org/publications/data-policy/):
 <!-- https://twitter.com/__jsta/status/1355148391857205250?s=20 -->
 
 <!-- You can read their announcement at: -->
