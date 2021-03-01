@@ -14,8 +14,7 @@ The Ecological Society of America (ESA) has recently adopted an [Open Science (a
 
 ```{r echo=FALSE}
 library(tweetrmd)
-# tweet_screenshot(tweet_url("ESA_org", "1354882651451248641"))
-tweet_embed("https://twitter.com/alexpghayes/status/1211748406730706944")
+tweet_screenshot(tweet_url("ESA_org", "1354882651451248641"))
 ```
 
 In general, I think this new policy is great and should go a long way in promoting open data, code, and reproduciblity in Ecology.
