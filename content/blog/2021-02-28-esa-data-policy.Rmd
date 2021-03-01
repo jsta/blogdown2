@@ -6,16 +6,18 @@ slug: esa-data-policy
 categories: []
 tags: []
 ---
-The Ecological Society of America (ESA) has recently adopted an [Open Science (and Open Data policy)](https://www.esa.org/publications/data-policy/).
+The Ecological Society of America (ESA) has recently adopted an [Open Science (and Open Data policy)](https://www.esa.org/publications/data-policy/):
 <!-- https://twitter.com/__jsta/status/1355148391857205250?s=20 -->
 
 <!-- You can read their announcement at: -->
 <!-- https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/ -->
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.cap = "Read the announcement at: https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/", eval=FALSE}
 library(tweetrmd)
 tweet_screenshot(tweet_url("ESA_org", "1354882651451248641"))
 ```
+
+[![Read the announcement at: https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/](/blog/2021-02-28-esa-data-policy_files/figure-html/unnamed-chunk-1-1.png)](https://www.esa.org/esablog/2021/01/28/esa-data-policy-ensuring-an-openness-to-science/)
 
 In general, I think this new policy is great and should go a long way in promoting open data, code, and reproduciblity in Ecology.
 
@@ -43,24 +45,24 @@ I am fan of Zenodo but I disagree with codifying them as the required Github arc
 
 ## Ambiguous requirements
 
-**3. What is and is not novel code?**
-
-> Archiving of novel code is required for each submission. Code that is not novel (e.g., from a standard statistical package or publicly available model) must only be properly cited and referenced. 
-
-This is certainly a worthwhile requirement. However, I feel that it can be difficult to distinguish between what is and is not novel code. My interpretation of the requirement is that if you used a publicly available software package (e.g. an R package on CRAN, even if "non-standard"), you should cite it but you don't need to archive its source code. In my experience, the biggest challenge to providing code with a paper is corralling disparate coding efforts across large multi-author teams. So, yes, the code your collaborator wrote in an unfamiliar (to you) language to produce one component of the paper counts as novel code. It doesn't need to be integrated with your code in a single repository but it does need to be archived.
-
-**4. What does it mean to archive a derived data product?**
-
-> Raw data and metadata used to generate tables, figures, plots, videos/animations [is required for each submission]. Derived data products [are required for each submission]. Derived data products constitutes data which are collected from database source(s) and collated and/or processed specific to the current research.
-
-I think the Details sections of the policy does a good job defining raw data. I don't see a lot of ambiguity there. However, I do see some potential for confusion with the requirement to archive derived data products. As an example, consider a study where elevation data is collected from something like the National Elevation Dataset (NED). My interpretation is that to satisfy the policy you would not need to archive the entire NED or even the entirety of any NED tiles you used in your paper. Because the NED is a very public dataset, you would provide a formal citation reference and details (or code) for data processing steps. Then, if you extracted point measurements from NED tiles, these would be archived as part of your "raw" data product.
-
-**5. What is a proprietary data format?**
+**3. What is a proprietary data format? Are shapefiles banned?**
 
 > Data should be provided in non-proprietary, machine-readable formats (e.g., “.csv”).
 
 This is a great part of the policy in my opinion. While the policy gives an example of a non-proprietary format, there are differences in practice between what is technically proprietary and practically proprietary. For example,
 Access databases and raster ESRI geodatabases require paid software to open and are both technically *and* practically proprietary. Conversely, [shapefiles are technically proprietary](https://en.wikipedia.org/wiki/Shapefile) but they are not practically proprietary. The format has an open specification so as to not require paid software. As an aside, I recommend using Geopackages rather than Shapefiles because they are technically non-proprietary ([see prior post](https://jsta.rbind.io/blog/2016-07-14-geopackage-r/)).
+
+**4. What is and is not novel code?**
+
+> Archiving of novel code is required for each submission. Code that is not novel (e.g., from a standard statistical package or publicly available model) must only be properly cited and referenced. 
+
+This is certainly a worthwhile requirement. However, I feel that it can be difficult to distinguish between what is and is not novel code. My interpretation of the requirement is that if you used a publicly available software package (e.g. an R package on CRAN, even if "non-standard"), you should cite it but you don't need to archive its source code. In my experience, the biggest challenge to providing code with a paper is corralling disparate coding efforts across large multi-author teams. So, yes, the code your collaborator wrote in an unfamiliar (to you) language to produce one component of the paper counts as novel code. It doesn't need to be integrated with your code in a single repository but it does need to be archived.
+
+**5. What does it mean to archive a derived data product?**
+
+> Raw data and metadata used to generate tables, figures, plots, videos/animations [is required for each submission]. Derived data products [are required for each submission]. Derived data products constitutes data which are collected from database source(s) and collated and/or processed specific to the current research.
+
+I think the Details sections of the policy does a good job defining raw data. I don't see a lot of ambiguity there. However, I do see some potential for confusion with the requirement to archive derived data products. As an example, consider a study where elevation data is collected from something like the National Elevation Dataset (NED). My interpretation is that to satisfy the policy you would not need to archive the entire NED or even the entirety of any NED tiles you used in your paper. Because the NED is a very public dataset, you would provide a formal citation reference and details (or code) for data processing steps. Then, if you extracted point measurements from NED tiles, these would be archived as part of your "raw" data product.
 
 ---
 
