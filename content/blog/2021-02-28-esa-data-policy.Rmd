@@ -50,7 +50,7 @@ I am fan of Zenodo but I disagree with codifying them as the required Github arc
 > Data should be provided in non-proprietary, machine-readable formats (e.g., “.csv”).
 
 This is a great part of the policy in my opinion. While the policy gives an example of a non-proprietary format, there are differences in practice between what is technically proprietary and practically proprietary. For example,
-Access databases and raster ESRI geodatabases require paid software to open and are both technically *and* practically proprietary. Conversely, [shapefiles are technically proprietary](https://en.wikipedia.org/wiki/Shapefile) but they are not practically proprietary. The format has an open specification so as to not require paid software. As an aside, I recommend using Geopackages rather than Shapefiles because they are technically non-proprietary ([see prior post](https://jsta.rbind.io/blog/2016-07-14-geopackage-r/)).
+Access databases and raster ESRI geodatabases require paid software to open and are both technically *and* practically proprietary. Conversely, [shapefiles are technically proprietary](https://en.wikipedia.org/wiki/Shapefile) but they are not practically proprietary. The format has an open specification so as to not require paid software. Although I recommend using Geopackages rather than Shapefiles because they are technically non-proprietary ([see prior post](https://jsta.rbind.io/blog/2016-07-14-geopackage-r/)), I think it is OK to use and archive shapefiles.
 
 **4. What is and is not novel code?**
 
