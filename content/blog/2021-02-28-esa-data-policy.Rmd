@@ -69,3 +69,9 @@ I think the Details sections of the policy does a good job defining raw data. I 
 ## Conclusion
 
 I am excited for the future of Open Science. It is great for education and has the potential to at least somewhat puncture the Ivory Tower. One of the sticking points in past Open Science discussions I've seen is the question of enforcement. Who will be responsible for telling authors they are required to do the extra work of making their data and code open? Will it be granting agencies, university leadership, journal reviewers? On this point, I was particularly interested to see the promise that **"ESA Publications staff will verify data and code archiving is complete before releasing files to the publisher"**.
+
+## References
+
+* [NSF Data Management Plan Requirements](https://www.nsf.gov/bfa/dias/policy/dmp.jsp)
+
+* [Github-Zenodo Integration](https://guides.github.com/activities/citable-code/)
