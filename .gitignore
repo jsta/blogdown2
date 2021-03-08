@@ -9,3 +9,11 @@ static/data/WFD*
 static/data/*.rds
 config.py
 temp
+static/node_modules/
+static/package-lock.json
+privatekey.json
+__pycache__/
+test
+.vscode/
+condaenvs/
+static/rmarkdown-libs/
