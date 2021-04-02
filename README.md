@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1880589c-045d-4161-8054-8f67b825512e/deploy-status)](https://app.netlify.com/sites/jsta/deploys)
 
-This is Joseph Stachelek's personal website based on [**blogdown**](https://github.com/rstudio/blogdown) and the [Hugo](https://gohugo.io) theme [hugo-lithium-theme](https://github.com/yihui/hugo-lithium-theme). 
+This is J Stachelek's personal website based on [**blogdown**](https://github.com/rstudio/blogdown) and the [Hugo](https://gohugo.io) theme [hugo-lithium-theme](https://github.com/yihui/hugo-lithium-theme). 
 
 ## Usage
 
