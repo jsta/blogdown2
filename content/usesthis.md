@@ -22,9 +22,7 @@ title: "Software I Use"
 
 ## Coding / GIS
 
-[RStudio](https://www.rstudio.com/products/rstudio/download/#download) - R coding
-
-[VSCodium](https://vscodium.com/) - For non-R coding
+[VSCodium](https://vscodium.com/) - For programming code
 
 [vim](https://vim-adventures.com/) - Command-line text editing
 
