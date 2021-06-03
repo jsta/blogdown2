@@ -17,3 +17,6 @@ test
 .vscode/
 condaenvs/
 static/rmarkdown-libs/
+*.aux
+*.out
+cv.html
