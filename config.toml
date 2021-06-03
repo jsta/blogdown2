@@ -17,8 +17,8 @@ rssLimit = 30
     url = "/about/"
     weight = 1
 [[menu.main]]
-    name = "Open Science"
-    url = "/openscience/"
+    name = "Products"
+    url = "/products/"
     weight = 2
 [[menu.main]]
     name = "CV"
