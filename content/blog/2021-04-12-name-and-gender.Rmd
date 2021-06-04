@@ -1,7 +1,7 @@
 ---
-title: "Jem posting: A notice of my name and gender"
+title: "Jem posting: a notice of my name and gender"
 date: '2021-04-12'
-slug: name-gender
+slug: jem-posting
 ---
 
 This post serves as a notice of my name and gender. **I go by Jemma or "Jem" for short and I use they/them pronouns** (or she/her in a pinch).
@@ -28,6 +28,4 @@ This is not a comprehensive list. It has recency bias, it is heavily slanted tow
 
 <!-- ## Tweet -->
 
-<!-- [blog] Struggle with naming things while programming? Try naming yourself: A notice of my name and gender | https://jsta.rbind.io/blog/asdf -->
-
-<!-- [blog] A notice of my name and gender | https://jsta.rbind.io/blog/asdf -->
+<!-- [blog] Jem posting: a notice of my name and gender | https://jsta.rbind.io/blog/jem-posting -->
