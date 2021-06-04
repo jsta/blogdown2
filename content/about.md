@@ -2,6 +2,6 @@
 title: "About"
 ---
 
-## Joseph Stachelek
+## Jemma Stachelek
 
-I am a researcher at the [Center for Limnology](https://limnology.wisc.edu/) at the University of Wisconsin-Madison working with Hilary Dugan, Paul Hanson, and the other members of the [Knowledge Guided Machine Learning Project](https://sites.google.com/umn.edu/kgml/home).
+I am a researcher in the [Earth System Observations](https://www.lanl.gov/org/ddste/aldcels/earth-environmental-sciences/earth-systems-operations/index.php) group at [Los Alamos National Laboratory](https://lanl.gov).

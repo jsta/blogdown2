@@ -34,7 +34,7 @@ rssLimit = 30
     weight = 5
 
 [params]
-    description = "Personal website of Joseph Stachelek"
+    description = "Personal website of Jemma Stachelek"
     dateFormat = "2006/01/02"
     customCSS = ["css/style-new.css", "css/custom.css"]
     customJS = ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js"]

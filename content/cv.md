@@ -8,7 +8,7 @@ disable_comments: true
 
 [extended pdf version](../pdf/cv.pdf)
 
-## Joseph Stachelek
+## Jemma Stachelek
 
 ## Education
 
@@ -17,8 +17,10 @@ disable_comments: true
 - 2004 -- 2008, B.S., University of Maine. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf).
 
 ## Professional Experience
-  
-- 2020 -- Present, Post-doctoral Research Associate, Center for Limnology, University of Wisconsin-Madison
+
+- 2021 -- Present, Postdoctoral Research Associate, Earth System Observations, Los Alamos National Laboratory
+
+- 2020 -- 2021, Postdoctoral Research Associate, Center for Limnology, University of Wisconsin-Madison
   
 - 2012 -- 2016, Research Scientist, South Florida Water Management District
 
