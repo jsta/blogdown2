@@ -1,6 +1,6 @@
 ---
 title: "Jem posting: a notice of my name and gender"
-date: '2021-04-12'
+date: '2021-06-04'
 slug: jem-posting
 ---
 
