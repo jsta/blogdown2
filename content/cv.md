@@ -12,9 +12,11 @@ disable_comments: true
 
 ## Education
 
-- 2016 -- 2020, Ph.D., Michigan State University. [dissertation](https://www.proquest.com/docview/2435195033).
-- 2009 -- 2012, M.S., University of Texas. [thesis](http://repositories.lib.utexas.edu/handle/2152/ETD-UT-2012-05-5549).
-- 2004 -- 2008, B.S., University of Maine. [thesis](../pdf/FieldGuidetoMarinePlantsAlgae.pdf).
+- 2016 -- 2020, Ph.D., Michigan State University
+
+- 2009 -- 2012, M.S., University of Texas
+
+- 2004 -- 2008, B.S., University of Maine
 
 ## Professional Experience
 
